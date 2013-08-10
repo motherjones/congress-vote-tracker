@@ -15,4 +15,9 @@ Little competent oversight and abuse
 > Stephen, a guy we hired as a temporary contractor to tidy up our database layer, grabbed the greenest of engineers, moved into the ping-pong room, and told the engineer, “We are not leaving this room until we can see the application actually work.” [src]:(http://www.randsinrepose.com/archives/2012/11/14/stables_and_volatiles.html)
 
 This doesn’t sound like something we should celebrate to make investment vehicles.  Sleep is good for your brain and thinking just afew minutes ahead avoids many obstacles.
-Let me explain that I am stating my values, the health of the workers 
+Let me explain that I am stating my values
+* the health of the workers over the health of the market
+* the health of the software and documentation over sexyness
+* prototyping over expecting(friday projects are life bloods)
+* anti-lockin build things for change
+
