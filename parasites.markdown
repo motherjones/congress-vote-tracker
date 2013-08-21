@@ -1,7 +1,9 @@
 # Or How do put your Oppressor in a Skinner Box
-I’ve been hearing a bunch about volatiles and stables lately, about how we are all the same basically, just in different parts of a transition from volatile to stable in an ever waging war of 0...1...2...3...4
-And we is the team they use veterans of a war?  Some of us want to end the war.  End the obsession on shipping, resource allocation, and perks.
-Some veterans want to end the war. 
+I’ve been hearing a bunch about volatiles and stables lately; about how we are all the same basically, just in different parts of a transition from volatile to stable in an ever waging war of versions 0.0...1.0...2.0...
+I don't just use the word war casually I hear it again and again that in software its a war to win, each sprint at battle.  We talk about getting to version "one zero" like its a death march, because it is.  Not all veterans come home patriotic, some of us want to end the war.  End the obsession on shipping, resource allocation, and perks.
+Some veterans want to end the war.
+Like more wars the enemy isn't always what the generals tell you, often its the generals themselves.  Typically we are told this war is users, deadlines, other companies, and getting funding. By coaching programmers as "volatile" and "stable" we create enemies out of what was once comrades and forget to realize that its these same tactics which strenthen the power devide between business owners and employees.
+
 * “Volatile” engineers often get thrown away or placed in positions of ill advised power.
 * “Stable” engineers often get ignored or promoted to dead-end middle management.
 * Technology follows predictable patterns empowering or replacing the ones that come before it, most attempts to force innovation end in boom or bust cycles.
