@@ -4,10 +4,16 @@ I don't just use the word war casually I hear it again and again that in softwar
 Some veterans want to end the war.
 Like more wars the enemy isn't always what the generals tell you, often its the generals themselves.  Typically we are told this war is users, deadlines, other companies, and getting funding. By coaching programmers as "volatile" and "stable" we create enemies out of what was once comrades and forget to realize that its these same tactics which strengthen the power divide between business owners and employees.
 
+## Dichotomies Matter
+Its not a coincidence that we keep revisiting the same issues in the projects and companies we build.  When we couch people as "volatile" vs. "stable" and don't acknowledge the underlying power dynamics creating them we simple seek to reproduce the same failing environments.  Ones where people with violent anti-social behavior are able to piss all over their own personal parts of the noosphere and professional baby sitters make their stakes on taming these beasts.
+
 * “Volatile” engineers often get thrown away or placed in positions of ill advised power.
 * “Stable” engineers often get ignored or promoted to dead-end middle management.
 * Technology follows predictable patterns empowering or replacing the ones that come before it, most attempts to force innovation end in boom or bust cycles.
 Decision making is a collective process get over it, software has multiple levels, and most companies fail.  We have been told and told to celebrate failure “its part of startup culture”.
+
+We don't build these dichotomies to accurately explain human behavior we do it do normalize maladaptive behaviors which it currently seem uneconomical to deal with a structural level.  Teaching people to work in teams is something we ultimately have to start doing at younger ages, this isn't just sports teams or social groups but teaching people how to work out technical decisions requires setting aside egos on completely different levels.
+Since we can't change elementary education for our current generation we have to approach as a eminent problem.  Ultimately the sharks and the parasites in our community are not as separate or safe from everyone else as they expect.
 
 ## Here we get to the toxin
 Startups, large round VC funded companies, fail more readily than small businesses oriented around software 
@@ -37,10 +43,6 @@ An engineers first response is going to be to promote the old guard, we are clas
 So we say behavior like this is  necessary to innovate, that these behaviors are not just correlated with genius but a part of or required for it.  Mostly based off the reason that this is how we do it and how its always been done.
 ## Doing things this ways sucks!
 Not many people understand how seriously bad this sucks and how little actually gets done because of it.  Heres a big secret most new technologies are just rebuilding software thats that have been in open source for years.  Its seriously easy to build an image of something, building the actual thing is often an epic task.  We add constraints to the product, we avoid achieving core goals while building new adapters and features focusing on expansion rather than accessibility/flexibility.
-## Dichotomies Matter
-Its not a coincidence that we keep revisiting the same issues in the projects and companies we build.  When we couch people as "volatile" vs. "stable" and don't acknowledge the underlying power dynamics creating them we simple seek to reproduce the same failing environments.  Ones where people with violent anti-social behavior are able to piss all over their own personal parts of the noosphere and professional baby sitters make their stakes on taming these beasts.
-We don't build these dichotomies to accurately explain human behavior we do it do normalize maladaptive behaviors which it currently seem uneconomical to deal with a structural level.  Teaching people to work in teams is something we ultimately have to start doing at younger ages, this isn't just sports teams or social groups but teaching people how to work out technical decisions requires setting aside egos on completely different levels.
-Since we can't change elementary education for our current generation we have to approach as a eminent problem.  Ultimately the sharks and the parasites in our community are not as separate or safe from everyone else as they expect.
 ## Kings can't live without Serfs
 What scares people like Linus more than anything is that we don't actually need them for much.  For every king of every little kernel their is already someone with enough knowledge and intelligence to take over the project from them, often even with the ability to communicate and organize on longer timescales.  We create cults of personality not because its functional but in fact because of cultural assumptions around intelligence.
 The real question becomes then why do we choose this situation?  Technology is too young a field to be this bitterly entrenched, who can really be an expect in a field only 5-20 years old.  The main part of the "Unix philosophy" is to iterate quickly, build anew, and hold no cows sacred.  Well let me tell you developer toxicity is not a feature, its a bug.
