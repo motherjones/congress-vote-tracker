@@ -11,13 +11,13 @@ Decision making is a collective process get over it, software has multiple level
 
 ## Here we get to the toxin
 Startups, large round VC funded companies, fail more readily than small businesses oriented around software 
-[src]:(http://www.inc.com/mark-peter-davis/why-you-should-not-raise-venture-capital-money.html). 
+[src](http://www.inc.com/mark-peter-davis/why-you-should-not-raise-venture-capital-money.html). 
 Who gains from this; money managers team starters making large salaries, selling off IP and email passwords.  Requiring high success rates across large portfolios to shooting for larger profits leveraging statistics.
 
 ## Whats the symptoms
 Little competent oversight and abuse
 > Stephen, a guy we hired as a temporary contractor to tidy up our database layer, grabbed the greenest of engineers, moved into the ping-pong room, and told the engineer, “We are not leaving this room until we can see the application actually work.” 
-[src]:(http://www.randsinrepose.com/archives/2012/11/14/stables_and_volatiles.html)
+[src](http://www.randsinrepose.com/archives/2012/11/14/stables_and_volatiles.html)
 
 This doesn’t sound like something we should celebrate to make investment vehicles.  Sleep is good for your brain and thinking just a few minutes ahead avoids many obstacles.
 Let me explain that I am stating my values
