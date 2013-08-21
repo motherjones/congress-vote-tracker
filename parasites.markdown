@@ -37,10 +37,15 @@ Now for all of this what do we get?
 
 ## What happens when you survive?
 So your long hours have paid off, metrics met, investors happy  no real income yet *probably* but buzz and users and early adopters.  Its time for a vacation right?  No its time for what have you done for me latelies to rain down and ignore technical debt.  Frustrated management organizes more hackathons, coding sprints.  All in an attempt reinvigorate a fire that wasn't there.  We hire new people either put them under or beside the old members and see what happens.
+
 An engineers first response is going to be to promote the old guard, we are classically bad at this especially under stress and with high levels of developer vs. manager unrest.  We tend to promote our sharks when we expect to have to innovate more, we put people with anti-social behaviors at the heads of projects.  We do this because we hate management and we severely want to get push back on technical problems or just push deadlines off enough to catch some breath.
+
 So we say behavior like this is  necessary to innovate, that these behaviors are not just correlated with genius but a part of or required for it.  Mostly based off the reason that this is how we do it and how its always been done.
+
 ## Doing things this ways sucks!
 Not many people understand how seriously bad this sucks and how little actually gets done because of it.  Heres a big secret most new technologies are just rebuilding software thats that have been in open source for years.  Its seriously easy to build an image of something, building the actual thing is often an epic task.  We add constraints to the product, we avoid achieving core goals while building new adapters and features focusing on expansion rather than accessibility/flexibility.
+
 ## Kings can't live without Serfs
 What scares people like Linus more than anything is that we don't actually need them for much.  For every king of every little kernel their is already someone with enough knowledge and intelligence to take over the project from them, often even with the ability to communicate and organize on longer timescales.  We create cults of personality not because its functional but in fact because of cultural assumptions around intelligence.
+
 The real question becomes then why do we choose this situation?  Technology is too young a field to be this bitterly entrenched, who can really be an expect in a field only 5-20 years old.  The main part of the "Unix philosophy" is to iterate quickly, build anew, and hold no cows sacred.  Well let me tell you developer toxicity is not a feature, its a bug.
