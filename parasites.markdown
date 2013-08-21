@@ -28,7 +28,7 @@ doesn’t sound like something we should celebrate to make investment vehicles. 
 
 * Worker burnout and probable failure
 * Technically uninteresting (or hobbled) projects
-* Failures to evolve/entire life cycles trashes
+* Failures to evolve/entire life cycles trashed
 * Little competent oversight and abuse
 * Focus on investibility over viability
 * Usery and rent seeking behaviour against user base
