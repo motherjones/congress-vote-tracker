@@ -1,7 +1,12 @@
 # Or How do put your Oppressor into a Skinner Box
-I’ve been hearing a bunch about volatiles and stables lately; about how we are all the same basically, just in different parts of a transition from volatile to stable in an ever waging war of versions 0.0...1.0...2.0...
+I’ve been hearing a bunch about volatiles and stables lately; about how we are all the same basically, just in different parts of a transition from volatile to stable in an ever waging war of versions 0.0...1.0...2.0... I don't just use the word war casually I hear it again and again.
 
-I don't just use the word war casually I hear it again and again.  Each company is in a war to win, each sprint is a battle, each all nighter is a new boot camp.  We talk about getting to version "one zero" like its a death march; because it is.  Not all veterans come home patriotic (not all come home at all), and some of us want to end the war.  End the obsession on shipping products.  End the scramble for resource allocation. End the obsession with a culture of perks.  So that we can build something worthwhile for the betterment of everyone.
+* Each Company is in a war to win, 
+* Every Sprint is a battle
+* Ever Product Owner a general
+* Very emergency won a war story 
+
+We talk about getting to version "one zero" like its a death march; because it is.  Not all veterans come home patriotic (not all come home at all), and some of us want to end the war.  End the obsession on shipping products.  End the scramble for resource allocation. End the obsession with a culture of perks.  So that we can build something worthwhile for the betterment of everyone.
 
 ## Here we get to the toxin
 Like most wars the enemy isn't always what the generals tell you; often it's the generals themselves.  Typically we are told this war is users, deadlines, other companies, and funding. By coaching programmers to be "volatile" and "stable," we create enemies out of what were once comrades and forget to realize that these same tactics strengthen the power divide between business owners and employees.
