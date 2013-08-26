@@ -1,4 +1,4 @@
-# Or How do put your Oppressor into a Skinner Box
+# Parasites and their Niches in Tech
 I’ve been hearing a bunch about volatiles and stables lately; about how we are all the same basically, just in different parts of a transition from volatile to stable in an ever waging war of versions 0.0...1.0...2.0... I don't just use the word war casually I hear it again and again.
 
 * Each Company is in a war to win
