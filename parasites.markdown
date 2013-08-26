@@ -64,10 +64,13 @@ The real question should become "why do we choose this situation"  I don't think
 Viruses like rabies cause the host to have delusional and violent behaviour to increase its spread itself.  
 Sometimes cultures can become sick and not even know it and this serves the purpose of these finely adapted parasites.
 
+### The Danger Zone
+Biological and ecological metaphors aside we can talk about creating safe spaces, not just functional or profitable or professional(fuck this word) but spaces where it is not safe or empowering to abuse and manipulate those around you.
+We don't just achieve this through quite thought though there are reigns of power to be taken.  Doxing and pack trolling are a thing that can be used to protect each other on social media but on listserves at conferences and in our own workplaces we need better tools.
+Not all of these places can be fixed at immediately and having to learn to deal in those situation is a collective pain that dearly needs to be alleviated.  
+
+Violence and "retraining" can come in many forms, however, including having Linus kickbanned from everything.  Its one thing to tell your boss that they are a giant piece of shit after they fire you without pay(or make you undo months/years of work) and another to call an uninformed person derogatory feminizing/racist terms or the "more pc" fall back [insert ablest bullshit here].  Is there any real harm in actually excluding people from channels/listserves/hacker spaces when they are actively impeding the health and development of our communities; even if their name is on the kernel.
+
 Technology is too young a field to be bitterly entrenched, who can really be an expert in a field that is only 5-20 years old?  The main part of the "Unix philosophy" is to iterate quickly, build anew, and hold no cows sacred.  Well, let me tell you-developer toxicity is not a feature, its a bug.  We are what could be considered the Pre-Cambrian era in which more species then we will even know became extinct.  Culture in general is a brand new environment to cultivate, just recently stitched back together from past tatters.
 No one has the home field advantage here, we can we win this for ourselves and for the next generation who will be here and blowing our minds before this even publishes.
 
-### The Danger Zone
-Biological and ecological metaphors aside we can talk about creating safe spaces, not just functional or profitable or professional(fuck this word) but spaces where it is not safe or empowering to abuse and manipulate those around you.
-We don't just achieve this through quite thought though there are reigns of power to be taken.  Doxing and trollings are a thing that can be used to protect each other on social media but on listserves at conferences and in our own workplaces.  
-Not all of these places can be fixed at once and having to learn to deal in those situation is a collective pain that dearly needs to be alleviated.  Violence and "retraining" can come in many forms, however, including having Linus kickbanned from everything.  Its one thing to tell your boss that they are a giant piece of shit after they fire you without pay(or make you undo months/years of work) and another to tell noobs(I'm one all the time) derogatory feminizing/emasculating terms or the "more pc" fall back [insert ablest bullshit here].  Is there any real harm in actually excluding people from channels/listserves/hacker spacers who are actively impeding the health and development of our communities even if their name is on the kernel.
