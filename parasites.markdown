@@ -24,9 +24,9 @@ Its not a coincidence that we keep revisiting the same issues in the projects an
 * “Stable” engineers often get ignored or promoted to dead-end middle management positions.
 * Technologies follow predictable patterns-each empowers or replaces the ones that come before it. Most attempts to force innovation end in boom or bust cycles.
 
-Shanley recenetly did a great [talk](https://medium.com/about-work/3ac19d4bd478) 
+Shanley recently did a great [talk](https://medium.com/about-work/3ac19d4bd478) 
 on Fairy Tales as a metaphor for discussing the deeper subtext of engineering cultures.  One of the key points to bring away from this is that the stories we tell ourselves matter.   
-The story of the volatile developer burning bridges and the mid-night oil to just get it done is tired and harmful.
+The story of the volatile developer burning bridges and the mid-night oil to just get it done is tired and harmful; think about the children.
 We don't build these dichotomies to accurately explain human behavior, we do it to normalize maladaptive behaviors which superficially seem structurally uneconomical. 
 
 ### Whats the symptoms?
@@ -60,9 +60,11 @@ Software has multiple levels and most companies fail.  We have been told and tol
 ## Kings can't live without Serfs
 What scares people like Linus more than anything is that they don't serve a real purpose for us. For every king of every little kernel there's already someone with enough knowledge and intelligence to take over the project from them. Often even with the ability to communicate and organize on longer timescales.  We create cults of personality not because it's functional but in fact because of cultural assumptions around intelligence.
 
-The real question should become "why do we choose this situation"  I don't think its because the rest of us(code monkeys, consultants, peons) are sheep or want to get jerked around by the forces of developer mythos.  One of the major survival techniques of a parasite is seduce its host into maladaptive behaviours.  Some parasites cause their hosts to jump into bodies of water or crawl up to large heights.  
-Viruses like rabies cause the host to have delusional and violent behaviour to increase its spread itself.  
+The real question should become "why do we choose this situation"  I don't think its because the rest of us(code monkeys, consultants, peons) are sheep or want to get jerked around by the forces of developer mythos.  One of the major survival techniques of a parasite is seduce its host into maladaptive behaviours.  Some parasites cause their hosts to jump into bodies of water or crawl up to large heights to continue its life cycle.  
+Viruses like rabies cause the host to have delusional and violent behaviour to increase its spread from one victim to the next.  
+
 Sometimes cultures can become sick and not even know it and this serves the purpose of these finely adapted parasites.
+But its also this fine grained adaptation that makes these same parasites vulnerable to environmental changes.  If we can bring about some environment level change these same parasites will either adapt or go extinct.  I suspect most will adapt.
 
 ### The Danger Zone
 Biological and ecological metaphors aside we can talk about creating safe spaces, not just functional or profitable or professional(fuck this word) but spaces where it is not safe or empowering to abuse and manipulate those around you.
