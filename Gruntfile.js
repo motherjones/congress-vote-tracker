@@ -108,7 +108,7 @@ module.exports = function(grunt) {
     gss_pull: {
         base: {
             files: {
-                'dev/data/<%= pkg.name %>.json' : ['0AswaDV9q95oZdE4wVHFZYXlic0tHaU5QNWRqYzUxU0E']
+                'dev/data/<%= pkg.name %>.json' : ['0AmXJhRgn8UhudFlwcFdEVWt5TXdCRGFPWW5Pd21Sd3c']
             }
         }
     },
