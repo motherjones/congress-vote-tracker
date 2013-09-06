@@ -9,25 +9,25 @@
     var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0AmXJhRgn8UhudFlwcFdEVWt5TXdCRGFPWW5Pd21Sd3c&output=html';
     var seat_fillers = [
         'add_strong_d_no',
+		'add_strong_r_no',
         'add_weak_d_no',
+		'add_weak_r_no',
         'add_d_undecided',
+		'add_r_undecided',
         'add_d_unknown',
+		'add_r_unknown',
+		'add_empty',
         'add_weak_d_yes',
+		'add_weak_r_yes',
         'add_strong_d_yes',
-        'add_empty',
         'add_strong_r_yes',
-        'add_weak_r_yes',
-        'add_r_unknown',
-        'add_r_undecided',
-        'add_weak_r_no',
-        'add_strong_r_no',
     ];
 
     var tooltip_template = ' \
         <h3>{name}</h3> \
         <p>Party Affiliation: {party}</p> \
         <p>{strength} {lean}</p> \
-        <p><a href="{source}">source</a></p> \
+        <p><a target="_blank" href="{source}">source</a></p> \
     ';
 </script>
 <script src="data/syria_vote.sep5.6pm.json" type="text/javascript"></script>
