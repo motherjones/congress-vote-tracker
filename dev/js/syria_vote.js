@@ -122,11 +122,13 @@ var cleanup_dataset = function( dataset ) {
         }
 
 
+        console.log(dataset[i]);
         var member = { 
             name: dataset[i].member,
             party: dataset[i].party === 'R' ? 'Republican': 'Democrat',
             lean: lean, 
-            strength: strength
+            strength: strength,
+            source: dataset[i].link
         }
 
         dust.render('tooltip', member, function(err, out) {
