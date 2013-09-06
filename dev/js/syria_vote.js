@@ -36,6 +36,25 @@ window.onload = function() {
             simpleSheet: true 
         } )
 
+    console.log( dataset_times );
+
+    var time_container = jQuery('#time_picker');
+    for (var i = 0; i < dataset_times.length; i++) {
+        var time = dataset_times[i];
+        var title;
+        for(var k in time) title = k;
+
+        var button = jQuery('<button>' + title +'</button>');
+        (function(dataset) {
+            button.click(function() {
+                count_whip(dataset);
+            });
+        })(cleanup_dataset(time[title]))
+
+        time_container.prepend(button);
+    }
+
+    /*
     var sep_5_6pm_title = [];
     for(var k in sep_5_6pm) sep_5_6pm_title.push(k);
     sep_5_6pm_title = sep_5_6pm_title[0]
@@ -43,7 +62,6 @@ window.onload = function() {
     var sep_6_12am_title = [];
     for(var k in sep_6_12am) sep_6_12am_title.push(k);
     sep_6_12am_title = sep_6_12am_title[0]
-
 
     var sep_5_6pm_cleaned = cleanup_dataset(sep_5_6pm[sep_5_6pm_title])
     var sep_6_12am_cleaned = cleanup_dataset(sep_6_12am[sep_6_12am_title])
@@ -54,6 +72,7 @@ window.onload = function() {
     jQuery('#sep6_12am').click(function() {
         count_whip(sep_6_12am_cleaned);
     });
+    */
     jQuery('#current').click(function() {
         count_whip(present_dataset);
     });
