@@ -4,8 +4,8 @@
 <script src="js/libs/tabletop.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/libs/dust-full-1.2.3.min.js"></script>
 <link rel="stylesheet" href="{{css}}" type="text/css"></style>
-<script src="data/syria_vote.sep5.6pm.json" type="text/javascript"></script>
-<script src="data/syria.Friday,%20September%2006,%20201300:00:01%20GMT-0700%20(PDT).json" type="text/javascript"></script>
+<script src="/data/syria_vote.sep5.6pm.json" type="text/javascript"></script>
+<script src="/data/syria_vote_sep_5_12.json" type="text/javascript"></script>
 <script src="{{js}}" type="text/javascript"></script>
 <style>
 #tooltip {
