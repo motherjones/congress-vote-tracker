@@ -196,7 +196,9 @@ seat_filler.add_strong_d_no = function(leaning, seat_count) {
     for (var i = 0; i < strong_d_no.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
-        circle.setAttribute('class', 'strongDno ' + strong_d_no[i].name.replace(/\s/, ''));
+        circle.setAttribute('class', 'strongDno ' + strong_d_no[i].name.replace(/\s/, '')
+                + ' democratic strong no'
+                );
         circle.setAttribute('data-tooltip', strong_d_no[i].tooltip);
     }
     return seat_count;
@@ -207,7 +209,8 @@ seat_filler.add_weak_d_no = function(leaning, seat_count) {
     for (var i = 0; i < weak_d_no.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
-        circle.setAttribute('class', 'weakDno ' + weak_d_no[i].name.replace(/\s/, ''));
+        circle.setAttribute('class', 'weakDno ' + weak_d_no[i].name.replace(/\s/, '')
+                + ' democratic weak no');
         circle.setAttribute('data-tooltip', weak_d_no[i].tooltip);
     }
     return seat_count;
@@ -218,7 +221,8 @@ seat_filler.add_d_undecided = function(leaning, seat_count) {
     for (var i = 0; i < d_undecided.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
-        circle.setAttribute('class', 'd_undecided ' + d_undecided[i].name.replace(/\s/, ''));
+        circle.setAttribute('class', 'd_undecided ' + d_undecided[i].name.replace(/\s/, '')
+                + ' democratic undecided');
         circle.setAttribute('data-tooltip', d_undecided[i].tooltip);
     }
     return seat_count;
@@ -229,7 +233,8 @@ seat_filler.add_d_unknown = function(leaning, seat_count) {
     for (var i = 0; i < d_unknown.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
-        circle.setAttribute('class', 'd_unknown ' + d_unknown[i].name.replace(/\s/, ''));
+        circle.setAttribute('class', 'd_unknown ' + d_unknown[i].name.replace(/\s/, '')
+                + ' democratic unknown');
         circle.setAttribute('data-tooltip', d_unknown[i].tooltip);
     }
     return seat_count;
@@ -240,7 +245,8 @@ seat_filler.add_weak_d_yes = function(leaning, seat_count) {
     for (var i = 0; i < weak_d_yes.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
-        circle.setAttribute('class', 'weakDyes ' + weak_d_yes[i].name.replace(/\s/, ''));
+        circle.setAttribute('class', 'weakDyes ' + weak_d_yes[i].name.replace(/\s/, '')
+                + ' democratic weak yes');
         circle.setAttribute('data-tooltip', weak_d_yes[i].tooltip);
     }
     return seat_count;
@@ -250,7 +256,8 @@ seat_filler.add_strong_d_yes = function(leaning, seat_count) {
     var strong_d_yes = leaning.D.yes.strong;
     for (var i = 0; i < strong_d_yes.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
-        circle.setAttribute('class', 'strongDyes ' + seat_count);
+        circle.setAttribute('class', 'strongDyes ' + strong_d_yes[i].name.replace(/\s/, '')
+                + ' democratic strong yes');
         seat_count++;
         circle.setAttribute('data-tooltip', strong_d_yes[i].tooltip);
     }
@@ -272,7 +279,8 @@ seat_filler.add_strong_r_yes = function(leaning, seat_count) {
     for (var i = 0; i < strong_r_yes.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
-        circle.setAttribute('class', 'strongRyes ' + strong_r_yes[i].name.replace(/\s/, ''));
+        circle.setAttribute('class', 'strongRyes ' + strong_r_yes[i].name.replace(/\s/, '')
+                + ' strong republican yes');
         circle.setAttribute('data-tooltip', strong_r_yes[i].tooltip );
     }
     return seat_count;
@@ -283,7 +291,8 @@ seat_filler.add_weak_r_yes = function(leaning, seat_count) {
     for (var i = 0; i < weak_r_yes.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
-        circle.setAttribute('class', 'weakRyes ' + weak_r_yes[i].name.replace(/\s/, ''));
+        circle.setAttribute('class', 'weakRyes ' + weak_r_yes[i].name.replace(/\s/, '')
+                + ' weak republican no');
         circle.setAttribute('data-tooltip', weak_r_yes[i].tooltip);
     }
     return seat_count;
@@ -294,7 +303,8 @@ seat_filler.add_r_unknown = function(leaning, seat_count) {
     for (var i = 0; i < r_unknown.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
-        circle.setAttribute('class', 'r_unknown ' + r_unknown[i].name.replace(/\s/, ''));
+        circle.setAttribute('class', 'r_unknown ' + r_unknown[i].name.replace(/\s/, '')
+                + ' republican unknown');
         circle.setAttribute('data-tooltip', r_unknown[i].tooltip + r_unknown[i].lean);
     }
     return seat_count;
@@ -305,19 +315,20 @@ seat_filler.add_r_undecided = function(leaning, seat_count) {
     for (var i = 0; i < r_undecided.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
-        circle.setAttribute('class', 'r_undecided ' + r_undecided[i].name.replace(/\s/, ''));
+        circle.setAttribute('class', 'r_undecided ' + r_undecided[i].name.replace(/\s/, '')
+                + ' republican undecided');
         circle.setAttribute('data-tooltip', r_undecided[i].tooltip);
     }
     return seat_count;
 }
-
 
 seat_filler.add_weak_r_no = function(leaning, seat_count) {
     var weak_r_no = leaning.R.no.weak;
     for (var i = 0; i < weak_r_no.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
-        circle.setAttribute('class', 'weakRno ' + weak_r_no[i].name.replace(/\s/, ''));
+        circle.setAttribute('class', 'weakRno ' + weak_r_no[i].name.replace(/\s/, '')
+                + ' weak republican no');
         circle.setAttribute('data-tooltip', weak_r_no[i].tooltip);
     }
     return seat_count;
@@ -328,7 +339,8 @@ seat_filler.add_strong_r_no = function(leaning, seat_count) {
     for (var i = 0; i < strong_r_no.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
-        circle.setAttribute('class', 'strongRno ' + strong_r_no[i].name.replace(/\s/, ''));
+        circle.setAttribute('class', 'strongRno ' + strong_r_no[i].name.replace(/\s/, '')
+                + ' strong republican no');
         circle.setAttribute('data-tooltip', strong_r_no[i].tooltip );
     }
     return seat_count;
