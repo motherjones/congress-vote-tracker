@@ -14,7 +14,7 @@ var total_seats = 435;
 
 
 var tooltip_template = ' \
-    <h3>{member}</h3> \
+    <h3>{name}</h3> \
     <p>Party Affiliation: {party}</p> \
     <p>{strength} {lean}</p> \
 ';
@@ -127,16 +127,19 @@ var cleanup_dataset = function( dataset ) {
             num_i++;
         }
 
-        dust.render('tooltip', dataset[i], function(err, out) {
-            dataset[i].tooltip = out;
-        })
 
         var member = { 
             name: dataset[i].member,
-            party: dataset[i].party,
-            lean: lean + strength, 
-            tooltip: dataset[i].tooltip
+            party: dataset[i].party === 'R' ? 'Republican': 'Democrat',
+            lean: lean, 
+            strength: strength
         }
+
+        dust.render('tooltip', member, function(err, out) {
+            member.tooltip = out;
+        })
+
+
         if (lean === 'undecided' || lean === 'unknown') {
             leaning[dataset[i].party][lean].push(member)
         } else {
