@@ -27,22 +27,37 @@ window.onload = function() {
             key: public_spreadsheet_url,
             callback: function(dataset) {
                 var leaning = present_dataset = cleanup_dataset(dataset)
-                console.log('current dataset has ' + dataset.length); 
                 count_whip(leaning);
             },
             simpleSheet: true 
         } )
 
+    dataset_times.sort().reverse();
+
+    var time_container = jQuery('#time_picker');
+    for (var i = 0; i < dataset_times.length; i++) {
+        var time = dataset_times[i];
+        var title;
+        for(var k in time) title = k;
+
+        var button = jQuery('<button>' + title +'</button>');
+        (function(dataset) {
+            button.click(function() {
+                count_whip(dataset);
+            });
+        })(cleanup_dataset(time[title]))
+
+        time_container.prepend(button);
+    }
+
+    /*
     var sep_5_6pm_title = [];
     for(var k in sep_5_6pm) sep_5_6pm_title.push(k);
     sep_5_6pm_title = sep_5_6pm_title[0]
-    console.log('sep 5 dataset has ' + sep_5_6pm[sep_5_6pm_title].length); 
 
     var sep_6_12am_title = [];
     for(var k in sep_6_12am) sep_6_12am_title.push(k);
     sep_6_12am_title = sep_6_12am_title[0]
-    console.log('sep 6 dataset has ' + sep_6_12am[sep_6_12am_title].length); 
-
 
     var sep_5_6pm_cleaned = cleanup_dataset(sep_5_6pm[sep_5_6pm_title])
     var sep_6_12am_cleaned = cleanup_dataset(sep_6_12am[sep_6_12am_title])
@@ -53,6 +68,7 @@ window.onload = function() {
     jQuery('#sep6_12am').click(function() {
         count_whip(sep_6_12am_cleaned);
     });
+    */
     jQuery('#current').click(function() {
         count_whip(present_dataset);
     });
@@ -196,11 +212,11 @@ var count_whip = function(leaning) {
         circle.setAttribute('data-tooltip', strong_d_yes[i].tooltip);
     }
 
-    document.getElementById('seat199').setAttribute('class', 'empty_seat');
-    document.getElementById('seat199').setAttribute('data-tooltip', 'Empty Seat seat 199');
+    document.getElementById('seat' + seat_count).setAttribute('class', 'empty_seat');
+    document.getElementById('seat' + seat_count).setAttribute('data-tooltip', 'Empty Seat');
     seat_count++;
-    document.getElementById('seat200').setAttribute('class', 'empty_seat');
-    document.getElementById('seat200').setAttribute('data-tooltip', 'Empty Seat seat 200');
+    document.getElementById('seat' + seat_count).setAttribute('class', 'empty_seat');
+    document.getElementById('seat' + seat_count).setAttribute('data-tooltip', 'Empty Seat');
     seat_count++;
 
     var strong_r_yes = leaning.R.yes.strong;
@@ -212,7 +228,6 @@ var count_whip = function(leaning) {
     }
 
     var weak_r_yes = leaning.R.yes.weak;
-    console.log('weak r ' + weak_r_yes.length);
     for (var i = 0; i < weak_r_yes.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
@@ -222,7 +237,6 @@ var count_whip = function(leaning) {
 
     var r_un_start_point = r_yes_start_point + strong_r_yes.length + weak_r_yes.length;
     var r_unknown = leaning.R.unknown;
-    console.log('r unkown ' + r_unknown.length);
     for (var i = 0; i < r_unknown.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;

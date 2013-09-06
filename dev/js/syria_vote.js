@@ -12,12 +12,6 @@ var current_r = 234;
 var current_empty = 2;
 var total_seats = 435;
 
-
-var tooltip_template = ' \
-    <h3>{member}</h3> \
-    <p>Party Affiliation: {party}</p> \
-    <p>{strength} {lean}</p> \
-';
 var compiled_tooltip = dust.compile(tooltip_template, 'tooltip');
 dust.loadSource(compiled_tooltip);
 
@@ -31,36 +25,68 @@ window.onload = function() {
             key: public_spreadsheet_url,
             callback: function(dataset) {
                 var leaning = present_dataset = cleanup_dataset(dataset)
-                console.log('current dataset has ' + dataset.length); 
                 count_whip(leaning);
             },
             simpleSheet: true 
         } )
 
-    var sep_5_6pm_title = [];
-    for(var k in sep_5_6pm) sep_5_6pm_title.push(k);
-    sep_5_6pm_title = sep_5_6pm_title[0]
-    console.log('sep 5 dataset has ' + sep_5_6pm[sep_5_6pm_title].length); 
+    dataset_times.sort().reverse();
 
-    var sep_6_12am_title = [];
-    for(var k in sep_6_12am) sep_6_12am_title.push(k);
-    sep_6_12am_title = sep_6_12am_title[0]
-    console.log('sep 6 dataset has ' + sep_6_12am[sep_6_12am_title].length); 
+    var time_container = jQuery('#time_picker');
+    for (var i = 0; i < dataset_times.length; i++) {
+        var time = dataset_times[i];
+        var title;
+        for(var k in time) title = k;
 
+        var button = jQuery('<button>' + title +'</button>');
+        (function(dataset) {
+            button.click(function() {
+                count_whip(dataset);
+            });
+        })(cleanup_dataset(time[title]))
 
-    var sep_5_6pm_cleaned = cleanup_dataset(sep_5_6pm[sep_5_6pm_title])
-    var sep_6_12am_cleaned = cleanup_dataset(sep_6_12am[sep_6_12am_title])
+        time_container.prepend(button);
+    }
 
-    jQuery('#sep5_6pm').click(function() {
-        count_whip(sep_5_6pm_cleaned);
-    });
-    jQuery('#sep6_12am').click(function() {
-        count_whip(sep_6_12am_cleaned);
-    });
     jQuery('#current').click(function() {
         count_whip(present_dataset);
     });
 
+
+    jQuery('svg circle').bind('mouseout', function(){
+      tooltip_element.css('display', 'none');
+    });
+    jQuery('svg circle').bind('mousemove', function(e){
+      tooltip_element.css('left', e.pageX + 10)
+        .css('top', e.pageY + 10)
+        .css('display', 'block')
+        .html(jQuery(this).attr('data-tooltip'));
+    });
+
+    jQuery(document).click(function() {
+        jQuery('svg circle').bind('mousemove', function(e){
+          tooltip_element.css('left', e.pageX + 10)
+            .css('top', e.pageY + 10)
+            .css('display', 'block')
+            .html(jQuery(this).attr('data-tooltip'));
+        });
+        tooltip_element.css('display', 'none');
+    });
+    jQuery('svg circle').click(function(e){
+        jQuery('svg circle').unbind('mouseout');
+        jQuery('svg circle').unbind('mousemove');
+        tooltip_element.css('left', e.pageX + 10)
+            .css('top', e.pageY + 10)
+            .css('display', 'block')
+            .html(jQuery(this).attr('data-tooltip'));
+        
+        if(e.stopPropagation) {
+            e.stopPropagation()
+        } else {
+            e.cancelBubble = true;
+        }
+        return false;
+    })
 };
 
 
@@ -130,16 +156,20 @@ var cleanup_dataset = function( dataset ) {
             num_i++;
         }
 
-        dust.render('tooltip', dataset[i], function(err, out) {
-            dataset[i].tooltip = out;
-        })
 
         var member = { 
             name: dataset[i].member,
-            party: dataset[i].party,
-            lean: lean + strength, 
-            tooltip: dataset[i].tooltip
+            party: dataset[i].party === 'R' ? 'Republican': 'Democrat',
+            lean: lean, 
+            strength: strength,
+            source: dataset[i].link
         }
+
+        dust.render('tooltip', member, function(err, out) {
+            member.tooltip = out;
+        })
+
+
         if (lean === 'undecided' || lean === 'unknown') {
             leaning[dataset[i].party][lean].push(member)
         } else {
@@ -153,6 +183,15 @@ var cleanup_dataset = function( dataset ) {
 var count_whip = function(leaning) {
     var seat_count = 0;
 
+    for (var i = 0; i < seat_fillers.length; i++) {
+        seat_count = seat_filler[seat_fillers[i]](leaning, seat_count);
+    }
+
+};
+
+var seat_filler = {};
+
+seat_filler.add_strong_d_no = function(leaning, seat_count) {
     var strong_d_no = leaning.D.no.strong;
     for (var i = 0; i < strong_d_no.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
@@ -160,7 +199,10 @@ var count_whip = function(leaning) {
         circle.setAttribute('class', 'strongDno ' + strong_d_no[i].name.replace(/\s/, ''));
         circle.setAttribute('data-tooltip', strong_d_no[i].tooltip);
     }
+    return seat_count;
+}
 
+seat_filler.add_weak_d_no = function(leaning, seat_count) {
     var weak_d_no = leaning.D.no.weak;
     for (var i = 0; i < weak_d_no.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
@@ -168,7 +210,10 @@ var count_whip = function(leaning) {
         circle.setAttribute('class', 'weakDno ' + weak_d_no[i].name.replace(/\s/, ''));
         circle.setAttribute('data-tooltip', weak_d_no[i].tooltip);
     }
+    return seat_count;
+}
 
+seat_filler.add_d_undecided = function(leaning, seat_count) {
     var d_undecided = leaning.D.undecided;
     for (var i = 0; i < d_undecided.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
@@ -176,6 +221,10 @@ var count_whip = function(leaning) {
         circle.setAttribute('class', 'd_undecided ' + d_undecided[i].name.replace(/\s/, ''));
         circle.setAttribute('data-tooltip', d_undecided[i].tooltip);
     }
+    return seat_count;
+}
+
+seat_filler.add_d_unknown = function(leaning, seat_count) {
     var d_unknown = leaning.D.unknown;
     for (var i = 0; i < d_unknown.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
@@ -183,7 +232,10 @@ var count_whip = function(leaning) {
         circle.setAttribute('class', 'd_unknown ' + d_unknown[i].name.replace(/\s/, ''));
         circle.setAttribute('data-tooltip', d_unknown[i].tooltip);
     }
+    return seat_count;
+}
 
+seat_filler.add_weak_d_yes = function(leaning, seat_count) {
     var weak_d_yes = leaning.D.yes.weak;
     for (var i = 0; i < weak_d_yes.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
@@ -191,7 +243,10 @@ var count_whip = function(leaning) {
         circle.setAttribute('class', 'weakDyes ' + weak_d_yes[i].name.replace(/\s/, ''));
         circle.setAttribute('data-tooltip', weak_d_yes[i].tooltip);
     }
+    return seat_count;
+}
 
+seat_filler.add_strong_d_yes = function(leaning, seat_count) {
     var strong_d_yes = leaning.D.yes.strong;
     for (var i = 0; i < strong_d_yes.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
@@ -199,14 +254,20 @@ var count_whip = function(leaning) {
         seat_count++;
         circle.setAttribute('data-tooltip', strong_d_yes[i].tooltip);
     }
+    return seat_count;
+}
 
-    document.getElementById('seat199').setAttribute('class', 'empty_seat');
-    document.getElementById('seat199').setAttribute('data-tooltip', 'Empty Seat seat 199');
+seat_filler.add_empty = function(leaning, seat_count) {
+    document.getElementById('seat' + seat_count).setAttribute('class', 'empty_seat');
+    document.getElementById('seat' + seat_count).setAttribute('data-tooltip', 'Empty Seat');
     seat_count++;
-    document.getElementById('seat200').setAttribute('class', 'empty_seat');
-    document.getElementById('seat200').setAttribute('data-tooltip', 'Empty Seat seat 200');
+    document.getElementById('seat' + seat_count).setAttribute('class', 'empty_seat');
+    document.getElementById('seat' + seat_count).setAttribute('data-tooltip', 'Empty Seat');
     seat_count++;
+    return seat_count;
+}
 
+seat_filler.add_strong_r_yes = function(leaning, seat_count) {
     var strong_r_yes = leaning.R.yes.strong;
     for (var i = 0; i < strong_r_yes.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
@@ -214,27 +275,32 @@ var count_whip = function(leaning) {
         circle.setAttribute('class', 'strongRyes ' + strong_r_yes[i].name.replace(/\s/, ''));
         circle.setAttribute('data-tooltip', strong_r_yes[i].tooltip );
     }
+    return seat_count;
+}
 
+seat_filler.add_weak_r_yes = function(leaning, seat_count) {
     var weak_r_yes = leaning.R.yes.weak;
-    console.log('weak r ' + weak_r_yes.length);
     for (var i = 0; i < weak_r_yes.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
         circle.setAttribute('class', 'weakRyes ' + weak_r_yes[i].name.replace(/\s/, ''));
         circle.setAttribute('data-tooltip', weak_r_yes[i].tooltip);
     }
+    return seat_count;
+}
 
-    var r_un_start_point = r_yes_start_point + strong_r_yes.length + weak_r_yes.length;
+seat_filler.add_r_unknown = function(leaning, seat_count) {
     var r_unknown = leaning.R.unknown;
-    console.log('r unkown ' + r_unknown.length);
     for (var i = 0; i < r_unknown.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
         circle.setAttribute('class', 'r_unknown ' + r_unknown[i].name.replace(/\s/, ''));
         circle.setAttribute('data-tooltip', r_unknown[i].tooltip + r_unknown[i].lean);
     }
+    return seat_count;
+}
 
-    //var r_un_start_point = total_seats - 1 - (weak_r_no.length + strong_r_no.length);
+seat_filler.add_r_undecided = function(leaning, seat_count) {
     var r_undecided = leaning.R.undecided;
     for (var i = 0; i < r_undecided.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
@@ -242,9 +308,11 @@ var count_whip = function(leaning) {
         circle.setAttribute('class', 'r_undecided ' + r_undecided[i].name.replace(/\s/, ''));
         circle.setAttribute('data-tooltip', r_undecided[i].tooltip);
     }
-    
+    return seat_count;
+}
 
-    var r_yes_start_point = r_un_start_point + r_unknown.length + r_undecided.length;
+
+seat_filler.add_weak_r_no = function(leaning, seat_count) {
     var weak_r_no = leaning.R.no.weak;
     for (var i = 0; i < weak_r_no.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
@@ -252,7 +320,10 @@ var count_whip = function(leaning) {
         circle.setAttribute('class', 'weakRno ' + weak_r_no[i].name.replace(/\s/, ''));
         circle.setAttribute('data-tooltip', weak_r_no[i].tooltip);
     }
+    return seat_count;
+}
 
+seat_filler.add_strong_r_no = function(leaning, seat_count) {
     var strong_r_no = leaning.R.no.strong;
     for (var i = 0; i < strong_r_no.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
@@ -260,18 +331,7 @@ var count_whip = function(leaning) {
         circle.setAttribute('class', 'strongRno ' + strong_r_no[i].name.replace(/\s/, ''));
         circle.setAttribute('data-tooltip', strong_r_no[i].tooltip );
     }
+    return seat_count;
+}
 
 
-
-      jQuery('svg circle').bind('mouseout', function(){
-          tooltip_element.css('display', 'none');
-      });
-      jQuery('svg circle').bind('mousemove', function(e){
-          tooltip_element.css('left', e.pageX + 10)
-            .css('top', e.pageY + 10)
-            .css('display', 'block')
-            .html(jQuery(this).attr('data-tooltip'));
-      });
-
-
-};
