@@ -111,7 +111,8 @@ module.exports = function(grunt) {
                 (function() {
                     var obj = {};
                     var time = new Date().toTimeString();
-                    var filename = 'dev/data/syria.' + time + '.json';
+                    var date = new Date().toLocaleDateString();
+                    var filename = 'dev/data/syria.' + date + time + '.json';
                     obj[filename] = ['0AmXJhRgn8UhudFlwcFdEVWt5TXdCRGFPWW5Pd21Sd3c'];
                     return obj;
                     //return {'foo' : ['0AswaDV9q95oZdE4wVHFZYXlic0tHaU5QNWRqYzUxU0E']};
