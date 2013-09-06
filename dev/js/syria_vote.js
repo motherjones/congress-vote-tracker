@@ -38,7 +38,6 @@ window.onload = function() {
 
 
 var cleanup_dataset = function( dataset ) {
-    console.log('dataset is this long: ' + dataset.length)
     var leaning = {
         D: {
             yes : {
@@ -100,8 +99,6 @@ var cleanup_dataset = function( dataset ) {
         } else if (dataset[i].party === 'R') {
             num_r++;
         } else if (dataset[i].party === 'I') {
-            console.log('no party');
-            console.log(dataset[i]);
             num_i++;
         }
 
@@ -122,8 +119,6 @@ var cleanup_dataset = function( dataset ) {
         }
 
     }
-    console.log(num_d);
-    console.log(num_r);
     return leaning;
 };
 
@@ -134,7 +129,6 @@ var count_whip = function(leaning) {
         circle.className.baseVal = 'strongDno';
         circle.setAttribute('data-tooltip', strong_d_no[i].tooltip);
     }
-    console.log('stops at ' + i)
 
     var weak_d_no = leaning.D.no.weak;
     for (var i = 0; i < weak_d_no.length; i++) {
@@ -152,7 +146,6 @@ var count_whip = function(leaning) {
     var weak_r_no = leaning.R.no.weak;
     for (var i = 0; i < weak_r_no.length; i++) {
         var circle = document.getElementById('seat' + (total_seats - i - strong_r_no.length - 1));
-        console.log(total_seats - i - strong_r_no.length - 1);
         circle.className.baseVal = 'weakRno';
         circle.setAttribute('data-tooltip', weak_r_no[i].tooltip);
     }
@@ -188,7 +181,6 @@ var count_whip = function(leaning) {
     }
 
     var d_un_start_point = weak_d_no.length + weak_d_yes.length + 2;
-    console.log('starts at ' + d_un_start_point + 2)
     var d_undecided = leaning.D.undecided;
     for (var i = 0; i < d_undecided.length; i++) {
         var circle = document.getElementById('seat' + (d_un_start_point + i + 1));
