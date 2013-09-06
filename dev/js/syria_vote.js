@@ -36,7 +36,7 @@ window.onload = function() {
             simpleSheet: true 
         } )
 
-    console.log( dataset_times );
+    dataset_times.sort().reverse();
 
     var time_container = jQuery('#time_picker');
     for (var i = 0; i < dataset_times.length; i++) {

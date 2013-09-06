@@ -4,8 +4,13 @@
 <script src="js/libs/tabletop.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/libs/dust-full-1.2.3.min.js"></script>
 <link rel="stylesheet" href="css/syria_vote.min.css" type="text/css"></style>
-<script src="../dev/data/syria_vote.sep5.6pm.json" type="text/javascript"></script>
-<script src="../dev/data/syria_vote_sep_5_12.json" type="text/javascript"></script>
+<script>
+    var dataset_times = [];
+</script>
+<script src="data/syria_vote.sep5.6pm.json" type="text/javascript"></script>
+<script src="data/syria_vote.sep6.12am.json" type="text/javascript"></script>
+<script src="data/syria_vote.sep6.6am.json" type="text/javascript"></script>
+<script src="data/syria_vote.sep6.12pm.json" type="text/javascript"></script>
 <script src="js/syria_vote.min.js" type="text/javascript"></script>
 <style>
 #tooltip {
@@ -69,9 +74,9 @@ text {
 </style>
 <body>
 
-    <button id="sep5_6pm">september 5th, 6pm</button>
-    <button id="sep6_12am">september 6th, 12am</button>
-    <button id="current">As of right now</button>
+    <div id="time_picker">
+        <button id="current">As of right now</button>
+    </div>
 
 <script>
 var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0AmXJhRgn8UhudFlwcFdEVWt5TXdCRGFPWW5Pd21Sd3c&output=html';
