@@ -52,6 +52,41 @@ window.onload = function() {
         count_whip(present_dataset);
     });
 
+
+    jQuery('svg circle').bind('mouseout', function(){
+      tooltip_element.css('display', 'none');
+    });
+    jQuery('svg circle').bind('mousemove', function(e){
+      tooltip_element.css('left', e.pageX + 10)
+        .css('top', e.pageY + 10)
+        .css('display', 'block')
+        .html(jQuery(this).attr('data-tooltip'));
+    });
+
+    jQuery(document).click(function() {
+        jQuery('svg circle').bind('mousemove', function(e){
+          tooltip_element.css('left', e.pageX + 10)
+            .css('top', e.pageY + 10)
+            .css('display', 'block')
+            .html(jQuery(this).attr('data-tooltip'));
+        });
+        tooltip_element.css('display', 'none');
+    });
+    jQuery('svg circle').click(function(e){
+        jQuery('svg circle').unbind('mouseout');
+        jQuery('svg circle').unbind('mousemove');
+        tooltip_element.css('left', e.pageX + 10)
+            .css('top', e.pageY + 10)
+            .css('display', 'block')
+            .html(jQuery(this).attr('data-tooltip'));
+        
+        if(e.stopPropagation) {
+            e.stopPropagation()
+        } else {
+            e.cancelBubble = true;
+        }
+        return false;
+    })
 };
 
 
@@ -122,7 +157,6 @@ var cleanup_dataset = function( dataset ) {
         }
 
 
-        console.log(dataset[i]);
         var member = { 
             name: dataset[i].member,
             party: dataset[i].party === 'R' ? 'Republican': 'Democrat',
@@ -152,18 +186,6 @@ var count_whip = function(leaning) {
     for (var i = 0; i < seat_fillers.length; i++) {
         seat_count = seat_filler[seat_fillers[i]](leaning, seat_count);
     }
-
-
-  jQuery('svg circle').bind('mouseout', function(){
-      tooltip_element.css('display', 'none');
-  });
-  jQuery('svg circle').bind('mousemove', function(e){
-      tooltip_element.css('left', e.pageX + 10)
-        .css('top', e.pageY + 10)
-        .css('display', 'block')
-        .html(jQuery(this).attr('data-tooltip'));
-  });
-
 
 };
 

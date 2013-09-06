@@ -27,8 +27,8 @@
         <h3>{name}</h3> \
         <p>Party Affiliation: {party}</p> \
         <p>{strength} {lean}</p> \
+        <p><a href="{source}">source</a></p> \
     ';
-        //<p><a href="{source}">source</a></p> \
 </script>
 <script src="data/syria_vote.sep5.6pm.json" type="text/javascript"></script>
 <script src="data/syria_vote.sep6.12am.json" type="text/javascript"></script>
