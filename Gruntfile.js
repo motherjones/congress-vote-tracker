@@ -107,9 +107,16 @@ module.exports = function(grunt) {
     },
     gss_pull: {
         base: {
-            files: {
-                'dev/data/<%= pkg.name %>.json' : ['0AmXJhRgn8UhudFlwcFdEVWt5TXdCRGFPWW5Pd21Sd3c']
-            }
+            files: 
+                (function() {
+                    var obj = {};
+                    var time = new Date().toTimeString();
+                    var filename = 'dev/data/syria.' + time + '.json';
+                    obj[filename] = ['0AmXJhRgn8UhudFlwcFdEVWt5TXdCRGFPWW5Pd21Sd3c'];
+                    return obj;
+                    //return {'foo' : ['0AswaDV9q95oZdE4wVHFZYXlic0tHaU5QNWRqYzUxU0E']};
+                })()
+//                'dev/data/<%= pkg.name %>.json' : ['0AswaDV9q95oZdE4wVHFZYXlic0tHaU5QNWRqYzUxU0E']
         }
     },
     connect: {
