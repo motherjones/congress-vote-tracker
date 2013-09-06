@@ -1,0 +1,216 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}strong{font-weight:bold}#care2_fb_footer{display:none}#care2_portal{width:1px;height:1px;position:absolute;bottom:0;left:0;visibility:hidden}.default_entry{color:#999 !important}.container{font-family:Arial,Helvetica,sans-serif;overflow:hidden;behavior:url(/styles/PIE.htc);position:relative;background:rgb(255,255,255);background: -moz-linear-gradient(top, rgba(255,255,255,1) 63%, rgba(237,237,237,1) 87%);background: -webkit-gradient(linear, left top, left bottom, color-stop(63%,rgba(255,255,255,1)), color-stop(87%,rgba(237,237,237,1)));background: -webkit-linear-gradient(top, rgba(255,255,255,1) 63%,rgba(237,237,237,1) 87%);background: -o-linear-gradient(top, rgba(255,255,255,1) 63%,rgba(237,237,237,1) 87%);background: -ms-linear-gradient(top, rgba(255,255,255,1) 63%,rgba(237,237,237,1) 87%);background:linear-gradient(top, rgba(255,255,255,1) 63%,rgba(237,237,237,1) 87%);-pie-background:linear-gradient(top, rgba(255,255,255,1) 63%,rgba(237,237,237,1) 87%);border:1px
+solid #ccc;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;border-radius:5px;width:100%;height:100%}.size-425x190 #petition_face.container,
+.size-500x190
+#petition_face.container{background:#fff;border:0;-moz-border-radius:0;-webkit-border-radius:0;-o-border-radius:0;border-radius:0}body.suppressCare2Logo .care2logo,
+body.suppressAuthor .petition_author,
+body.suppressAuthor
+.na_pet_text_sponsor{display:none !important}#petition_face,.petition_description_area,#petition_sign_area,#petition_grab_code,#petition_error{display:none}.petitionsPage_sign
+h1{font-size:20px;color:#5e5e5e;margin:5px
+0;display:none}.petitionsPage_sign h1
+strong{font-size:18px}.petitionsPage_sign
+h2{font-size:0.75em;margin:13px
+auto 8px auto;color:#000;font-weight:bold;line-height:1.4em}.petitionsPage_sign
+.inner{margin:5px;height:100%}.petition_num_sigs{margin:10px
+0 10px 0;font-size:0.7em;color:#000}#petition_face
+.petition_author{display:none}.petitionsPage_sign
+a{text-decoration:none;color:#000}.petition_sign_inner{position:relative;overflow:hidden;background:transparent;width:100%;height:100%}.petition_more{display:none}.short_summary{display:none}.thumbnail_wrapper{position:relative}.thumbnail{background-color:#fff;display:block;margin:5px
+auto;behavior:url(/styles/PIE.htc);position:relative;box-shadow:0px 0px 5px #000;-moz-box-shadow:0px 0px 5px #000;-webkit-box-shadow:0px 0px 5px #000;padding:2px}.thumbnail
+span{display:block;width:100%;height:100%;overflow:hidden}.footer{font-size:0.55em;margin:0;padding:0;behavior:url(/styles/PIE.htc);position:absolute;bottom:4px;left:0;width:100%;height:auto;-moz-border-radius:0 0 5px 5px;-webkit-border-radius:0 0 5px 5px;-o-border-radius:0 0 5px 5px;border-radius:0 0 5px 5px}button{cursor:pointer;font-size:17px;font-family:'Verdana',sans-serif;color:#fff;border:1px
+solid #fff;padding:3px
+10px;behavior:url(/styles/PIE.htc);position:relative;background-image:url(http://dingo.care2.com/petitions/widget/widget-sprite.png);background-repeat:repeat-x;background-position:0 -33px;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;border-radius:5px;box-shadow:0 0 4px #5e5e5e;-moz-box-shadow:0 0 4px #5e5e5e;-webkit-box-shadow:0 0 4px #5e5e5e}button
+span{position:relative;top:0;*top:7px}@-moz-document url-prefix(){button
+span{top: -3px}}@media screen and (-webkit-min-device-pixel-ratio:0){button
+span{top:0}}#petition_loading{text-align:center;padding-top:50px}.care2logo{background:url(http://dingo.care2.com/petitions/widget/widget-sprite.png) no-repeat -91px 0 transparent;width:49px;height:26px;position:absolute;display:none}#na_left_arrow,.left-arrow,#na_right_arrow,.right-arrow{background:url(http://dingo.care2.com/petitions/widget/widget-sprite.png) no-repeat 0 0 transparent;width:16px;height:26px;position:absolute;top:33px;cursor:pointer}#na_left_arrow,.left-arrow{background-position: -16px 0;left:0}#na_right_arrow,.right-arrow{right:0;cursor:pointer}.left-arrow,.right-arrow{display:none}.top_title{display:none}.size-150x250
+.petitionsPage_sign{width:148px;height:248px}.size-180x250
+.petitionsPage_sign{width:178px;height:248px}.size-300x250
+.petitionsPage_sign{width:298px;height:248px}.size-460x375
+.petitionsPage_sign{width:458px;height:373px}.size-425x190
+.petitionsPage_sign{width:425px;height:190px}.size-500x190
+.petitionsPage_sign{width:500px;height:190px}.size-150x250 #petition_face,
+.size-180x250
+#petition_face{text-align:center}#petitionsPage_next_action,
+.expanded_widget
+.petitionsPage_sign{height:373px !important;width:458px !important}.size-150x250
+.thumbnail{width:125px;height:110px}.size-180x250
+.thumbnail{width:150px;height:110px}.size-300x250
+.thumbnail{width:195px;height:95px}.size-460x375
+.thumbnail{width:195px;height:150px}.size-425x190
+.thumbnail{width:125px;height:105px}.size-500x190
+.thumbnail{width:145px;height:115px}.size-150x250 .thumbnail
+img{height:100%;margin-left: -6px}.size-180x250 .thumbnail
+img{width:100%;margin-top: -6px}.size-300x250 .thumbnail
+img{width:100%;margin-top: -30px}.size-460x375 .thumbnail
+img{width:100%;margin-top: -3px}.size-425x190 .thumbnail
+img{height:100%;margin-left: -3px}.size-500x190 .thumbnail
+img{width:100%;margin-top: -1px}.size-150x250 #petition_face
+button{width:135px;margin:0
+auto;padding-top:1px;padding-bottom:1px;font-size:15px}.size-150x250 .tan #petition_face button, .size-180x250.tan #petition_face
+button{width:108px;height:24px;margin:0
+auto;font-size:0.8em}.size-180x250 #petition_face
+button{width:145px;margin:0
+auto}.size-300x250 #petition_face
+button{width:135px;height:25px;padding-top:0;padding-bottom:0;position:absolute;bottom:8px;right:4px}.size-460x375 #petition_face
+button{width:145px;height:34px}.size-425x190 #petition_face
+button{width:140px;height:30px}.size-500x190 #petition_face
+button{width:140px;height:30px}.size-150x250
+h1{margin:0
+0 5px 0;font-size:16px}.size-150x250 h1
+strong{font-size:14px}.size-150x250 h2, .size-180x250
+h2{margin:3px
+auto 0px auto;line-height:14px}.size-150x250.tan .petition_num_sigs, .size-180x250.tan
+.petition_num_sigs{margin:4px
+0}.size-180x250
+h1{margin:0
+0 5px 0;font-size:18px}.size-180x250 h1
+strong{font-size:16px}.size-300x250 .petitionsPage_sign
+.inner{margin:10px
+15px 15px}.size-300x250 #petition_face
+h2{font-size:0.92em;line-height:1.3em;margin:10px
+auto 5px}.size-300x250 #petition_face .petition_author, .size-300x250 #petition_face
+.petition_num_sigs{display:block}.size-300x250 #petition_face .petition_author, .size-300x250 #petition_face
+.petition_num_sigs{font-size:0.8em}.size-300x250
+.petition_sign_inner{height:208px}.size-300x250
+.petition_num_sigs{margin:5px
+0}.size-300x250 .footer, .size-460x375
+.footer{height:30px;background:#fff;bottom:0;font-size:0.70em}.size-300x250 .footer span, .size-460x375 .footer
+span{display:block;width:100%;height:30px;text-align:left;margin-left:15px;margin-top:10px}.size-300x250 .left-arrow, .size-300x250 .right-arrow{display:block}.size-460x375 #petition_face .care2logo,
+.size-300x250 #petition_face
+.care2logo{display:block;right:25px;bottom:3px}#petition_grab_code
+h3{font-weight:bold;font-size:13px;padding:15px;padding-right:30px}.size-180x250 #petition_grab_code
+h3{padding-right:40px}#petition_grab_code
+textarea{margin-left:15px;height:120px;color:#717171;font-size:11px;resize:none}.size-150x250 #petition_grab_code
+textarea{width:115px;height:90px}.size-180x250 #petition_grab_code
+textarea{width:145px;height:100px}.size-300x250 #petition_grab_code
+textarea{width:265px}.size-460x375 #petition_grab_code
+textarea{width:425px;height:250px}.size-425x190 #petition_grab_code
+textarea{width:390px}.size-500x190 #petition_grab_code
+textarea{width:465px}#petition_grab_code
+h4{font-size:11px;padding:15px;padding-top:0;color:#717171}#petition_grab_code
+button{position:absolute;bottom:20px;right:20px}#code_copied{position:absolute;font-size:13px;bottom:27px;right:30px;display:none}.size-460x375 .petitionsPage_sign
+.short_summary{display:block;float:left;font-size:12px;line-height:17px;width:225px;margin-left:10px;margin-top:4px}.size-460x375 #petition_face
+.thumbnail_wrapper{position:relative;float:left;margin-left:10px;margin-bottom:20px}.size-460x375 #petition_face
+.petition_author{display:block;font-size:0.8em;margin-left:10px;margin-top:20px;clear:both}.size-460x375 #petition_face
+.petition_num_sigs{margin-left:10px;font-size:0.8em}.size-460x375 .petitionsPage_sign
+button{position:absolute;bottom:50px;right:25px}.size-460x375
+h2.top_title{display:block;float:left;font-size:22px;font-weight:bold;line-height:30px;margin-left:10px;margin-top:4px;width:442px}.size-460x375
+h2.bottom_title{display:none}.size-460x375
+.petition_more{overflow:hidden}.size-460x375 .petition_more .thumbnail
+img{width:110px;height:87px}.size-460x375 .petition_more .thumbnail, .size-460x375 .petition_more
+.thumbnail_wrapper{width:114px;height:89px}.size-460x375 .petition_more
+.petition_details{float:left;width:225px;margin-left:10px;margin-right:5px;line-height:17px}body.showTakeActionNowHeader
+h1{display:block}body.showTakeActionNowHeader #petition_face
+button{font-size:15px;padding-top:0;padding-bottom:0}body.showTakeActionNowHeader.size-300x250 #petition_face
+.petition_author{display:none}body.showTakeActionNowHeader.size-300x250 .petitionsPage_sign
+.inner{margin-top:5px}body.suppressSignature
+.widget_num_sigs{display:none !important}.size-300x250
+h1{margin-top:0;margin-bottom:10px}.size-425x190 h1, .size-500x190
+h1{display:block;border-bottom:1px solid #ccc;padding-bottom:5px;margin-bottom:5px}.size-425x190 .petitionsPage_sign, .size-500x190
+.petitionsPage_sign{border:0
+none;background:none #fff}.size-425x190 #petition_face
+.thumbnail_wrapper{position:relative;float:left;width:136px}.size-425x190 .bottom_title, .size-500x190
+.bottom_title{width:260px;margin-left:15px;float:left;font-size:16px;margin-top:4px}.size-425x190 #petition_face .petition_author, .size-500x190 #petition_face
+.petition_author{display:block;font-size:12px;width:260px;float:left;margin-left:15px}.size-425x190 #petition_face .petition_num_sigs, .size-500x190 #petition_face
+.petition_num_sigs{display:block;font-size:12px;width:260px;float:left;margin-left:15px}.size-425x190 #petition_face .footer span, .size-500x190 #petition_face .footer
+span{display:none}.size-425x190 #petition_face .footer, .size-500x190 #petition_face
+.footer{background:url(http://dingo.care2.com/petitions/widget/widget-sprite.png) no-repeat scroll -34px 0;width:105px;height:30px;position:absolute;left:auto;right:8px}.size-425x190 #petition_face button, .size-500x190 #petition_face
+button{position:relative;left:15px}.size-500x190 #petition_face
+.thumbnail_wrapper{position:relative;float:left;width:155px;height:119px}.size-500x190 .bottom_title, .size-500x190 #petition_face .petition_author,
+.size-500x190 #petition_face
+.petition_num_sigs{width:316px}.size-500x190 #petition_face
+button{left:15px}.petition_more
+h2{display:block;float:left;font-size:22px;font-weight:bold;line-height:30px;margin-left:10px;margin-top:4px;width:442px}.petition_more
+.petition_author{clear:none;margin-top:5px}.petition_more
+.petition_num_sigs{margin-top:5px}.petition_more
+.petition_target{display:block;font-size:0.8em;margin-left:10px;margin-top:5px}.petition_sign_inner .short_summary
+p.more{text-align:right}.petition_more
+.back{text-align:right;bottom:10px;position:absolute;right:15px;font-size:12px}.size-460x375 .petition_more
+.short_summary{float:none;clear:both;overflow:scroll;width:430px;height:200px}.signature_form>div{overflow:hidden}.details_panel{font-size:12px}.details_panel
+.petition_details{float:left;width:225px;padding-left:20px;margin-right:5px;line-height:17px;font-size:12px !important}.details_panel .petition_details
+li{padding-bottom:5px}.read_full_petition
+a{text-decoration:none;font-weight:bold;color:#36a2db}.details_panel
+h2{display:block;float:left;font-size:20px;font-weight:bold;line-height:28px;margin-left:10px;margin-top:4px;margin-bottom:10px;width:415px;border-bottom:1px solid #4a4a4a}.details_panel h2
+a{color:#000;text-decoration:none}.details_panel
+.thumbnail{float:left;width:105px;height:110px;margin-left:6px;margin-bottom:10px}.details_panel .thumbnail
+img{height:100%;width:auto;margin:0
+0 0 -16px}.details_panel
+.description{clear:both;margin-bottom:25px;margin-left:10px;line-height:17px}.details_panel .description
+a{text-decoration:underline}#petition_sign_area
+form{margin:10px;clear:both}.form_field{float:left}#petition_sign_area input,.form_input{margin-right:5px;margin-bottom:5px}#petition_sign_area
+input{border:1px
+solid #ccc;padding:3px
+0}#sign_firstname{width:138px}#sign_lastname,#sign_country{width:190px}#sign_city,#sign_zip{width:90px}#sign_email,#sign_address{width:200px}.form_label,#form_field_anon,.optional_questions,#form_address_r2,.terms{display:none}#form_address_r1{clear:both}.related{font-size:10px}.related
+strong{width:83px}.related_opt{width:166px;margin-bottom:5px}.related strong,.related_opt{float:left}input.related_update{margin-bottom:0;float:left}#petition_sign_area
+button{position:absolute;bottom:15px;right:15px}.petition_description_area
+button{position:absolute;bottom:10px;right:15px}.petition_description_area
+.petition_author{display:block}.protected
+a{text-decoration:underline}.protected{background:url(http://dingo.care2.com/petitions/widget/widget-sprite.png) no-repeat scroll -237px -2px transparent;font-size:11px;height:20px;padding-left:17px;padding-top:3px;position:absolute;bottom:20px;left:5px}#petition_sign_area_inner{margin:0
+10px 10px;position:relative}#petition_sign_area .care2logo,
+.petition_description_area
+.care2logo{left:10px;bottom:3px;display:block}span.close{background:url(http://dingo.care2.com/petitions/widget/widget-sprite.png) no-repeat scroll -140px -2px transparent;width:20px;height:20px;display:block;position:absolute;top:10px;right:10px;cursor:pointer;z-index:1}.signature_form
+div.back{position:absolute;left:240px;bottom: -9px;display:none}.signature_form
+button{position:absolute}#sign_optins_block{clear:both}#sign_optins_block
+#updated_text{float:left;margin-right:5px;padding-top:5px}#sign_optins_block
+.signpage_optins{float:left}#sign_optins_block .signpage_optins
+input{margin-bottom:0}#na_updated_text,#na_optins,#sign_optins_block{font-size:11px}#na_optins{width:250px}#na_updated_text{clear:both;padding-top:10px}#sign_error_alert{font-weight:bold;color:#e64706}#petition_sign_area .form_field_errors input,
+#petition_sign_area .form_field_errors
+.form_input{border:2px
+solid #e64706;padding:2px
+0;margin-right:3px}#petition_sign_area .form_field_errors
+.form_input{padding:0;margin-right:1px;margin-bottom:1px}.scrollme{clear:both;height:250px;overflow-y:scroll}a.back_btn{position:absolute;left:236px;bottom:10px}a.back_btn:hover{text-decoration:underline}#na_mid,
+.na_fullpage #na_loading,
+.na_minipage
+#na_loading{display:none}.na_fullpage #na_mid,
+.na_minipage
+#na_mid{display:block}#na_loading{text-align:center;padding-top:25px}#na_mid
+.mini_header{padding:13px;padding-bottom:3px}#na_mid .mini_header
+h3{font-size:19px;margin-bottom:5px}#na_mid .mini_header
+h4{font-size:14px;margin-bottom:5px}#na_mid .mini_header
+.share_block{height:30px}#na_mid .mini_header .share_block
+p{height:22px;line-height:22px;float:left;padding:0
+10px}#na_mid .mini_header .share_block
+a{display:block;overflow:hidden;height:0;width:73px;padding-top:22px;background:transparent url(http://dingo.care2.com/petitions/widget/widget-sprite.png) no-repeat scroll -161px 0}#na_area{background:#fff;width:373px;height:207px;border:2px
+solid #dadada;margin-left:30px;padding:10px}#na_left_arrow,#na_right_arrow{top:160px}#na_left_arrow{left:6px}#na_right_arrow{right:8px}#na_mid
+.care2logo{left:30px;bottom:10px;top:auto;display:block}#na_mid
+.na_pet_title{margin-bottom:15px}#na_mid .na_pet_title
+a{font-size:18px;font-weight:bold;color:#000;text-decoration:none;line-height:1.3}#na_mid
+.na_pet_img{float:left;padding:2px;width:123px;height:95px;background:#fff;margin-right:25px;box-shadow:0 0 5px #000;-moz-box-shadow:0 0 5px #000;-webkit-box-shadow:0 0 #000;behavior:url(/styles/PIE.htc);position:relative}#na_mid .na_pet_img
+img{width:100%;height:100%}#na_mid
+.na_pet_details{font-size:12px;line-height:1.2}#na_mid .na_pet_details
+div{padding-bottom:10px}#na_mid .na_pet_details
+a{color:#32a3d7}#na_mid
+.sign_button{position:absolute;right:45px;bottom:65px}#petition_error
+.petition_error_inner{background:transparent url(http://dingo.care2.com/petitions/widget/widget-error-globe.png) scroll no-repeat bottom left;width:100%;height:100%}#petition_error
+.care2logo{display:block;right:25px;bottom:3px}#petition_error .footer,
+#petition_error
+.footer_bar{width:100%;position:absolute;bottom:0;left:0;height:30px;font-size:0.7em}#petition_error
+.footer{background:transparent}#petition_error
+.footer_bar{opacity:0.8;filter:alpha(opacity=80);background:#fff}.size-150x250 #petition_error .footer,
+.size-150x250 #petition_error
+.footer_bar{font-size:9px}.size-150x250 #petition_error .footer,
+.size-150x250 #petition_error .footer_bar,
+.size-180x250 #petition_error .footer,
+.size-180x250 #petition_error
+.footer_bar{height:20px;text-align:center;line-height:20px}.size-150x250 #petition_error .care2logo,
+.size-180x250 #petition_error
+.care2logo{display:none}.size-425x190 #petition_error .footer,
+.size-500x190 #petition_error
+.footer{padding:10px
+0 0 15px;height:20px}#petition_error .error_text,
+#petition_error
+.act_now_button{position:absolute}.size-150x250 #petition_error
+.error_text{top:34px;left:0}.size-180x250 #petition_error
+.error_text{top:34px;left:2px}.size-300x250 #petition_error
+.error_text{top:12px;left:18px}.size-460x375 #petition_error
+.error_text{top:50px;left:150px}.size-425x190 #petition_error
+.error_text{top:5px;left:175px}.size-500x190 #petition_error
+.error_text{top:5px;left:175px}.size-150x250 #petition_error .error_text
+img{height:52px}.size-180x250 #petition_error .error_text
+img{height:60px}.size-150x250 #petition_error
+.act_now_button{top:140px;left:25px}.size-180x250 #petition_error
+.act_now_button{top:140px;left:40px}.size-300x250 #petition_error
+.act_now_button{top:100px;left:175px}.size-460x375 #petition_error
+.act_now_button{top:150px;left:230px}.size-425x190 #petition_error
+.act_now_button{top:100px;left:255px}.size-500x190 #petition_error
+.act_now_button{top:100px;left:255px}.feedback_link{color:inherit;font-size:11px;position:absolute;text-decoration:underline !important}#petition_sign_area
+.feedback_link{bottom:6px;left:100px}#na_mid
+.feedback_link{bottom:10px;right:30px}

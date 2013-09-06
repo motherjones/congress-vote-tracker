@@ -1,0 +1,4 @@
+(function(){
+var url="http://ads.admarvel.com/fam/javascriptGetAd.php?partner_id=d593cf7bd8e36797&site_id=50293&target_params=&cb=" + +new Date;
+document.write('\x3cscript src="' + url + '">\x3c/script>');
+})();

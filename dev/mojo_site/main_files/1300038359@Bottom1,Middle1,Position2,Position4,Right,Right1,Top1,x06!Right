@@ -1,0 +1,13 @@
+document.write ('<script type="text/javascript">document.write(');
+document.write ("'");
+document.write ('<ifr');
+document.write ("'");
+document.write ('+');
+document.write ("'");
+document.write ('ame width="300" height="600" src="http://web.adblade.com/impsc.php?cid=1137-3572493846&output=html" frameborder="0" scrolling="no" hspace="0" vspace="0" marginheight="0" marginwidth="0" style="overflow: hidden;width:300px;height:600px;border:0px;padding:0px;margin:0px"></ifr');
+document.write ("'");
+document.write ('+');
+document.write ("'");
+document.write ('ame>');
+document.write ("'");
+document.write (');</script>');

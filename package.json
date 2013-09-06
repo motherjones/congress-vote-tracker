@@ -1,0 +1,50 @@
+{
+  "name": "syria_vote",
+  "title": "Syria Vote",
+  "description": "The best MoJo news app ever.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/motherjones/syria",
+  "author": {
+    "name": "Mother Jones Data Desk",
+    "email": "benbreedlove@gmail.com",
+    "url": "motherjones.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/motherjones/syria.git"
+  },
+  "bugs": {
+    "url": "https://github.com/motherjones/syria/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/motherjones/syria/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt qunit"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.1.1rc5",
+    "grunt-contrib-clean": "~0.4.0rc5",
+    "grunt-contrib-nodeunit": "~0.1.2rc5",
+    "grunt-contrib-qunit": "~0.1.1rc5",
+    "grunt-contrib-concat": "~0.1.2rc5",
+    "grunt-contrib-uglify": "0.1.1rc5",
+    "grunt-contrib-less": "~0.5.0rc7",
+    "grunt-contrib-watch": "~0.2.0rc5",
+    "grunt-contrib-connect": "0.1.0",
+    "less-middleware": "~0.1.9",
+    "handlebars": "~1.0.8",
+    "hbs": "~2.0.1",
+    "grunt-templater": "0.0.3-1",
+    "grunt-html-smoosher": "0.1.1",
+    "grunt-gss-pull": "0.1.1",
+    "grunt": "~0.4.0rc5"
+  },
+  "keywords": []
+}
