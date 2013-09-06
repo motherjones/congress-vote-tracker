@@ -12,12 +12,6 @@ var current_r = 234;
 var current_empty = 2;
 var total_seats = 435;
 
-
-var tooltip_template = ' \
-    <h3>{name}</h3> \
-    <p>Party Affiliation: {party}</p> \
-    <p>{strength} {lean}</p> \
-';
 var compiled_tooltip = dust.compile(tooltip_template, 'tooltip');
 dust.loadSource(compiled_tooltip);
 

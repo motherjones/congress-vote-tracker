@@ -22,6 +22,12 @@
         'add_weak_r_no',
         'add_strong_r_no',
     ];
+
+    var tooltip_template = ' \
+        <h3>{name}</h3> \
+        <p>Party Affiliation: {party}</p> \
+        <p>{strength} {lean}</p> \
+    ';
 </script>
 <script src="data/syria_vote.sep5.6pm.json" type="text/javascript"></script>
 <script src="data/syria_vote.sep6.12am.json" type="text/javascript"></script>
