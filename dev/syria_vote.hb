@@ -37,6 +37,9 @@
 <script src="data/syria_vote.sep6.6am.json" type="text/javascript"></script>
 <script src="data/syria_vote.sep6.12pm.json" type="text/javascript"></script>
 <script src="data/syria_vote.sep6.6pm.json" type="text/javascript"></script>
+<script src="data/syria_vote.sep7.12am.json" type="text/javascript"></script>
+<script src="data/syria_vote.sep7.6am.json" type="text/javascript"></script>
+<script src="data/syria_vote.sep7.12pm.json" type="text/javascript"></script>
 <script src="{{js}}" type="text/javascript"></script>
 
 <body>
