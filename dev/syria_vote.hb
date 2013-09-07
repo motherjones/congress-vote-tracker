@@ -55,7 +55,7 @@
         <p>Votes Needed To Pass/Fail: <span class="breakdown_number">217</span></p>
     </div>
 
-<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.0" viewBox="0 0 1280 659.89313" id="syria_leaning" inkscape:version="0.48.4 r9939" sodipodi:docname="113USHouseStructure.svg">
+<svg preserveAspectRatio="xMinYMin slice" style="width:100%;height:100%" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.0" viewBox="0 0 1280 659.89313" id="syria_leaning" inkscape:version="0.48.4 r9939" sodipodi:docname="113USHouseStructure.svg">
   <metadata id="metadata884">
     <rdf:rdf>
       <cc:work rdf:about="">
