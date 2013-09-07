@@ -35,66 +35,7 @@
 <script src="data/syria_vote.sep6.6am.json" type="text/javascript"></script>
 <script src="data/syria_vote.sep6.12pm.json" type="text/javascript"></script>
 <script src="{{js}}" type="text/javascript"></script>
-<style>
-#tooltip {
-    background-color: white;
-    border-radius: 5px;
-    border: 2px solid black;
-    padding: 1em;
-}
 
-circle {
-  fill: rgb(255, 255, 255);
-  stroke: rgb(31, 119, 180);
-  stroke-width: 1px;
-}
-.strongDno {
-    fill: blue;
-}
-.weakDno {
-    fill: blue;
-    fill-opacity: .5;
-}
-.strongRno {
-    fill: red;
-}
-.weakRno {
-    fill: red;
-    fill-opacity: .5;
-}
-
-.strongDyes {
-    fill: blue;
-}
-.weakDyes {
-    fill: blue;
-    fill-opacity: .5;
-}
-
-.strongRyes {
-    fill: red;
-}
-.weakRyes {
-    fill: red;
-    fill-opacity: .5;
-}
-.d_undecided {
-    fill: #999999;
-}
-.d_unknown {
-    fill: #555555;
-}
-.r_undecided {
-    fill: #999999;
-}
-.r_unknown {
-    fill: #555555;
-}
-text {
-  font: 10px sans-serif;
-}
-
-</style>
 <body>
 
     <div id="time_picker">
