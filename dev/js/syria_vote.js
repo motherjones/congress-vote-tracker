@@ -34,7 +34,7 @@ window.onload = function() {
 
     var time_container = jQuery('#time_picker');
     var label_value_now = 'Right now';
-    var time_label = jQuery('<label>' + label_value_now + '</label>');
+    var time_label = jQuery('<label id="time_picker_label">' + label_value_now + '</label>');
     time_container.after(time_label);
     time_container.noUiSlider({
         range: [0, dataset_times.length],
