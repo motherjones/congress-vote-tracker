@@ -508,7 +508,7 @@
 	<li><p><img src="css/assets/undecided.png" /> Undecided/Unknown: <span id="breakdown_neither" class="breakdown_number">&nbsp;</span></p></li>
     <li><p><img src="css/assets/lean-yes.png" /> Leaning Yes: <span id="breakdown_weak_yes" class="breakdown_number">&nbsp;</span></p></li>
     <li><p><img src="css/assets/yes.png" /> Yes: <span id="breakdown_yes" class="breakdown_number">&nbsp;</span></p></li>
-
+	<li><p><img src="css/assets/empty-seat.png" /> Empty Seat</p></li>
 	</ul>
 </div>
 
