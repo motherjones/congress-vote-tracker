@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <script src="js/libs/jquery/jquery.js" type="text/javascript"></script>
+<script src="js/libs/jquery.nouislider.min.js" type="text/javascript"></script>
 <script src="js/libs/tabletop.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/libs/dust-full-1.2.3.min.js"></script>
 <link rel="stylesheet" href="{{css}}" type="text/css"></style>
+<link rel="stylesheet" href="css/nouislider.css" type="text/css"></style>
 <script>
     var dataset_times = [];
     var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0AmXJhRgn8UhudFlwcFdEVWt5TXdCRGFPWW5Pd21Sd3c&output=html';
@@ -39,8 +41,7 @@
 
 <body>
 
-    <div id="time_picker">
-        <button id="current">As of right now</button>
+    <div id="time_picker" class="noUiSlider">
     </div>
     <div id="party_picker">
         <button id="show_republicans_only">Just Republicans</button> 
