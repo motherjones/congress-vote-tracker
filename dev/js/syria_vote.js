@@ -52,7 +52,6 @@ window.onload = function() {
         count_whip(present_dataset);
     });
 
-
     jQuery('svg circle').bind('mouseout', function(){
       tooltip_element.css('display', 'none');
     });
@@ -186,6 +185,11 @@ var count_whip = function(leaning) {
     for (var i = 0; i < seat_fillers.length; i++) {
         seat_count = seat_filler[seat_fillers[i]](leaning, seat_count);
     }
+    jQuery('#breakdown_no').text( leaning.D.no.strong.length + leaning.R.no.strong.length)
+    jQuery('#breakdown_weak_no').text(leaning.D.no.weak.length + leaning.R.no.weak.length)
+    jQuery('#breakdown_yes').text( leaning.D.yes.strong.length + leaning.R.yes.strong.length)
+    jQuery('#breakdown_weak_yes').text(leaning.D.yes.weak.length + leaning.R.yes.weak.length)
+    jQuery('#breakdown_neither').text(leaning.D.unknown.length + leaning.D.undecided.length + leaning.R.unknown.length + leaning.R.undecided.length )
 
 };
 

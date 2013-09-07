@@ -100,6 +100,18 @@ text {
     <div id="time_picker">
         <button id="current">As of right now</button>
     </div>
+    <div id="party_picker">
+        <button id="show_republicans_only">Just Republicans</button> 
+        <button id="show_democrats_only">Just Democrats</button> 
+    </div>
+    <div id="vote_breakdown_counter">
+        <p>No: <span id="breakdown_no" class="breakdown_number">&nbsp;</span></p>
+        <p>Leaning No: <span id="breakdown_weak_no" class="breakdown_number">&nbsp;</span></p>
+        <p>Yes: <span id="breakdown_yes" class="breakdown_number">&nbsp;</span></p>
+        <p>Leaning Yes: <span id="breakdown_weak_yes" class="breakdown_number">&nbsp;</span></p>
+        <p>Undecide/Unknown: <span id="breakdown_neither" class="breakdown_number">&nbsp;</span></p>
+        <p>Votes Needed To Pass/Fail: <span class="breakdown_number">217</span></p>
+    </div>
 
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.0" viewBox="0 0 1280 659.89313" id="syria_leaning" inkscape:version="0.48.4 r9939" sodipodi:docname="113USHouseStructure.svg">
   <metadata id="metadata884">
