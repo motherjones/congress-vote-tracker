@@ -13,6 +13,7 @@ var current_empty = 2;
 var total_seats = 435;
 var showing_d_only = false;
 var showing_r_only = false;
+var displayed_leaning;
 
 var compiled_tooltip = dust.compile(tooltip_template, 'tooltip');
 dust.loadSource(compiled_tooltip);
@@ -46,6 +47,8 @@ window.onload = function() {
         slide: function() {
             var value = $(this).val();
             count_whip(cleaned_times[value]);
+            displayed_leaning = cleaned_times[value];
+
             var title = (value === dataset_times.length)
                 ? label_value_now
                 : function() { for (var k in dataset_times[value]) return k }
@@ -56,7 +59,7 @@ window.onload = function() {
     Tabletop.init( { 
         key: public_spreadsheet_url,
         callback: function(dataset) {
-            var leaning = cleanup_dataset(dataset)
+            var leaning = displayed_leaning = cleanup_dataset(dataset)
             cleaned_times.push(leaning);
             count_whip(leaning);
         },
@@ -83,6 +86,7 @@ window.onload = function() {
         }
         showing_d_only = false;
         showing_r_only = false;
+        update_count(displayed_leaning);
     });
 
     jQuery('#show_republicans_only').click(function() {
@@ -98,6 +102,7 @@ window.onload = function() {
         }
         showing_r_only = true;
         showing_d_only = false;
+        update_count(displayed_leaning);
     });
     jQuery('#show_democrats_only').click(function() {
         jQuery('#party_picker .selected').removeClass('selected');
@@ -112,6 +117,7 @@ window.onload = function() {
         }
         showing_d_only = true;
         showing_r_only = false;
+        update_count(displayed_leaning);
     });
 
     jQuery(document).click(function() {
@@ -237,13 +243,31 @@ var count_whip = function(leaning) {
     for (var i = 0; i < seat_fillers.length; i++) {
         seat_count = seat_filler[seat_fillers[i]](leaning, seat_count);
     }
-    jQuery('#breakdown_no').text( leaning.D.no.strong.length + leaning.R.no.strong.length)
-    jQuery('#breakdown_weak_no').text(leaning.D.no.weak.length + leaning.R.no.weak.length)
-    jQuery('#breakdown_yes').text( leaning.D.yes.strong.length + leaning.R.yes.strong.length)
-    jQuery('#breakdown_weak_yes').text(leaning.D.yes.weak.length + leaning.R.yes.weak.length)
-    jQuery('#breakdown_neither').text(leaning.D.unknown.length + leaning.D.undecided.length + leaning.R.unknown.length + leaning.R.undecided.length )
+    update_count(leaning);
 
 };
+
+var update_count = function(leaning) {
+    if (!showing_d_only && !showing_r_only) {
+        jQuery('#breakdown_no').text( leaning.D.no.strong.length + leaning.R.no.strong.length)
+        jQuery('#breakdown_weak_no').text(leaning.D.no.weak.length + leaning.R.no.weak.length)
+        jQuery('#breakdown_yes').text( leaning.D.yes.strong.length + leaning.R.yes.strong.length)
+        jQuery('#breakdown_weak_yes').text(leaning.D.yes.weak.length + leaning.R.yes.weak.length)
+        jQuery('#breakdown_neither').text(leaning.D.unknown.length + leaning.D.undecided.length + leaning.R.unknown.length + leaning.R.undecided.length )
+    } else if ( showing_r_only ) {
+        jQuery('#breakdown_no').text( leaning.R.no.strong.length)
+        jQuery('#breakdown_weak_no').text( leaning.R.no.weak.length)
+        jQuery('#breakdown_yes').text( leaning.R.yes.strong.length)
+        jQuery('#breakdown_weak_yes').text( leaning.R.yes.weak.length)
+        jQuery('#breakdown_neither').text(leaning.R.unknown.length + leaning.R.undecided.length )
+    } else if ( showing_d_only ) {
+        jQuery('#breakdown_no').text( leaning.D.no.strong.length)
+        jQuery('#breakdown_weak_no').text( leaning.D.no.weak.length)
+        jQuery('#breakdown_yes').text( leaning.D.yes.strong.length)
+        jQuery('#breakdown_weak_yes').text( leaning.D.yes.weak.length)
+        jQuery('#breakdown_neither').text(leaning.D.unknown.length + leaning.R.undecided.length )
+    }
+}
 
 var seat_filler = {};
 
