@@ -1,2 +1,3 @@
 .DS_Store
-dev/**/*.html
+dev/css/syria_vote.css
+dev/syria_vote.html
