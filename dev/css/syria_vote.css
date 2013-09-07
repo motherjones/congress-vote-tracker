@@ -24,10 +24,17 @@
 }
 .undecided,
 .unknown {
-  fill: #2D2D2D;
+  fill: #B7B7B7;
 }
 .fade {
   fill-opacity: .05;
+}
+circle {
+  fill-opacity: 1;
+}
+circle,
+.fade {
+  transition: fill-opacity 0.5s;
 }
 #pass_fail {
   padding-left: 33%;
