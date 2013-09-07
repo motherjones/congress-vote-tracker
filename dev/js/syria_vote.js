@@ -20,19 +20,49 @@ var tooltip_element = jQuery('<div id="tooltip" style="display: none; position: 
 window.onload = function() {
     jQuery('svg').before(tooltip_element);
 
-    var present_dataset;
-        Tabletop.init( { 
-            key: public_spreadsheet_url,
-            callback: function(dataset) {
-                var leaning = present_dataset = cleanup_dataset(dataset)
-                count_whip(leaning);
-            },
-            simpleSheet: true 
-        } )
+    dataset_times.sort();
 
-    dataset_times.sort().reverse();
+
+    var cleaned_times = [];
+    for (var i = 0; i < dataset_times.length; i++) {
+        var time = dataset_times[i];
+        var title;
+        for(var k in time) title = k;
+        cleaned_times.push(cleanup_dataset(time[title]));
+    }
+
 
     var time_container = jQuery('#time_picker');
+    var label_value_now = 'Right now';
+    var time_label = jQuery('<label id="time_picker_label">' + label_value_now + '</label>');
+    time_container.after(time_label);
+    time_container.noUiSlider({
+        range: [0, dataset_times.length],
+        handles: 1,
+        start: [dataset_times.length],
+        step: 1,
+        slide: function() {
+            var value = $(this).val();
+            count_whip(cleaned_times[value]);
+            var title = (value === dataset_times.length)
+                ? label_value_now
+                : function() { for (var k in dataset_times[value]) return k }
+            time_label.text(title);
+        },
+    });
+
+    Tabletop.init( { 
+        key: public_spreadsheet_url,
+        callback: function(dataset) {
+            var leaning = cleanup_dataset(dataset)
+            cleaned_times.push(leaning);
+            count_whip(leaning);
+        },
+        simpleSheet: true 
+    } )
+
+
+    /*  TIME STUFF OLD
     for (var i = 0; i < dataset_times.length; i++) {
         var time = dataset_times[i];
         var title;
@@ -51,6 +81,7 @@ window.onload = function() {
     jQuery('#current').click(function() {
         count_whip(present_dataset);
     });
+    */
 
     jQuery('svg circle').bind('mouseout', function(){
       tooltip_element.css('display', 'none');
