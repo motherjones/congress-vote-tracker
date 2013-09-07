@@ -49,6 +49,7 @@
     <div id="party_picker">
         <button id="show_republicans_only">Just Republicans</button> 
         <button id="show_democrats_only">Just Democrats</button> 
+        <button id="show_all_parties">Show All Parties</button> 
     </div>
 	<div id="pass_fail">
 		<p><span class="breakdown_number">217</span> Votes Needed To Pass/Fail</p>

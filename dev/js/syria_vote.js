@@ -11,6 +11,8 @@ var current_d = 199;
 var current_r = 234;
 var current_empty = 2;
 var total_seats = 435;
+var showing_d_only = false;
+var showing_r_only = false;
 
 var compiled_tooltip = dust.compile(tooltip_template, 'tooltip');
 dust.loadSource(compiled_tooltip);
@@ -62,27 +64,6 @@ window.onload = function() {
     } )
 
 
-    /*  TIME STUFF OLD
-    for (var i = 0; i < dataset_times.length; i++) {
-        var time = dataset_times[i];
-        var title;
-        for(var k in time) title = k;
-
-        var button = jQuery('<button>' + title +'</button>');
-        (function(dataset) {
-            button.click(function() {
-                count_whip(dataset);
-            });
-        })(cleanup_dataset(time[title]))
-
-        time_container.prepend(button);
-    }
-
-    jQuery('#current').click(function() {
-        count_whip(present_dataset);
-    });
-    */
-
     jQuery('svg circle').bind('mouseout', function(){
       tooltip_element.css('display', 'none');
     });
@@ -93,25 +74,44 @@ window.onload = function() {
         .html(jQuery(this).attr('data-tooltip'));
     });
 
-    jQuery('#show_republicans_only').click(function() {
+    jQuery('#show_all_parties').click(function() {
+        jQuery('#party_picker .selected').removeClass('selected');
+        jQuery('#show_all_parties').addClass('selected');
         var faded = jQuery('#syria_leaning .fade')
         for (var i = 0; i < faded.length; i++) {
             faded[i].setAttribute('class', faded[i].getAttribute('class').replace(/\sfade/, '')); 
         }
-        var tofade = jQuery('#syria_leaning .democratic');
+        showing_d_only = false;
+        showing_r_only = false;
+    });
+
+    jQuery('#show_republicans_only').click(function() {
+        jQuery('#party_picker .selected').removeClass('selected');
+        jQuery('#show_republicans_only').addClass('selected');
+        var faded = jQuery('#syria_leaning .fade')
+        for (var i = 0; i < faded.length; i++) {
+            faded[i].setAttribute('class', faded[i].getAttribute('class').replace(/\sfade/, '')); 
+        }
+        var tofade = jQuery('#syria_leaning .democratic,#syria_leaning .empty_seat');
         for (var i = 0; i < tofade.length; i++) {
             tofade[i].setAttribute('class', tofade[i].getAttribute('class') + ' fade'); 
         }
+        showing_r_only = true;
+        showing_d_only = false;
     });
     jQuery('#show_democrats_only').click(function() {
+        jQuery('#party_picker .selected').removeClass('selected');
+        jQuery('#show_democrats_only').addClass('selected');
         var faded = jQuery('#syria_leaning .fade')
         for (var i = 0; i < faded.length; i++) {
             faded[i].setAttribute('class', faded[i].getAttribute('class').replace(/\sfade/, '')); 
         }
-        var tofade = jQuery('#syria_leaning .republican');
+        var tofade = jQuery('#syria_leaning .republican,#syria_leaning .empty_seat');
         for (var i = 0; i < tofade.length; i++) {
             tofade[i].setAttribute('class', tofade[i].getAttribute('class') + ' fade'); 
         }
+        showing_d_only = true;
+        showing_r_only = false;
     });
 
     jQuery(document).click(function() {
@@ -254,7 +254,8 @@ seat_filler.add_strong_d_no = function(leaning, seat_count) {
         seat_count++;
         circle.setAttribute('class', 'strongDno ' + strong_d_no[i].name.replace(/\s/, '')
                 + ' democratic strong no'
-                );
+                + (showing_r_only ? ' fade' : '')
+        );
         circle.setAttribute('data-tooltip', strong_d_no[i].tooltip);
     }
     return seat_count;
@@ -266,7 +267,9 @@ seat_filler.add_weak_d_no = function(leaning, seat_count) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
         circle.setAttribute('class', 'weakDno ' + weak_d_no[i].name.replace(/\s/, '')
-                + ' democratic weak no');
+                + ' democratic weak no'
+                + (showing_r_only ? ' fade' : '')
+        );
         circle.setAttribute('data-tooltip', weak_d_no[i].tooltip);
     }
     return seat_count;
@@ -278,6 +281,7 @@ seat_filler.add_d_undecided = function(leaning, seat_count) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
         circle.setAttribute('class', 'd_undecided ' + d_undecided[i].name.replace(/\s/, '')
+                + (showing_r_only ? ' fade' : '')
                 + ' democratic undecided');
         circle.setAttribute('data-tooltip', d_undecided[i].tooltip);
     }
@@ -290,6 +294,7 @@ seat_filler.add_d_unknown = function(leaning, seat_count) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
         circle.setAttribute('class', 'd_unknown ' + d_unknown[i].name.replace(/\s/, '')
+                + (showing_r_only ? ' fade' : '')
                 + ' democratic unknown');
         circle.setAttribute('data-tooltip', d_unknown[i].tooltip);
     }
@@ -302,6 +307,7 @@ seat_filler.add_weak_d_yes = function(leaning, seat_count) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
         circle.setAttribute('class', 'weakDyes ' + weak_d_yes[i].name.replace(/\s/, '')
+                + (showing_r_only ? ' fade' : '')
                 + ' democratic weak yes');
         circle.setAttribute('data-tooltip', weak_d_yes[i].tooltip);
     }
@@ -313,6 +319,7 @@ seat_filler.add_strong_d_yes = function(leaning, seat_count) {
     for (var i = 0; i < strong_d_yes.length; i++) {
         var circle = document.getElementById('seat' + seat_count);
         circle.setAttribute('class', 'strongDyes ' + strong_d_yes[i].name.replace(/\s/, '')
+                + (showing_r_only ? ' fade' : '')
                 + ' democratic strong yes');
         seat_count++;
         circle.setAttribute('data-tooltip', strong_d_yes[i].tooltip);
@@ -321,10 +328,14 @@ seat_filler.add_strong_d_yes = function(leaning, seat_count) {
 }
 
 seat_filler.add_empty = function(leaning, seat_count) {
-    document.getElementById('seat' + seat_count).setAttribute('class', 'empty_seat');
+    document.getElementById('seat' + seat_count).setAttribute('class', 'empty_seat'
+                + (showing_d_only || showing_r_only ? ' fade' : '')
+    );
     document.getElementById('seat' + seat_count).setAttribute('data-tooltip', 'Empty Seat');
     seat_count++;
-    document.getElementById('seat' + seat_count).setAttribute('class', 'empty_seat');
+    document.getElementById('seat' + seat_count).setAttribute('class', 'empty_seat'
+                + (showing_d_only || showing_r_only ? ' fade' : '')
+    );
     document.getElementById('seat' + seat_count).setAttribute('data-tooltip', 'Empty Seat');
     seat_count++;
     return seat_count;
@@ -336,6 +347,7 @@ seat_filler.add_strong_r_yes = function(leaning, seat_count) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
         circle.setAttribute('class', 'strongRyes ' + strong_r_yes[i].name.replace(/\s/, '')
+                + (showing_d_only ? ' fade' : '')
                 + ' strong republican yes');
         circle.setAttribute('data-tooltip', strong_r_yes[i].tooltip );
     }
@@ -348,6 +360,7 @@ seat_filler.add_weak_r_yes = function(leaning, seat_count) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
         circle.setAttribute('class', 'weakRyes ' + weak_r_yes[i].name.replace(/\s/, '')
+                + (showing_d_only ? ' fade' : '')
                 + ' weak republican yes');
         circle.setAttribute('data-tooltip', weak_r_yes[i].tooltip);
     }
@@ -360,6 +373,7 @@ seat_filler.add_r_unknown = function(leaning, seat_count) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
         circle.setAttribute('class', 'r_unknown ' + r_unknown[i].name.replace(/\s/, '')
+                + (showing_d_only ? ' fade' : '')
                 + ' republican unknown');
         circle.setAttribute('data-tooltip', r_unknown[i].tooltip + r_unknown[i].lean);
     }
@@ -372,6 +386,7 @@ seat_filler.add_r_undecided = function(leaning, seat_count) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
         circle.setAttribute('class', 'r_undecided ' + r_undecided[i].name.replace(/\s/, '')
+                + (showing_d_only ? ' fade' : '')
                 + ' republican undecided');
         circle.setAttribute('data-tooltip', r_undecided[i].tooltip);
     }
@@ -384,6 +399,7 @@ seat_filler.add_weak_r_no = function(leaning, seat_count) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
         circle.setAttribute('class', 'weakRno ' + weak_r_no[i].name.replace(/\s/, '')
+                + (showing_d_only ? ' fade' : '')
                 + ' weak republican no');
         circle.setAttribute('data-tooltip', weak_r_no[i].tooltip);
     }
@@ -396,6 +412,7 @@ seat_filler.add_strong_r_no = function(leaning, seat_count) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
         circle.setAttribute('class', 'strongRno ' + strong_r_no[i].name.replace(/\s/, '')
+                + (showing_d_only ? ' fade' : '')
                 + ' strong republican no');
         circle.setAttribute('data-tooltip', strong_r_no[i].tooltip );
     }
