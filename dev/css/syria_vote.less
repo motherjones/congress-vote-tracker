@@ -11,6 +11,7 @@
   fill: #FFFFFF;
   stroke: #2D2D2D;
   stroke-width: 1px;
+  stroke-opacity: 1;
 }
 
 .strong.no {
@@ -35,6 +36,7 @@
 
 .fade {
     fill-opacity: .05;
+    stroke-opacity: .05;
 }
 
 circle {
@@ -43,6 +45,9 @@ circle {
 
 circle, .fade {
     transition: fill-opacity .5s;
+}
+.empty_seat,.empty_seat.fade {
+    transition: stroke-opacity .5s;
 }
 
 #pass_fail {
