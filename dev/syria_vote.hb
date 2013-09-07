@@ -45,14 +45,10 @@
         <button id="show_republicans_only">Just Republicans</button> 
         <button id="show_democrats_only">Just Democrats</button> 
     </div>
-    <div id="vote_breakdown_counter">
-        <p>No: <span id="breakdown_no" class="breakdown_number">&nbsp;</span></p>
-        <p>Leaning No: <span id="breakdown_weak_no" class="breakdown_number">&nbsp;</span></p>
-        <p>Yes: <span id="breakdown_yes" class="breakdown_number">&nbsp;</span></p>
-        <p>Leaning Yes: <span id="breakdown_weak_yes" class="breakdown_number">&nbsp;</span></p>
-        <p>Undecide/Unknown: <span id="breakdown_neither" class="breakdown_number">&nbsp;</span></p>
-        <p>Votes Needed To Pass/Fail: <span class="breakdown_number">217</span></p>
-    </div>
+	<div id="pass_fail">
+		<p><span class="breakdown_number">217</span> Votes Needed To Pass/Fail</p>
+	</div>
+	
 
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.0" viewBox="0 0 1280 659.89313" id="syria_leaning" inkscape:version="0.48.4 r9939" sodipodi:docname="113USHouseStructure.svg">
   <metadata id="metadata884">
@@ -504,5 +500,15 @@
     <circle d="m 354.06001,176.36 c 0,2.01032 -1.62968,3.64 -3.64,3.64 -2.01031,0 -3.64,-1.62968 -3.64,-3.64 0,-2.01032 1.62969,-3.64 3.64,-3.64 2.01032,0 3.64,1.62968 3.64,3.64 z" sodipodi:ry="3.6400001" sodipodi:rx="3.6400001" sodipodi:cy="176.36" sodipodi:cx="350.42001" id="seat434" r="3.6400001" cy="176.36" cx="350.42001" transform="matrix(3.56199,0,0,-3.56199,-15.218219,201.31071)"></circle>
     </g>
 </svg>
+<div id="vote_breakdown_counter">
+    <ul>
+		<li><img src="css/assets/no.png"></img><p>No: <span id="breakdown_no" class="breakdown_number">&nbsp;</span></p></li>
+    <li><img src="css/assets/lean-no.png"></img><p>Leaning No: <span id="breakdown_weak_no" class="breakdown_number">&nbsp;</span></p></li>
+    <li><img src="css/assets/yes.png"></img><p>Yes: <span id="breakdown_yes" class="breakdown_number">&nbsp;</span></p></li>
+    <li><img src="css/assets/lean-yes.png"></img><p>Leaning Yes: <span id="breakdown_weak_yes" class="breakdown_number">&nbsp;</span></p></li>
+    <li><img src="css/assets/undecided.png"></img><p>Undecided/Unknown: <span id="breakdown_neither" class="breakdown_number">&nbsp;</span></p></li>
+	</ul>
+</div>
+
 </body>
 </html>

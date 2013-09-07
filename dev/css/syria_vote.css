@@ -1,1 +1,52 @@
 /* YEEEEAAAHHH I EXIST */
+#tooltip {
+  background-color: white;
+  border-radius: 5px;
+  border: 2px solid black;
+  padding: 1em;
+}
+.empty_seat {
+  fill: #FFFFFF;
+  stroke: #2D2D2D;
+  stroke-width: 1px;
+}
+.strong.no {
+  fill: #DF5E1F;
+}
+.weak.no {
+  fill: #C9A79D;
+}
+.strong.yes {
+  fill: #00A087;
+}
+.weak.yes {
+  fill: #8EB2AA;
+}
+.undecided,
+.unknown {
+  fill: #2D2D2D;
+}
+.fade {
+  fill-opacity: .05;
+}
+#pass_fail {
+  padding-left: 30%;
+  font-size: 14px;
+  font-family: verdana, sans-serif;
+  font-weight: bold;
+}
+#vote_breakdown_counter {
+  padding-left: 1.5em;
+  border: 2px solid #D8D6D6;
+}
+#vote_breakdown_counter p {
+  font-size: 14px;
+  font-family: verdana, sans-serif;
+  font-weight: bold;
+}
+#vote_breakdown_counter span {
+  font-weight: normal;
+}
+text {
+  font: 10px sans-serif;
+}
