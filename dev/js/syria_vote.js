@@ -62,6 +62,27 @@ window.onload = function() {
         .html(jQuery(this).attr('data-tooltip'));
     });
 
+    jQuery('#show_republicans_only').click(function() {
+        var faded = jQuery('#syria_leaning .fade')
+        for (var i = 0; i < faded.length; i++) {
+            faded[i].setAttribute('class', faded[i].getAttribute('class').replace(/\sfade/, '')); 
+        }
+        var tofade = jQuery('#syria_leaning .democratic');
+        for (var i = 0; i < tofade.length; i++) {
+            tofade[i].setAttribute('class', tofade[i].getAttribute('class') + ' fade'); 
+        }
+    });
+    jQuery('#show_democrats_only').click(function() {
+        var faded = jQuery('#syria_leaning .fade')
+        for (var i = 0; i < faded.length; i++) {
+            faded[i].setAttribute('class', faded[i].getAttribute('class').replace(/\sfade/, '')); 
+        }
+        var tofade = jQuery('#syria_leaning .republican');
+        for (var i = 0; i < tofade.length; i++) {
+            tofade[i].setAttribute('class', tofade[i].getAttribute('class') + ' fade'); 
+        }
+    });
+
     jQuery(document).click(function() {
         jQuery('svg circle').bind('mousemove', function(e){
           tooltip_element.css('left', e.pageX + 10)
@@ -296,7 +317,7 @@ seat_filler.add_weak_r_yes = function(leaning, seat_count) {
         var circle = document.getElementById('seat' + seat_count);
         seat_count++;
         circle.setAttribute('class', 'weakRyes ' + weak_r_yes[i].name.replace(/\s/, '')
-                + ' weak republican no');
+                + ' weak republican yes');
         circle.setAttribute('data-tooltip', weak_r_yes[i].tooltip);
     }
     return seat_count;
