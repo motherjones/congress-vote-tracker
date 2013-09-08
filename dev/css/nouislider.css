@@ -11,6 +11,16 @@
 }
 .noUiSlider {
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+#time_picker_label {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 150px;
+  display: block;
 }
 .noUiSlider a {
   position: absolute;
