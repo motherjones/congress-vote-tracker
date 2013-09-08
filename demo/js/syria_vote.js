@@ -465,3 +465,28 @@ seat_filler.add_strong_r_no = function(leaning, seat_count) {
     }
     return seat_count;
 };
+
+function fixWebkitHeightBug(){
+
+    //broke in ff
+var svgW = 1280;
+var svgH = 659.89313;
+var curSVGW = $('#syria_leaning').width();
+if(curSVGW === 100) { return; }
+var newSVGH = heightInRatio(svgH,svgW,curSVGW);
+$('#syria_leaning').height(newSVGH);
+
+}
+function heightInRatio(oH,oW,nW){
+
+return (oH / oW * nW);
+
+}
+
+
+$(window).resize(function() {
+fixWebkitHeightBug();
+});
+$(document).ready(function() {
+fixWebkitHeightBug();
+});
