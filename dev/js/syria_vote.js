@@ -36,7 +36,7 @@ window.onload = function() {
 
 
     var time_container = jQuery('#time_picker');
-    var label_value_now = 'Latest tally';
+    var label_value_now = 'Latest vote tally';
     var time_label = jQuery('<label id="time_picker_label">' + label_value_now + '</label>');
     time_container.after(time_label);
     time_container.noUiSlider({
