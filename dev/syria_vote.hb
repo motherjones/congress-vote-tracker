@@ -51,7 +51,6 @@
 		<p class="hed">Decision in Syria</p>
 		<p><span class="breakdown_number">217</span> Votes Needed To Pass or Fail</p>
 		</section>
-	</div>
 	<div id="vote_breakdown_counter">
 	    <ul>
 			<li><p><img src="css/assets/no.png" /> No: <span id="breakdown_no" class="breakdown_number">&nbsp;</span></p></li>
@@ -522,6 +521,6 @@
 <div id="time_picker" class="noUiSlider">
 </div>
 <button id="play_times">See changes over time</button>
-
+</div>
 </body>
 </html>
