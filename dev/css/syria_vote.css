@@ -73,6 +73,8 @@ circle,
   font-size: 12px;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   color: #2d2d2d;
+  margin-top: 4px;
+  margin-bottom: 6px;
 }
 #vote_breakdown_counter span {
   font-weight: normal;
