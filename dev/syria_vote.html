@@ -47,7 +47,10 @@
 
 <body>
 	<div id="pass_fail">
+		<section id="banner">
+		<p class="hed">Decision in Syria</p>
 		<p><span class="breakdown_number">217</span> Votes Needed To Pass or Fail</p>
+		</section>
 	</div>
 	<div id="vote_breakdown_counter">
 	    <ul>
@@ -518,7 +521,7 @@
 
 <div id="time_picker" class="noUiSlider">
 </div>
-<button id="play_times">Play</button>
+<button id="play_times">See changes over time</button>
 
 </body>
 </html>
