@@ -48,7 +48,7 @@
 	<div id="pass_fail">
 		<section id="banner">
 		<p class="hed">Decision in Syria</p>
-		<p><span class="breakdown_number">217</span> Votes Needed To Pass or Fail</p>
+		<p class="dek"><span class="breakdown_number">217</span> Votes Needed To Pass or Fail</p>
 		</section>
 	<div id="vote_breakdown_counter">
 	    <ul>
