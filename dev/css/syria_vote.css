@@ -47,7 +47,7 @@ circle,
   text-align: center;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 1.7em;
+  font-size: 1.2em;
 }
 #vote_breakdown_counter {
   width: 100%;
@@ -62,7 +62,6 @@ circle,
 }
 #vote_breakdown_counter li {
   display: inline-block;
-  margin-right: 3px;
 }
 #vote_breakdown_counter ul img {
   margin-bottom: -3px;
@@ -70,7 +69,7 @@ circle,
   width: 15px;
 }
 #vote_breakdown_counter p {
-  font-size: 12px;
+  font-size: 13px;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
   color: #2d2d2d;
   margin-top: 4px;
@@ -79,56 +78,69 @@ circle,
 #vote_breakdown_counter span {
   font-weight: normal;
 }
+#party_picker {
+  margin-bottom: 1em;
+}
 #show_republicans_only,
 #show_democrats_only,
 #show_all_parties {
-  padding: 2em;
-  -moz-box-shadow: inset 2px -6px 39px 5px #000000;
-  -webkit-box-shadow: inset 2px -6px 39px 5px #000000;
-  box-shadow: inset 2px -6px 39px 5px #000000;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2d2d2d), color-stop(1, #636163));
-  background: -moz-linear-gradient(center top, #2d2d2d 5%, #636163 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2d2d2d', endColorstr='#636163');
-  background-color: #2d2d2d;
-  -webkit-border-top-left-radius: 5px;
-  -moz-border-radius-topleft: 5px;
-  border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  -moz-border-radius-topright: 5px;
-  border-top-right-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  -moz-border-radius-bottomright: 5px;
-  border-bottom-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  border-bottom-left-radius: 5px;
-  text-indent: 0px;
-  border: 1px solid #ffffff;
-  display: inline-block;
-  color: #ffffff;
-  font-family: Trebuchet MS;
-  font-size: 15px;
-  font-weight: normal;
-  font-style: normal;
-  height: 48px;
-  line-height: 48px;
-  width: 150px;
-  text-decoration: none;
-  text-align: center;
+  background-color: #eee;
+  border: 4px solid #ccc;
+  color: #ccc;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: normal;
+  margin-bottom: 1em;
+  margin-left: .2em;
+  margin-right: .2em;
+  text-transform: uppercase;
+  padding: 4px;
+  margin-right: 3px;
 }
-#show_republicans_only:hover,
-#show_democrats_only:hover,
+#show_republicans_only:hover {
+  cursor: pointer;
+  background-color: #EF4023;
+  border: 4px solid #CD371E;
+  color: #fff;
+  -moz-transition: all 0.15s;
+  -o-transition: all 0.15s;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+#show_republicans_only.selected {
+  background-color: #EF4023;
+  border: 4px solid #CD371E;
+  color: #fff;
+}
+#show_democrats_only:hover {
+  cursor: pointer;
+  background-color: #0168A2;
+  border: 4px solid #304481;
+  color: #fff;
+  -moz-transition: all 0.15s;
+  -o-transition: all 0.15s;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+#show_democrats_only.selected {
+  background-color: #0168A2;
+  border: 4px solid #304481;
+  color: #fff;
+}
 #show_all_parties:hover {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #636163), color-stop(1, #2d2d2d));
-  background: -moz-linear-gradient(center top, #636163 5%, #2d2d2d 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#636163', endColorstr='#2d2d2d');
-  background-color: #636163;
+  cursor: pointer;
+  background-color: #515151;
+  border: 4px solid #2d2d2d;
+  color: #fff;
+  -moz-transition: all 0.15s;
+  -o-transition: all 0.15s;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
 }
-#show_republicans_only:active,
-#show_democrats_only:active,
-#show_all_parties:active {
-  position: relative;
-  top: 1px;
+#show_all_parties.selected {
+  background-color: #515151;
+  border: 4px solid #2d2d2d;
+  color: #fff;
 }
 text {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
