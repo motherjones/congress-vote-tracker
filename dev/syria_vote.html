@@ -26,10 +26,12 @@
     ];
 
     var tooltip_template = ' \
-        <h3>{name}</h3> \
-        <p>Party Affiliation: {party}</p> \
-        <p>{strength} {lean}</p> \
+        <section id="member_stats"> \
+		<h3>{name}</h3> \
+        <p>{party}</p> \
+        <p>Status: <span style="text-transform:capitalize;">{strength}</span> {lean}</p> \
         <p><a target="_blank" href="{source}">source</a></p> \
+		</section> \
     ';
 </script>
 <script src="data/syria_vote.sep5.6pm.json" type="text/javascript"></script>
@@ -514,7 +516,7 @@
 <div id="party_picker">
     <button id="show_republicans_only">Just Republicans</button> 
     <button id="show_democrats_only">Just Democrats</button> 
-    <button id="show_all_parties" class="selected">Show All Parties</button> 
+    <button id="show_all_parties">Show All Parties</button> 
 </div>
 
 </body>
