@@ -517,8 +517,8 @@
 </svg>
 
 <div id="time_picker" class="noUiSlider">
-<a id="play_times">&gt;</a>
 </div>
+<button id="play_times">Play</button>
 
 </body>
 </html>
