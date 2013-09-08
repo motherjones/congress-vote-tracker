@@ -514,7 +514,7 @@
 <div id="party_picker">
     <button id="show_republicans_only">Just Republicans</button> 
     <button id="show_democrats_only">Just Democrats</button> 
-    <button id="show_all_parties">Show All Parties</button> 
+    <button id="show_all_parties" class="selected">Show All Parties</button> 
 </div>
 
 </body>
