@@ -53,7 +53,7 @@
 	<div id="vote_breakdown_counter">
 	    <ul>
 			<li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets/no.png" /> No: <span id="breakdown_no" class="breakdown_number">&nbsp;</span></p></li>
-	    <li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets/lean-yes.png" /> Leaning No: <span id="breakdown_weak_no" class="breakdown_number">&nbsp;</span></p></li>
+	    <li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets/lean-no.png" /> Leaning No: <span id="breakdown_weak_no" class="breakdown_number">&nbsp;</span></p></li>
 		<li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets/undecided.png" /> Undecided: <span id="breakdown_neither" class="breakdown_number">&nbsp;</span></p></li>
 		<li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets/empty-seat.png" /> Vacancy</p></li>
 	    <li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets/lean-yes.png" /> Leaning Yes: <span id="breakdown_weak_yes" class="breakdown_number">&nbsp;</span></p></li>
