@@ -59,9 +59,9 @@ circle, .fade {
 }
 
 #vote_breakdown_counter {
-	border: 2px solid #D8D6D6;
 	width: 100%;
 	margin: 1em 0 1em 0;
+	text-align:center;
 }
 
 #vote_breakdown_counter ul {
@@ -93,6 +93,54 @@ circle, .fade {
 
 #vote_breakdown_counter span {
 	font-weight: normal;
+}
+
+#show_republicans_only, #show_democrats_only, #show_all_parties {
+	padding: 2em;
+	-moz-box-shadow:inset 2px -6px 39px 5px #000000;
+	-webkit-box-shadow:inset 2px -6px 39px 5px #000000;
+	box-shadow:inset 2px -6px 39px 5px #000000;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #2d2d2d), color-stop(1, #636163) );
+	background:-moz-linear-gradient( center top, #2d2d2d 5%, #636163 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2d2d2d', endColorstr='#636163');
+	background-color:#2d2d2d;
+	-webkit-border-top-left-radius:5px;
+	-moz-border-radius-topleft:5px;
+	border-top-left-radius:5px;
+	-webkit-border-top-right-radius:5px;
+	-moz-border-radius-topright:5px;
+	border-top-right-radius:5px;
+	-webkit-border-bottom-right-radius:5px;
+	-moz-border-radius-bottomright:5px;
+	border-bottom-right-radius:5px;
+	-webkit-border-bottom-left-radius:5px;
+	-moz-border-radius-bottomleft:5px;
+	border-bottom-left-radius:5px;
+	text-indent:0px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:15px;
+	font-weight:normal;
+	font-style:normal;
+	height:48px;
+	line-height:48px;
+	width:150px;
+	text-decoration:none;
+	text-align:center;
+}
+
+#show_republicans_only:hover, #show_democrats_only:hover, #show_all_parties:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #636163), color-stop(1, #2d2d2d) );
+	background:-moz-linear-gradient( center top, #636163 5%, #2d2d2d 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#636163', endColorstr='#2d2d2d');
+	background-color:#636163;
+}
+
+#show_republicans_only:active, #show_democrats_only:active, #show_all_parties:active {
+	position:relative;
+	top:1px;	
 }
 
 text {
