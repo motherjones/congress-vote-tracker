@@ -1,88 +1,72 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <script src="js/libs/jquery/jquery.js" type="text/javascript"></script>
+<script src="js/libs/jquery.nouislider.min.js" type="text/javascript"></script>
 <script src="js/libs/tabletop.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/libs/dust-full-1.2.3.min.js"></script>
 <link rel="stylesheet" href="css/syria_vote.min.css" type="text/css"></style>
 <script>
     var dataset_times = [];
+    var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0AmXJhRgn8UhudFlwcFdEVWt5TXdCRGFPWW5Pd21Sd3c&output=html';
+    var seat_fillers = [
+        'add_strong_d_no',
+		'add_strong_r_no',
+        'add_weak_d_no',
+		'add_weak_r_no',
+        'add_d_undecided',
+		'add_d_unknown',
+		'add_r_undecided',
+		'add_r_unknown',
+		'add_empty',
+        'add_weak_d_yes',
+		'add_weak_r_yes',
+        'add_strong_d_yes',
+        'add_strong_r_yes',
+    ];
+
+    var tooltip_template = ' \
+        <section id="member_stats"> \
+		<h3>{name}</h3> \
+        <p>{party}</p> \
+        <p>Status: <span style="text-transform:capitalize;">{strength}</span> {lean}</p> \
+        <p><a target="_blank" href="{source}">source</a></p> \
+		</section> \
+    ';
 </script>
 <script src="data/syria_vote.sep5.6pm.json" type="text/javascript"></script>
 <script src="data/syria_vote.sep6.12am.json" type="text/javascript"></script>
 <script src="data/syria_vote.sep6.6am.json" type="text/javascript"></script>
 <script src="data/syria_vote.sep6.12pm.json" type="text/javascript"></script>
+<script src="data/syria_vote.sep6.6pm.json" type="text/javascript"></script>
+<script src="data/syria_vote.sep7.12am.json" type="text/javascript"></script>
+<script src="data/syria_vote.sep7.6am.json" type="text/javascript"></script>
+<script src="data/syria_vote.sep7.12pm.json" type="text/javascript"></script>
+<script src="data/syria_vote.sep7.6pm.json" type="text/javascript"></script>
 <script src="js/syria_vote.min.js" type="text/javascript"></script>
-<style>
-#tooltip {
-    background-color: white;
-    border-radius: 5px;
-    border: 2px solid black;
-    padding: 1em;
-}
 
-circle {
-  fill: rgb(255, 255, 255);
-  stroke: rgb(31, 119, 180);
-  stroke-width: 1px;
-}
-.strongDno {
-    fill: blue;
-}
-.weakDno {
-    fill: blue;
-    fill-opacity: .5;
-}
-.strongRno {
-    fill: red;
-}
-.weakRno {
-    fill: red;
-    fill-opacity: .5;
-}
-
-.strongDyes {
-    fill: blue;
-}
-.weakDyes {
-    fill: blue;
-    fill-opacity: .5;
-}
-
-.strongRyes {
-    fill: red;
-}
-.weakRyes {
-    fill: red;
-    fill-opacity: .5;
-}
-.d_undecided {
-    fill: #999999;
-}
-.d_unknown {
-    fill: #555555;
-}
-.r_undecided {
-    fill: #999999;
-}
-.r_unknown {
-    fill: #555555;
-}
-text {
-  font: 10px sans-serif;
-}
-
-</style>
 <body>
+	<div id="pass_fail">
+		<section id="banner">
+		<p class="hed">House Vote: Syria</p>
+		<p class="dek"><span class="breakdown_number">217</span> Votes Needed To Pass or Fail</p>
+		</section>
+	<div id="vote_breakdown_counter">
+	    <ul>
+			<li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets/no.png" /> No: <span id="breakdown_no" class="breakdown_number">&nbsp;</span></p></li>
+	    <li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets/lean-yes.png" /> Leaning No: <span id="breakdown_weak_no" class="breakdown_number">&nbsp;</span></p></li>
+		<li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets/undecided.png" /> Undecided: <span id="breakdown_neither" class="breakdown_number">&nbsp;</span></p></li>
+		<li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets/empty-seat.png" /> Vacancy</p></li>
+	    <li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets/lean-yes.png" /> Leaning Yes: <span id="breakdown_weak_yes" class="breakdown_number">&nbsp;</span></p></li>
+	    <li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets/yes.png" /> Yes: <span id="breakdown_yes" class="breakdown_number">&nbsp;</span></p></li>
+		</ul>
+	</div>
+	<div id="party_picker">
+	    <button id="show_republicans_only">Republicans</button> 
+	    <button id="show_democrats_only">Democrats</button> 
+	    <button id="show_all_parties">All Parties</button> 
+	</div>
 
-    <div id="time_picker">
-        <button id="current">As of right now</button>
-    </div>
-
-<script>
-var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0AmXJhRgn8UhudFlwcFdEVWt5TXdCRGFPWW5Pd21Sd3c&output=html';
-</script>
-
-<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.0" viewBox="0 0 1280 659.89313" id="syria_leaning" inkscape:version="0.48.4 r9939" sodipodi:docname="113USHouseStructure.svg">
+<svg preserveAspectRatio="xMinYMin slice" style="width:100%;height:100%" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.0" viewBox="0 0 1280 659.89313" id="syria_leaning" inkscape:version="0.48.4 r9939" sodipodi:docname="113USHouseStructure.svg">
   <metadata id="metadata884">
     <rdf:rdf>
       <cc:work rdf:about="">
@@ -532,5 +516,10 @@ var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0AmXJh
     <circle d="m 354.06001,176.36 c 0,2.01032 -1.62968,3.64 -3.64,3.64 -2.01031,0 -3.64,-1.62968 -3.64,-3.64 0,-2.01032 1.62969,-3.64 3.64,-3.64 2.01032,0 3.64,1.62968 3.64,3.64 z" sodipodi:ry="3.6400001" sodipodi:rx="3.6400001" sodipodi:cy="176.36" sodipodi:cx="350.42001" id="seat434" r="3.6400001" cy="176.36" cx="350.42001" transform="matrix(3.56199,0,0,-3.56199,-15.218219,201.31071)"></circle>
     </g>
 </svg>
+
+<div id="time_picker" class="noUiSlider">
+</div>
+<button id="play_times">See changes over time</button>
+</div>
 </body>
 </html>
