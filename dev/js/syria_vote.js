@@ -59,6 +59,9 @@ window.onload = function() {
     });
 
     play_time = function(i) {
+        if (typeof(i) === 'undefined') {
+            i = time_container.val() + 1;
+        }
         time_container.val(i);
         count_whip(cleaned_times[i]);
         displayed_leaning = cleaned_times[i];
@@ -68,11 +71,14 @@ window.onload = function() {
             : function() { for (var k in dataset_times[i]) return k }
         time_label.text(title);
         if (i < dataset_times.length) {
-            setTimeout(function() {play_time(i+1)}, 1000);
+            setTimeout(function() {play_time()}, 1000);
+        } else { 
+            jQuery('#play_times').removeClass('selected');
         }
     }
 
     jQuery('#play_times').click(function() {
+        jQuery('#play_times').addClass('selected');
         play_time(0);
         return false;
     })
