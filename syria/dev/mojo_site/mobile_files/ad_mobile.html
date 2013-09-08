@@ -1,0 +1,68 @@
+
+<!-- saved from url=(0118)http://m.bd6.motherjones.com/ad_mobile.html?ad_location=x05&ad_locations=x05,x15&additional_classes=none&RNS=185219186 -->
+<html style="height: 50px; overflow: hidden;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            body {
+                margin: 0px;
+                padding: 0px;
+                overflow: hidden;
+                text-align: center;
+            }
+        </style>
+        <script>
+            function DisplayAds(location_string, options){
+                var RN = new String (Math.random());
+                options.RNS = RN.substring (2, 11);
+
+              var oas="http://oascentral.motherjones.com/RealMedia/ads/";
+              var sitepage = 'motherjones.com/mobile.html';
+
+              var script_call = sitepage + "/1" + options.RNS + "@" + location_string;
+
+              var parameter_start = '?';
+              if ( options.RM_exclusion_category ) {
+                  script_call += parameter_start + 'RM_Exclude=' + options.RM_exclusion_category;
+                  parameter_start = '&';
+              }
+
+              if ( options.ad_primary_tags ) {
+                  options.ad_primary_tags = options.ad_primary_tags.split(',');
+                  script_call += parameter_start + 'XE';
+                  parameter_start = '&';
+                  //all analytics stuff must go in here, beware if block above
+                  for ( var i = 0; i < options.ad_primary_tags.length; i++ ) {
+                      script_call += '&PrimaryTag=' + options.ad_primary_tags[i];
+                  }
+                  //end block where we can put analytics
+                  script_call += '&XE';
+              }
+              output = ('<SCRIPT LANGUAGE=javascript SRC="' + oas + "adstream_jx.ads/" + script_call + '">');
+              output += ("<!-- -->");
+              output += ("</SC" + "RIPT>");
+              output += ("<!-- -->");
+              return output;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="container">
+        <script>
+            ( function() {
+                var param_array = document.location.search.replace('?', '').split('&');
+                var param_obj = {};
+                for (var i = 0; i < param_array.length; i++ ) {
+                    var param = param_array[i].split('=');
+                    param_obj[param[0]] = param[1]
+                }
+                location_string = param_obj.ad_locations + '!' + param_obj.ad_location;
+
+                document.write( 
+                    DisplayAds(location_string, param_obj)
+                );
+            })();
+        </script><script language="javascript" src="1356291954@x05,x15!x05"><!-- --></script><script type="text/javascript" src="5ce"></script><script src="javascriptGetAd.php"></script><a href="http://107.20.15.67/fam/ck.php?p=__pid=d593cf7bd8e36797__sid=50293__bid=599929__cb=cd829326e5__h=1358554922__uid=d593cf7bd8e36797ff9fb53d3671fbffd5a90f7c903484cd__s=809010a369b4638135dd534574db85f4" target="_self"><img src="13517287816955_BankAlternative__320.jpg" width="320" height="50" alt="" title="" border="0"></a>
+<!-- -->
+        </div>
+    
+
+</body></html>
