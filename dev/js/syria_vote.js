@@ -382,12 +382,12 @@ seat_filler.add_empty = function(leaning, seat_count) {
     document.getElementById('seat' + seat_count).setAttribute('class', 'empty_seat'
                 + (showing_d_only || showing_r_only ? ' fade' : '')
     );
-    document.getElementById('seat' + seat_count).setAttribute('data-tooltip', 'Empty Seat');
+    document.getElementById('seat' + seat_count).setAttribute('data-tooltip', 'Vacant Seat');
     seat_count++;
     document.getElementById('seat' + seat_count).setAttribute('class', 'empty_seat'
                 + (showing_d_only || showing_r_only ? ' fade' : '')
     );
-    document.getElementById('seat' + seat_count).setAttribute('data-tooltip', 'Empty Seat');
+    document.getElementById('seat' + seat_count).setAttribute('data-tooltip', 'Vacant Seat');
     seat_count++;
     return seat_count;
 };
