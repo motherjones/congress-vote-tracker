@@ -1,3 +1,4 @@
 .DS_Store
 dev/css/syria_vote.css
 dev/syria_vote.html
+node_modules
