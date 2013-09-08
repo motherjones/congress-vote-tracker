@@ -15,6 +15,8 @@ var showing_d_only = false;
 var showing_r_only = false;
 var displayed_leaning;
 
+var play_time;
+
 var compiled_tooltip = dust.compile(tooltip_template, 'tooltip');
 dust.loadSource(compiled_tooltip);
 
@@ -55,6 +57,25 @@ window.onload = function() {
             time_label.text(title);
         },
     });
+
+    play_time = function(i) {
+        time_container.val(i);
+        count_whip(cleaned_times[i]);
+        displayed_leaning = cleaned_times[i];
+
+        var title = (i === dataset_times.length)
+            ? label_value_now
+            : function() { for (var k in dataset_times[i]) return k }
+        time_label.text(title);
+        if (i < dataset_times.length) {
+            setTimeout(function() {play_time(i+1)}, 1000);
+        }
+    }
+
+    jQuery('#play_times').click(function() {
+        play_time(0);
+        return false;
+    })
 
     Tabletop.init( { 
         key: public_spreadsheet_url,

@@ -512,6 +512,7 @@
 </svg>
 
 <div id="time_picker" class="noUiSlider">
+<a id="play_times">&gt;</a>
 </div>
 <div id="party_picker">
     <button id="show_republicans_only">Just Republicans</button> 
