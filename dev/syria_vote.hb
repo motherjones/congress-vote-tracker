@@ -5,7 +5,6 @@
 <script src="js/libs/tabletop.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/libs/dust-full-1.2.3.min.js"></script>
 <link rel="stylesheet" href="{{css}}" type="text/css"></style>
-<link rel="stylesheet" href="css/nouislider.css" type="text/css"></style>
 <script>
     var dataset_times = [];
     var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0AmXJhRgn8UhudFlwcFdEVWt5TXdCRGFPWW5Pd21Sd3c&output=html';
