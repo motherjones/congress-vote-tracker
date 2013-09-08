@@ -46,13 +46,6 @@ circle,
 .empty_seat.fade {
   transition: stroke-opacity 0.5s;
 }
-#pass_fail {
-  width: 100%;
-  text-align: center;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 1.7em;
-}
 #vote_breakdown_counter {
   width: 100%;
   margin: 1em 0 1em 0;
@@ -75,7 +68,6 @@ circle,
 }
 #vote_breakdown_counter p {
   font-size: 12px;
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
   color: #2d2d2d;
   margin-top: 4px;
   margin-bottom: 6px;
@@ -110,7 +102,6 @@ circle,
   border: 1px solid #ffffff;
   display: inline-block;
   color: #ffffff;
-  font-family: Trebuchet MS;
   font-size: 15px;
   font-weight: normal;
   font-style: normal;
@@ -134,12 +125,15 @@ circle,
   position: relative;
   top: 1px;
 }
-text {
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  color: red;
-}
 #play_times {
   right: -30px;
   top: -10px;
   font-size: 22px;
+}
+#pass_fail {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.7em;
 }
