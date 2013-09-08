@@ -136,6 +136,7 @@ circle,
 }
 text {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
+  color: red;
 }
 #play_times {
   right: -30px;
