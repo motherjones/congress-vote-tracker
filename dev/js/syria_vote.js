@@ -32,7 +32,7 @@ window.onload = function() {
     for (var i = 0; i < dataset_times.length; i++) {
         var time = dataset_times[i];
         var title;
-        for(var k in time) title = k;
+        for(var k in time) {title = k;}
         cleaned_times.push(cleanup_dataset(time[title]));
     }
 
@@ -53,7 +53,7 @@ window.onload = function() {
 
             var title = (value === dataset_times.length)
                 ? label_value_now
-                : function() { for (var k in dataset_times[value]) return k }
+                : function() { for (var k in dataset_times[value]) return k; }
             time_label.text(title);
         },
     });
@@ -68,10 +68,10 @@ window.onload = function() {
 
         var title = (i === dataset_times.length)
             ? label_value_now
-            : function() { for (var k in dataset_times[i]) return k }
+            : function() { for (var k in dataset_times[i]) return k; }
         time_label.text(title);
         if (i < dataset_times.length) {
-            setTimeout(function() {play_time()}, 1000);
+            setTimeout(function() {play_time();}, 1000);
         } else { 
             jQuery('#play_times').removeClass('selected');
         }
@@ -81,17 +81,17 @@ window.onload = function() {
         jQuery('#play_times').addClass('selected');
         play_time(0);
         return false;
-    })
+    });
 
-    Tabletop.init( { 
+    Tabletop.init({ 
         key: public_spreadsheet_url,
         callback: function(dataset) {
-            var leaning = displayed_leaning = cleanup_dataset(dataset)
+            var leaning = displayed_leaning = cleanup_dataset(dataset);
             cleaned_times.push(leaning);
             count_whip(leaning);
         },
         simpleSheet: true 
-    } )
+    });
 
 
     jQuery('svg circle').bind('mouseout', function(){
@@ -107,7 +107,7 @@ window.onload = function() {
     jQuery('#show_all_parties').click(function() {
         jQuery('#party_picker .selected').removeClass('selected');
         jQuery('#show_all_parties').addClass('selected');
-        var faded = jQuery('#syria_leaning .fade')
+        var faded = jQuery('#syria_leaning .fade');
         for (var i = 0; i < faded.length; i++) {
             faded[i].setAttribute('class', faded[i].getAttribute('class').replace(/\sfade/, '')); 
         }
@@ -119,7 +119,7 @@ window.onload = function() {
     jQuery('#show_republicans_only').click(function() {
         jQuery('#party_picker .selected').removeClass('selected');
         jQuery('#show_republicans_only').addClass('selected');
-        var faded = jQuery('#syria_leaning .fade')
+        var faded = jQuery('#syria_leaning .fade');
         for (var i = 0; i < faded.length; i++) {
             faded[i].setAttribute('class', faded[i].getAttribute('class').replace(/\sfade/, '')); 
         }
@@ -134,7 +134,7 @@ window.onload = function() {
     jQuery('#show_democrats_only').click(function() {
         jQuery('#party_picker .selected').removeClass('selected');
         jQuery('#show_democrats_only').addClass('selected');
-        var faded = jQuery('#syria_leaning .fade')
+        var faded = jQuery('#syria_leaning .fade');
         for (var i = 0; i < faded.length; i++) {
             faded[i].setAttribute('class', faded[i].getAttribute('class').replace(/\sfade/, '')); 
         }
@@ -165,12 +165,12 @@ window.onload = function() {
             .html(jQuery(this).attr('data-tooltip'));
         
         if(e.stopPropagation) {
-            e.stopPropagation()
+            e.stopPropagation();
         } else {
             e.cancelBubble = true;
         }
         return false;
-    })
+    });
 };
 
 
@@ -247,15 +247,15 @@ var cleanup_dataset = function( dataset ) {
             lean: lean, 
             strength: strength,
             source: dataset[i].link
-        }
+        };
 
         dust.render('tooltip', member, function(err, out) {
             member.tooltip = out;
-        })
+        });
 
 
         if (lean === 'undecided' || lean === 'unknown') {
-            leaning[dataset[i].party][lean].push(member)
+            leaning[dataset[i].party][lean].push(member);
         } else {
             leaning[dataset[i].party][lean][strength].push(member);
         }
@@ -276,25 +276,25 @@ var count_whip = function(leaning) {
 
 var update_count = function(leaning) {
     if (!showing_d_only && !showing_r_only) {
-        jQuery('#breakdown_no').text( leaning.D.no.strong.length + leaning.R.no.strong.length)
-        jQuery('#breakdown_weak_no').text(leaning.D.no.weak.length + leaning.R.no.weak.length)
-        jQuery('#breakdown_yes').text( leaning.D.yes.strong.length + leaning.R.yes.strong.length)
-        jQuery('#breakdown_weak_yes').text(leaning.D.yes.weak.length + leaning.R.yes.weak.length)
-        jQuery('#breakdown_neither').text(leaning.D.unknown.length + leaning.D.undecided.length + leaning.R.unknown.length + leaning.R.undecided.length )
+        jQuery('#breakdown_no').text( leaning.D.no.strong.length + leaning.R.no.strong.length);
+        jQuery('#breakdown_weak_no').text(leaning.D.no.weak.length + leaning.R.no.weak.length);
+        jQuery('#breakdown_yes').text( leaning.D.yes.strong.length + leaning.R.yes.strong.length);
+        jQuery('#breakdown_weak_yes').text(leaning.D.yes.weak.length + leaning.R.yes.weak.length);
+        jQuery('#breakdown_neither').text(leaning.D.unknown.length + leaning.D.undecided.length + leaning.R.unknown.length + leaning.R.undecided.length );
     } else if ( showing_r_only ) {
-        jQuery('#breakdown_no').text( leaning.R.no.strong.length)
-        jQuery('#breakdown_weak_no').text( leaning.R.no.weak.length)
-        jQuery('#breakdown_yes').text( leaning.R.yes.strong.length)
-        jQuery('#breakdown_weak_yes').text( leaning.R.yes.weak.length)
-        jQuery('#breakdown_neither').text(leaning.R.unknown.length + leaning.R.undecided.length )
+        jQuery('#breakdown_no').text( leaning.R.no.strong.length);
+        jQuery('#breakdown_weak_no').text( leaning.R.no.weak.length);
+        jQuery('#breakdown_yes').text( leaning.R.yes.strong.length);
+        jQuery('#breakdown_weak_yes').text( leaning.R.yes.weak.length);
+        jQuery('#breakdown_neither').text(leaning.R.unknown.length + leaning.R.undecided.length );
     } else if ( showing_d_only ) {
-        jQuery('#breakdown_no').text( leaning.D.no.strong.length)
-        jQuery('#breakdown_weak_no').text( leaning.D.no.weak.length)
-        jQuery('#breakdown_yes').text( leaning.D.yes.strong.length)
-        jQuery('#breakdown_weak_yes').text( leaning.D.yes.weak.length)
-        jQuery('#breakdown_neither').text(leaning.D.unknown.length + leaning.R.undecided.length )
+        jQuery('#breakdown_no').text( leaning.D.no.strong.length);
+        jQuery('#breakdown_weak_no').text( leaning.D.no.weak.length);
+        jQuery('#breakdown_yes').text( leaning.D.yes.strong.length);
+        jQuery('#breakdown_weak_yes').text( leaning.D.yes.weak.length);
+        jQuery('#breakdown_neither').text(leaning.D.unknown.length + leaning.R.undecided.length );
     }
-}
+};
 
 var seat_filler = {};
 
@@ -310,7 +310,7 @@ seat_filler.add_strong_d_no = function(leaning, seat_count) {
         circle.setAttribute('data-tooltip', strong_d_no[i].tooltip);
     }
     return seat_count;
-}
+};
 
 seat_filler.add_weak_d_no = function(leaning, seat_count) {
     var weak_d_no = leaning.D.no.weak;
@@ -324,7 +324,7 @@ seat_filler.add_weak_d_no = function(leaning, seat_count) {
         circle.setAttribute('data-tooltip', weak_d_no[i].tooltip);
     }
     return seat_count;
-}
+};
 
 seat_filler.add_d_undecided = function(leaning, seat_count) {
     var d_undecided = leaning.D.undecided;
@@ -337,7 +337,7 @@ seat_filler.add_d_undecided = function(leaning, seat_count) {
         circle.setAttribute('data-tooltip', d_undecided[i].tooltip);
     }
     return seat_count;
-}
+};
 
 seat_filler.add_d_unknown = function(leaning, seat_count) {
     var d_unknown = leaning.D.unknown;
@@ -350,7 +350,7 @@ seat_filler.add_d_unknown = function(leaning, seat_count) {
         circle.setAttribute('data-tooltip', d_unknown[i].tooltip);
     }
     return seat_count;
-}
+};
 
 seat_filler.add_weak_d_yes = function(leaning, seat_count) {
     var weak_d_yes = leaning.D.yes.weak;
@@ -363,7 +363,7 @@ seat_filler.add_weak_d_yes = function(leaning, seat_count) {
         circle.setAttribute('data-tooltip', weak_d_yes[i].tooltip);
     }
     return seat_count;
-}
+};
 
 seat_filler.add_strong_d_yes = function(leaning, seat_count) {
     var strong_d_yes = leaning.D.yes.strong;
@@ -376,7 +376,7 @@ seat_filler.add_strong_d_yes = function(leaning, seat_count) {
         circle.setAttribute('data-tooltip', strong_d_yes[i].tooltip);
     }
     return seat_count;
-}
+};
 
 seat_filler.add_empty = function(leaning, seat_count) {
     document.getElementById('seat' + seat_count).setAttribute('class', 'empty_seat'
@@ -390,7 +390,7 @@ seat_filler.add_empty = function(leaning, seat_count) {
     document.getElementById('seat' + seat_count).setAttribute('data-tooltip', 'Empty Seat');
     seat_count++;
     return seat_count;
-}
+};
 
 seat_filler.add_strong_r_yes = function(leaning, seat_count) {
     var strong_r_yes = leaning.R.yes.strong;
@@ -403,7 +403,7 @@ seat_filler.add_strong_r_yes = function(leaning, seat_count) {
         circle.setAttribute('data-tooltip', strong_r_yes[i].tooltip );
     }
     return seat_count;
-}
+};
 
 seat_filler.add_weak_r_yes = function(leaning, seat_count) {
     var weak_r_yes = leaning.R.yes.weak;
@@ -416,7 +416,7 @@ seat_filler.add_weak_r_yes = function(leaning, seat_count) {
         circle.setAttribute('data-tooltip', weak_r_yes[i].tooltip);
     }
     return seat_count;
-}
+};
 
 seat_filler.add_r_unknown = function(leaning, seat_count) {
     var r_unknown = leaning.R.unknown;
@@ -429,7 +429,7 @@ seat_filler.add_r_unknown = function(leaning, seat_count) {
         circle.setAttribute('data-tooltip', r_unknown[i].tooltip + r_unknown[i].lean);
     }
     return seat_count;
-}
+};
 
 seat_filler.add_r_undecided = function(leaning, seat_count) {
     var r_undecided = leaning.R.undecided;
@@ -442,7 +442,7 @@ seat_filler.add_r_undecided = function(leaning, seat_count) {
         circle.setAttribute('data-tooltip', r_undecided[i].tooltip);
     }
     return seat_count;
-}
+};
 
 seat_filler.add_weak_r_no = function(leaning, seat_count) {
     var weak_r_no = leaning.R.no.weak;
@@ -455,7 +455,7 @@ seat_filler.add_weak_r_no = function(leaning, seat_count) {
         circle.setAttribute('data-tooltip', weak_r_no[i].tooltip);
     }
     return seat_count;
-}
+};
 
 seat_filler.add_strong_r_no = function(leaning, seat_count) {
     var strong_r_no = leaning.R.no.strong;
@@ -468,6 +468,4 @@ seat_filler.add_strong_r_no = function(leaning, seat_count) {
         circle.setAttribute('data-tooltip', strong_r_no[i].tooltip );
     }
     return seat_count;
-}
-
-
+};
