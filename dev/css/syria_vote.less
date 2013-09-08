@@ -1,5 +1,15 @@
 /* YEEEEAAAHHH I EXIST */
 
+#banner {
+	
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 15px;
+	width: 50%;
+	margin: 0 auto;
+	border-bottom: 1px solid #b7b7b7;
+}
+
 #tooltip {
     background-color: white;
     border-radius: 5px;
@@ -172,3 +182,121 @@ text {
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 
 }
+
+
+
+
+
+/* SLIDER */
+
+	.noUiSlider,
+	.noUiSlider * {
+-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+		box-sizing: border-box;
+-webkit-user-select: none;
+   -moz-user-select: none;
+	-ms-user-select: none;
+		display: block;
+		cursor: default;
+	}
+	.noUiSlider {
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 10px;
+	}
+	
+	#time_picker_label {
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		width: 350px;
+		display: block;
+		text-transform: uppercase;
+		padding: 10px;
+		font-family: arial;
+		color: #b7b7b7;
+	}
+
+	.noUiSlider a {
+		position: absolute;
+		z-index: 1;
+	}
+	.noUiSlider a:nth-child(2) {
+		background: inherit !important;
+	}
+	.noUiSlider.vertical a {
+		width: 100%;
+		bottom: 0;
+	}
+	.noUiSlider.horizontal a {
+		height: 100%;
+		right: 0;
+	}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.noUiSlider:before,
+	body.TOUCH,
+	.noUiSlider div {
+		-ms-touch-action: none;
+	}
+	.noUiSlider:before {
+		display: block;
+		position: absolute;
+		width: 150%;
+		left: -25%;
+		height: 400%;
+		top: -150%;
+		content: "";
+		z-index: -1;
+	}
+	.noUiSlider.vertical:before {
+		width: 400%;
+		left: -150%;
+		height: 150%;
+		top: -25%;
+	}
+}
+	.noUiSlider {
+		border: 1px solid #908d84;
+		border-radius: 3px;
+	}
+	.noUiSlider.connect a,
+	.noUiSlider.connect.lower {
+		background: #b2a98f;
+	}
+	.noUiSlider,
+	.noUiSlider.connect.lower a {
+		background: #d9d7cb;
+		box-shadow: inset 0px 1px 7px #b6b4a8
+	}
+	.noUiSlider.disabled,
+	.noUiSlider.disabled.connect.lower a {
+		background: #ccc;
+		box-shadow: none;
+	}
+	.noUiSlider div {
+		height: 18px;
+		width: 18px;
+		border: 1px solid #99968f;
+		border-radius: 3px;
+		background: #efefe7;
+	}
+	.noUiSlider.disabled div {
+		background: transparent;
+	}
+	.noUiSlider.horizontal {
+		width: 300px;
+		height: 10px;
+	}
+	.noUiSlider.horizontal div {
+		margin: -5px 0 0 -9px;
+	}
+	.noUiSlider.vertical {
+		width: 10px;
+		height: 300px;
+	}
+	.noUiSlider.vertical div {
+		margin: -9px 0 0 -5px;
+	}
