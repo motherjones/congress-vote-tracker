@@ -49,7 +49,7 @@ require([
 
     var tooltip_element = jQuery('<div id="tooltip" style="display: none; position: absolute;"><p>text</p></div>');
 
-    jQuery('svg').before(tooltip_element);
+    jQuery('body').append(tooltip_element);
 
     var time_container = jQuery('#time_picker');
     var label_value_now = 'Latest vote tally';
@@ -185,6 +185,9 @@ require([
             .css('top', e.pageY + 10)
             .css('display', 'block')
             .html(jQuery(this).attr('data-tooltip'));
+        });
+        jQuery('svg circle').bind('mouseout', function(){
+          tooltip_element.css('display', 'none');
         });
         tooltip_element.css('display', 'none');
     });

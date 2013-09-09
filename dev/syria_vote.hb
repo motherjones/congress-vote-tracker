@@ -1,8 +1,3 @@
-<!--script src="js/libs/jquery/jquery.js" type="text/javascript"></script>
-<script src="js/libs/jquery.nouislider.min.js" type="text/javascript"></script>
-<script src="js/libs/tabletop.js" type="text/javascript"></script>
-<script type="text/javascript" src="js/libs/dust-full-1.2.3.min.js"></script-->
-<link rel="stylesheet" href="{{css}}" type="text/css"></style>
 <script>
     var dataset_times = [];
     var public_spreadsheet_url = 'https://docs.google.com/spreadsheet/pub?key=0AmXJhRgn8UhudFlwcFdEVWt5TXdCRGFPWW5Pd21Sd3c&output=html';
@@ -48,11 +43,6 @@
 <script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep9.6am.json" type="text/javascript"></script>
 <script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep9.12pm.json" type="text/javascript"></script>
 
-
-<!--script src="{{js}}" type="text/javascript"></script-->
-
-<script data-main="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/syria_vote" src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/require.js"></script>
-
 	<div id="pass_fail">
 		<section id="banner">
 		<p class="hed">House Vote: Syria</p>
@@ -75,15 +65,6 @@
 	</div>
 
 <svg preserveAspectRatio="xMinYMin slice"  style="width:100%;height:100%" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.0" viewBox="0 0 1280 659.89313" id="syria_leaning" inkscape:version="0.48.4 r9939" sodipodi:docname="113USHouseStructure.svg">
-  <metadata id="metadata884">
-    <rdf:rdf>
-      <cc:work rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
-        <dc:title></dc:title>
-      </cc:work>
-    </rdf:rdf>
-  </metadata>
   <defs id="defs882"></defs>
   <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="1920" inkscape:window-height="1028" id="namedview880" showgrid="false" inkscape:zoom="0.70710677" inkscape:cx="661.87647" inkscape:cy="293.2561" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="g4" showguides="true" inkscape:guide-bbox="true" fit-margin-top="20" fit-margin-left="20" fit-margin-right="20" fit-margin-bottom="20"></sodipodi:namedview>
   <g id="g4" transform="translate(14.059999,459.88309)">
@@ -526,7 +507,8 @@
 </svg>
 
 <div id="time_picker" class="noUiSlider">
-&nbsp;
+    <span style="display:none;" class="ffswhyisourwysiwygsobizarre">&nbsp;</span>
 </div>
 <button id="play_times">See changes over time</button>
 </div>
+<script data-main="http://mjassets.s3.amazonaws.com/interactives/projects/2013/09/syria-vote/js/syria_vote" src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/require.js"></script>
