@@ -16,6 +16,7 @@ var showing_r_only = false;
 var displayed_leaning;
 
 var play_time;
+var halt_play_time = false;
 
 var compiled_tooltip = dust.compile(tooltip_template, 'tooltip');
 dust.loadSource(compiled_tooltip);
@@ -57,6 +58,10 @@ window.onload = function() {
     });
 
     play_time = function(i) {
+        if (halt_play_time) {
+            halt_play_time = false;
+            return;
+        }
         if (typeof(i) === 'undefined') {
             i = time_container.val() + 1;
         }
@@ -76,9 +81,23 @@ window.onload = function() {
     }
 
     jQuery('#play_times').click(function() {
-        jQuery('#play_times').addClass('selected');
-        play_time(0);
+        if ( jQuery('#play_times').hasClass('selected') ) {
+            jQuery('#play_times').removeClass('selected');
+            halt_play_time = true;
+        } else {
+            halt_play_time = false;
+            jQuery('#play_times').addClass('selected');
+            if( time_container.val() < dataset_times.length) {
+                play_time();
+            } else {
+                play_time(0);
+            }
+        }
         return false;
+    });
+    time_container.click(function() {
+        halt_play_time = true;
+        jQuery('#play_times').removeClass('selected');
     });
 
     Tabletop.init({ 
