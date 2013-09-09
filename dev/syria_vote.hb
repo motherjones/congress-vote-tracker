@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<script src="js/libs/jquery/jquery.js" type="text/javascript"></script>
+<!--script src="js/libs/jquery/jquery.js" type="text/javascript"></script>
 <script src="js/libs/jquery.nouislider.min.js" type="text/javascript"></script>
 <script src="js/libs/tabletop.js" type="text/javascript"></script>
-<script type="text/javascript" src="js/libs/dust-full-1.2.3.min.js"></script>
+<script type="text/javascript" src="js/libs/dust-full-1.2.3.min.js"></script-->
 <link rel="stylesheet" href="{{css}}" type="text/css"></style>
 <script>
     var dataset_times = [];
@@ -33,27 +31,28 @@
 		</section> \
     ';
 </script>
-<script src="data/syria_vote.sep5.6pm.json" type="text/javascript"></script>
-<script src="data/syria_vote.sep6.12am.json" type="text/javascript"></script>
-<script src="data/syria_vote.sep6.6am.json" type="text/javascript"></script>
-<script src="data/syria_vote.sep6.12pm.json" type="text/javascript"></script>
-<script src="data/syria_vote.sep6.6pm.json" type="text/javascript"></script>
-<script src="data/syria_vote.sep7.12am.json" type="text/javascript"></script>
-<script src="data/syria_vote.sep7.6am.json" type="text/javascript"></script>
-<script src="data/syria_vote.sep7.12pm.json" type="text/javascript"></script>
-<script src="data/syria_vote.sep7.6pm.json" type="text/javascript"></script>
-<script src="data/syria_vote.sep8.12am.json" type="text/javascript"></script>
-<script src="data/syria_vote.sep8.6am.json" type="text/javascript"></script>
-<script src="data/syria_vote.sep8.12pm.json" type="text/javascript"></script>
-<script src="data/syria_vote.sep8.6pm.json" type="text/javascript"></script>
-<script src="data/syria_vote.sep9.12am.json" type="text/javascript"></script>
-<script src="data/syria_vote.sep9.6am.json" type="text/javascript"></script>
-<script src="data/syria_vote.sep9.12pm.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep5.6pm.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep6.12am.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep6.6am.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep6.12pm.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep6.6pm.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep7.12am.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep7.6am.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep7.12pm.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep7.6pm.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep8.12am.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep8.6am.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep8.12pm.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep8.6pm.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep9.12am.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep9.6am.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep9.12pm.json" type="text/javascript"></script>
 
 
-<script src="{{js}}" type="text/javascript"></script>
+<!--script src="{{js}}" type="text/javascript"></script-->
 
-<body>
+<script data-main="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/syria_vote" src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/require.js"></script>
+
 	<div id="pass_fail">
 		<section id="banner">
 		<p class="hed">House Vote: Syria</p>
@@ -527,8 +526,7 @@
 </svg>
 
 <div id="time_picker" class="noUiSlider">
+&nbsp;
 </div>
 <button id="play_times">See changes over time</button>
 </div>
-</body>
-</html>
