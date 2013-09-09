@@ -25,9 +25,7 @@ var tooltip_element = jQuery('<div id="tooltip" style="display: none; position: 
 window.onload = function() {
     jQuery('svg').before(tooltip_element);
 
-    dataset_times.sort();
-
-
+//    dataset_times.sort(); oh god don't do this
     var cleaned_times = [];
     for (var i = 0; i < dataset_times.length; i++) {
         var time = dataset_times[i];
