@@ -114,13 +114,13 @@ circle, .fade {
 	margin-bottom: 1em;
 	left: 50%;
 	position: relative;
-	margin-left: -159px;
+	margin-left: -225px;
 }
 
 #show_republicans_only, #show_democrats_only, #show_all_parties, #play_times {
-	background-color: #eee;
+	background-color: #4C4C4A;
 	border: 4px solid #ccc;
-	color: #ccc;
+	color: #eee;
 	font-weight: bold;
 	letter-spacing: 1px;
 	line-height: normal;
@@ -131,6 +131,11 @@ circle, .fade {
 	padding: 4px;
 	margin-right: 3px;	
 } 
+
+#play_times {
+	background-color: #2d2d2d;
+	padding: 10px;
+}
 
 #show_republicans_only:hover, #show_republicans_only.selected {
 	cursor: pointer;
@@ -176,21 +181,13 @@ text {
     margin-right: auto;
     display:block
 }
+
 #play_times.selected, #play_times:hover {
 	background-color: #515151;
 	border: 4px solid #2d2d2d;
 	color: #fff;
 	cursor: pointer;	
 }
-
-#pass_fail {
-
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	color: #292929;
-
-}
-
-
 
 
 
@@ -307,3 +304,40 @@ text {
 	.noUiSlider.vertical div {
 		margin: -9px 0 0 -5px;
 	}
+	
+/* mobile styles */
+
+@media only screen 
+and (max-width: 480px) {
+
+	#banner {
+		width: 100%;
+	}
+
+	#party_picker{
+		display: inline;
+	}
+	
+	#show_republicans_only, #show_democrats_only, #show_all_parties, #play_times {
+		background-color: #4C4C4A;
+		border: 4px solid #ccc;
+		color: #eee;
+		font-weight: bold;
+		letter-spacing: 1px;
+		line-height: normal;
+		margin-bottom: 1em;
+		margin-left: .2em;
+		margin-right: .2em;
+		text-transform: uppercase;
+		padding: 1em;
+		float: left;
+		clear: right;
+	} 
+
+	#play_times {
+		background-color: #2d2d2d;
+		padding: 20px;
+		left: 50%;
+		margin-left: -106px;
+	}
+}
