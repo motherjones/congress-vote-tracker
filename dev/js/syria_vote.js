@@ -47,7 +47,7 @@ require([
     var compiled_tooltip = dust.compile(tooltip_template, 'tooltip');
     dust.loadSource(compiled_tooltip);
 
-    var tooltip_element = jQuery('<div id="tooltip" style="display: none; position: absolute;"><p>text</p></div>');
+    var tooltip_element = jQuery('<div id="tooltip" style="display: none; position: absolute;" class="mobile-css-hide"><p>text</p></div>');
 
     jQuery('body').append(tooltip_element);
 

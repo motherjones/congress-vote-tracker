@@ -506,7 +506,7 @@
     </g>
 </svg>
 
-<div id="time_picker" class="noUiSlider">
+<div id="time_picker" class="noUiSlider mobile-css-hide">
     <span style="display:none;" class="ffswhyisourwysiwygsobizarre">&nbsp;</span>
 </div>
 <button id="play_times">See changes over time</button>
