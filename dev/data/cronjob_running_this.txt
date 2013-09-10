@@ -5,3 +5,8 @@ add this line
 @hourly cd /Users/bbreedlove/workspace/syria/ && /usr/local/bin/node /usr/local/lib/node_modules/grunt-cli/bin/grunt pull
 
 replace /Users/bbreedlove/workspace/syria/ with the path where you have this
+
+
+
+the cnn data can be had by
+wget http://www.cnn.com/interactive/2013/09/politics/syria-congress-vote-count/js/senate.js

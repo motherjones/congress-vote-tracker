@@ -565,22 +565,24 @@ require([
     jQuery('body').append(tooltip_element);
 
     var time_container = jQuery('#senate_time_picker');
-    //var label_value_now = 'Latest vote tally';
-    //var time_label = jQuery('<label id="time_picker_label">' + label_value_now + '</label>');
-    //time_container.after(time_label);
+    var label_value_now;
+    for (var k in senate_vote_times[senate_vote_times.length - 1]) { label_value_now = k; }
+    var time_label = jQuery('<label id="time_picker_label">' + label_value_now + '</label>');
+    time_container.after(time_label);
     time_container.noUiSlider({
-        range: [0, dataset_times.length],
+        range: [0, senate_vote_times.length - 1],
         handles: 1,
-        start: [dataset_times.length],
+        start: [senate_vote_times.length - 1],
         step: 1,
         slide: function() {
             var value = $(this).val();
+            console.log(value);
             count_whip(cleaned_times[value]);
             displayed_leaning = cleaned_times[value];
 
-            var title = (value === dataset_times.length)
+            var title = (value === senate_vote_times.length)
                 ? label_value_now
-                : function() { for (var k in dataset_times[value]) return k; }
+                : function() { for (var k in senate_vote_times[value]) return k; }
             time_label.text(title);
         },
     });
@@ -746,8 +748,6 @@ require([
             };
 
             dust.render('tooltip', member, function(err, out) {
-                console.log(member);
-                console.log(out);
                 member.tooltip = out;
             });
 
@@ -965,7 +965,6 @@ require([
         for(var k in time) {title = k;}
         cleaned_times.push(cleanup_dataset(time[title]));
     }
-    console.log(cleaned_times)
     count_whip(cleaned_times[cleaned_times.length - 1]);
 
 
