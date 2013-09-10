@@ -172,11 +172,6 @@ circle, g, .fade {
   transition: all 0.15s;	
 }
 
-text {
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-	color: red;
-}
-
 #play_times, #senate_play_times {
     position: relative;
     margin-left: auto;
@@ -330,31 +325,37 @@ and (max-width: 480px) {
 	#banner {
 		width: 100%;
 	}
-
-	#party_picker{
+	
+	#party_picker, #senate_party_picker {
 		display: inline;
+		margin-bottom: 2em;
 	}
 	
-	#show_republicans_only, #show_democrats_only, #show_all_parties, #play_times {
+	#party_picker button, #senate_party_picker button, #play_times {
 		background-color: #4C4C4A;
 		border: 4px solid #ccc;
 		color: #eee;
 		font-weight: bold;
 		letter-spacing: 1px;
 		line-height: normal;
-		margin-bottom: 1em;
 		margin-left: .2em;
 		margin-right: .2em;
+		margin-bottom: .2em;
 		text-transform: uppercase;
 		padding: 1em;
 		float: left;
 		clear: right;
+		width: 100%;
 	} 
 
-	#play_times {
+	#play_times, #senate_play_times {
 		background-color: #2d2d2d;
 		padding: 20px;
-		left: 50%;
-		margin-left: -106px;
+		width: 100%;
+		margin-bottom: 4em;
+	}
+	
+	.pass_fail svg {
+		margin-top: 1em;
 	}
 }
