@@ -541,3 +541,458 @@ require([
     });
 
 }); 
+require([
+        "tabletop",
+        "dust-full-1.2.3.min",
+        "jquery",
+        "jquery.nouislider.min"
+], function() {
+    "use strict";
+    var showing_d_only = false;
+    var showing_r_only = false;
+    var displayed_leaning;
+
+    var play_time;
+    var halt_play_time = false;
+
+    var cleaned_times = [];
+
+    var compiled_tooltip = dust.compile(senate_tooltip_template, 'tooltip');
+    dust.loadSource(compiled_tooltip);
+
+    var tooltip_element = jQuery('<div id="tooltip_senate" style="display: none; position: absolute;" class="mobile-css-hide"><p>text</p></div>');
+
+    jQuery('body').append(tooltip_element);
+
+    var time_container = jQuery('#senate_time_picker');
+    //var label_value_now = 'Latest vote tally';
+    //var time_label = jQuery('<label id="time_picker_label">' + label_value_now + '</label>');
+    //time_container.after(time_label);
+    time_container.noUiSlider({
+        range: [0, dataset_times.length],
+        handles: 1,
+        start: [dataset_times.length],
+        step: 1,
+        slide: function() {
+            var value = $(this).val();
+            count_whip(cleaned_times[value]);
+            displayed_leaning = cleaned_times[value];
+
+            var title = (value === dataset_times.length)
+                ? label_value_now
+                : function() { for (var k in dataset_times[value]) return k; }
+            time_label.text(title);
+        },
+    });
+
+    play_time = function(i) {
+        if (halt_play_time) {
+            halt_play_time = false;
+            return;
+        }
+        if (typeof(i) === 'undefined') {
+            i = time_container.val() + 1;
+        }
+        time_container.val(i);
+        count_whip(cleaned_times[i]);
+        displayed_leaning = cleaned_times[i];
+
+        var title = (i === dataset_times.length)
+            ? label_value_now
+            : function() { for (var k in dataset_times[i]) return k; }
+        time_label.text(title);
+        if (i < dataset_times.length) {
+            setTimeout(function() {play_time();}, 1000);
+        } else { 
+            jQuery('#play_times').removeClass('selected');
+        }
+    }
+
+    jQuery('#senate_play_times').click(function() {
+        if ( jQuery('#senate_play_times').hasClass('selected') ) {
+            jQuery('#senate_play_times').removeClass('selected');
+            halt_play_time = true;
+        } else {
+            halt_play_time = false;
+            jQuery('#senate_play_times').addClass('selected');
+            if( time_container.val() < dataset_times.length) {
+                play_time();
+            } else {
+                play_time(0);
+            }
+        }
+        return false;
+    });
+    time_container.click(function() {
+        halt_play_time = true;
+        jQuery('#senate_play_times').removeClass('selected');
+    });
+
+    jQuery('#senate_syria_leaning g').bind('mouseout', function(){
+      tooltip_element.css('display', 'none');
+    });
+    jQuery('#senate_syria_leaning g').bind('mousemove', function(e){
+      tooltip_element.css('left', e.pageX + 10)
+        .css('top', e.pageY + 10)
+        .css('display', 'block')
+        .html(jQuery(this).attr('data-tooltip'));
+    });
+
+    jQuery('#senate_show_all_parties').click(function() {
+        jQuery('#senate_party_picker .selected').removeClass('selected');
+        jQuery('#senate_show_all_parties').addClass('selected');
+        var faded = jQuery('#senate_syria_leaning .fade');
+        for (var i = 0; i < faded.length; i++) {
+            faded[i].setAttribute('class', faded[i].getAttribute('class').replace(/\sfade/, '')); 
+        }
+        showing_d_only = false;
+        showing_r_only = false;
+        update_count(displayed_leaning);
+    });
+
+    jQuery('#senate_show_republicans_only').click(function() {
+        jQuery('#senate_party_picker .selected').removeClass('selected');
+        jQuery('#senate_show_republicans_only').addClass('selected');
+        var faded = jQuery('#senate_syria_leaning .fade');
+        for (var i = 0; i < faded.length; i++) {
+            faded[i].setAttribute('class', faded[i].getAttribute('class').replace(/\sfade/, '')); 
+        }
+        var tofade = jQuery('#senate_syria_leaning .democratic,#senate_syria_leaning .empty_seat');
+        for (var i = 0; i < tofade.length; i++) {
+            tofade[i].setAttribute('class', tofade[i].getAttribute('class') + ' fade'); 
+        }
+        showing_r_only = true;
+        showing_d_only = false;
+        update_count(displayed_leaning);
+    });
+    jQuery('#senate_show_democrats_only').click(function() {
+        jQuery('#senate_party_picker .selected').removeClass('selected');
+        jQuery('#senate_show_democrats_only').addClass('selected');
+        var faded = jQuery('#senate_syria_leaning .fade');
+        for (var i = 0; i < faded.length; i++) {
+            faded[i].setAttribute('class', faded[i].getAttribute('class').replace(/\sfade/, '')); 
+        }
+        var tofade = jQuery('#senate_syria_leaning .republican,#senate_syria_leaning .empty_seat');
+        for (var i = 0; i < tofade.length; i++) {
+            tofade[i].setAttribute('class', tofade[i].getAttribute('class') + ' fade'); 
+        }
+        showing_d_only = true;
+        showing_r_only = false;
+        update_count(displayed_leaning);
+    });
+
+    jQuery(document).click(function() {
+        jQuery('#senate_syria_leaning g').bind('mousemove', function(e){
+          tooltip_element.css('left', e.pageX + 10)
+            .css('top', e.pageY + 10)
+            .css('display', 'block')
+            .html(jQuery(this).attr('data-tooltip'));
+        });
+        jQuery('#senate_syria_leaning g').bind('mouseout', function(){
+          tooltip_element.css('display', 'none');
+        });
+        tooltip_element.css('display', 'none');
+    });
+    jQuery('#senate_syria_leaning g').click(function(e){
+        jQuery('#senate_syria_leaning g').unbind('mouseout');
+        jQuery('#senate_syria_leaning g').unbind('mousemove');
+        tooltip_element.css('left', e.pageX + 10)
+            .css('top', e.pageY + 10)
+            .css('display', 'block')
+            .html(jQuery(this).attr('data-tooltip'));
+        
+        if(e.stopPropagation) {
+            e.stopPropagation();
+        } else {
+            e.cancelBubble = true;
+        }
+        return false;
+    });
+
+
+
+    var cleanup_dataset = function( dataset ) {
+        var leaning = {
+            D: {
+                Yes : [],
+                No : [],
+                Undecided : [],
+                Unknown : [],
+            },
+            R: {
+                Yes : [],
+                No : [],
+                Undecided : [],
+                Unknown : [],
+            },
+            I: {
+                Yes : [],
+                No : [],
+                Undecided : [],
+                Unknown : [],
+            },
+        };
+
+        var num_d = 0;
+        var num_r = 0;
+
+        for (var i = 0; i < dataset.length; i++) {
+            var lean = dataset[i].Vote
+            var member = { 
+                name: dataset[i].Name,
+                state: dataset[i].State,
+                party: dataset[i].Party === 'R' ? 'Republican': 'Democrat',
+                lean: lean 
+            };
+
+            dust.render('tooltip', member, function(err, out) {
+                console.log(member);
+                console.log(out);
+                member.tooltip = out;
+            });
+
+
+            leaning[dataset[i].Party][dataset[i].Vote].push(member);
+
+        }
+        return leaning;
+    };
+
+    var count_whip = function(leaning) {
+        var seat_count = 1;
+
+        for (var i = 0; i < senate_seat_fillers.length; i++) {
+            seat_count = seat_filler[senate_seat_fillers[i]](leaning, seat_count);
+        }
+        update_count(leaning);
+
+    };
+
+    var update_count = function(leaning) {
+        if (!showing_d_only && !showing_r_only) {
+            jQuery('#senate_breakdown_no').text( leaning.D.No.length + leaning.R.No.length);
+            jQuery('#senate_breakdown_yes').text( leaning.D.Yes.length + leaning.R.Yes.length);
+            jQuery('#senate_breakdown_neither').text((leaning.D.Unknown.length || 0) + leaning.D.Undecided.length + (leaning.R.Unknown.length || 0) + leaning.R.Undecided.length );
+        } else if ( showing_r_only ) {
+            jQuery('#senate_breakdown_no').text( leaning.R.no.strong.length);
+            jQuery('#senate_breakdown_yes').text( leaning.R.yes.strong.length);
+            jQuery('#senate_breakdown_neither').text(leaning.R.unknown.length + leaning.R.undecided.length );
+        } else if ( showing_d_only ) {
+            jQuery('#senate_breakdown_no').text( leaning.D.no.strong.length);
+            jQuery('#senate_breakdown_yes').text( leaning.D.yes.strong.length);
+            jQuery('#senate_breakdown_neither').text(leaning.D.unknown.length + leaning.R.undecided.length );
+        }
+    };
+
+    var seat_filler = {};
+
+    seat_filler.add_d_no = function(leaning, seat_count) {
+        var d_no = leaning.D.No;
+        for (var i = 0; i < d_no.length; i++) {
+            var circle = document.getElementById('senate_seat_' + seat_count);
+            seat_count++;
+            circle.setAttribute('class', 'Dno ' + d_no[i].name.replace(/\s/, '')
+                    + ' democratic no'
+                    + (showing_r_only ? ' fade' : '')
+            );
+            circle.setAttribute('data-tooltip', d_no[i].tooltip);
+        }
+        return seat_count;
+    };
+    seat_filler.add_i_no = function(leaning, seat_count) {
+        var i_no = leaning.I.No;
+        for (var i = 0; i < i_no.length; i++) {
+            var circle = document.getElementById('senate_seat_' + seat_count);
+            seat_count++;
+            circle.setAttribute('class', 'Ino ' + i_no[i].name.replace(/\s/, '')
+                    + ' independent no'
+                    + (showing_r_only ? ' fade' : '')
+            );
+            circle.setAttribute('data-tooltip', d_no[i].tooltip);
+        }
+        return seat_count;
+    };
+    seat_filler.add_i_undecided = function(leaning, seat_count) {
+        var i_undecided = leaning.I.Undecided;
+        for (var i = 0; i < i_undecided.length; i++) {
+            var circle = document.getElementById('senate_seat_' + seat_count);
+            seat_count++;
+            circle.setAttribute('class', 'Iundecided ' + i_undecided[i].name.replace(/\s/, '')
+                    + ' independent undecided'
+                    + (showing_r_only ? ' fade' : '')
+            );
+            circle.setAttribute('data-tooltip', i_undecided[i].tooltip);
+        }
+        return seat_count;
+    };
+    seat_filler.add_i_unknown = function(leaning, seat_count) {
+        var i_unknown = leaning.I.Unknown;
+        for (var i = 0; i < i_unknown.length; i++) {
+            var circle = document.getElementById('senate_seat_' + seat_count);
+            seat_count++;
+            circle.setAttribute('class', 'Iunknown ' + i_unknown[i].name.replace(/\s/, '')
+                    + ' independent unknown'
+                    + (showing_r_only ? ' fade' : '')
+            );
+            circle.setAttribute('data-tooltip', d_unknown[i].tooltip);
+        }
+        return seat_count;
+    };
+    seat_filler.add_i_yes = function(leaning, seat_count) {
+        var i_yes = leaning.I.Yes;
+        for (var i = 0; i < i_yes.length; i++) {
+            var circle = document.getElementById('senate_seat_' + seat_count);
+            seat_count++;
+            circle.setAttribute('class', 'Iyes ' + i_yes[i].name.replace(/\s/, '')
+                    + ' independent yes'
+                    + (showing_r_only ? ' fade' : '')
+            );
+            circle.setAttribute('data-tooltip', d_yes[i].tooltip);
+        }
+        return seat_count;
+    };
+
+    seat_filler.add_d_undecided = function(leaning, seat_count) {
+        var d_undecided = leaning.D.Undecided;
+        for (var i = 0; i < d_undecided.length; i++) {
+            var circle = document.getElementById('senate_seat_' + seat_count);
+            seat_count++;
+            circle.setAttribute('class', 'd_undecided ' + d_undecided[i].name.replace(/\s/, '')
+                    + (showing_r_only ? ' fade' : '')
+                    + ' democratic undecided');
+            circle.setAttribute('data-tooltip', d_undecided[i].tooltip);
+        }
+        return seat_count;
+    };
+
+    seat_filler.add_d_unknown = function(leaning, seat_count) {
+        var d_unknown = leaning.D.Unknown;
+        for (var i = 0; i < d_unknown.length; i++) {
+            var circle = document.getElementById('senate_seat_' + seat_count);
+            seat_count++;
+            circle.setAttribute('class', 'd_unknown ' + d_unknown[i].name.replace(/\s/, '')
+                    + (showing_r_only ? ' fade' : '')
+                    + ' democratic unknown');
+            circle.setAttribute('data-tooltip', d_unknown[i].tooltip);
+        }
+        return seat_count;
+    };
+
+    seat_filler.add_d_yes = function(leaning, seat_count) {
+        var d_yes = leaning.D.Yes;
+        for (var i = 0; i < d_yes.length; i++) {
+            var circle = document.getElementById('senate_seat_' + seat_count);
+            seat_count++;
+            circle.setAttribute('class', 'yes ' + d_yes[i].name.replace(/\s/, '')
+                    + (showing_r_only ? ' fade' : '')
+                    + ' democratic yes');
+            circle.setAttribute('data-tooltip', d_yes[i].tooltip);
+        }
+        return seat_count;
+    };
+
+    seat_filler.add_empty = function(leaning, seat_count) {
+        document.getElementById('senate_seat_' + seat_count).setAttribute('class', 'empty_seat'
+                    + (showing_d_only || showing_r_only ? ' fade' : '')
+        );
+        document.getElementById('senate_seat_' + seat_count).setAttribute('data-tooltip', 'Vacant Seat');
+        seat_count++;
+        document.getElementById('senate_seat_' + seat_count).setAttribute('class', 'empty_seat'
+                    + (showing_d_only || showing_r_only ? ' fade' : '')
+        );
+        document.getElementById('senate_seat_' + seat_count).setAttribute('data-tooltip', 'Vacant Seat');
+        seat_count++;
+        return seat_count;
+    };
+
+
+    seat_filler.add_r_yes = function(leaning, seat_count) {
+        var r_yes = leaning.R.Yes;
+        for (var i = 0; i < r_yes.length; i++) {
+            var circle = document.getElementById('senate_seat_' + seat_count);
+            seat_count++;
+            circle.setAttribute('class', 'Ryes ' + r_yes[i].name.replace(/\s/, '')
+                    + (showing_d_only ? ' fade' : '')
+                    + ' republican yes');
+            circle.setAttribute('data-tooltip', r_yes[i].tooltip);
+        }
+        return seat_count;
+    };
+
+    seat_filler.add_r_unknown = function(leaning, seat_count) {
+        var r_unknown = leaning.R.Unknown;
+        for (var i = 0; i < r_unknown.length; i++) {
+            var circle = document.getElementById('senate_seat_' + seat_count);
+            seat_count++;
+            circle.setAttribute('class', 'r_unknown ' + r_unknown[i].name.replace(/\s/, '')
+                    + (showing_d_only ? ' fade' : '')
+                    + ' republican unknown');
+            circle.setAttribute('data-tooltip', r_unknown[i].tooltip + r_unknown[i].lean);
+        }
+        return seat_count;
+    };
+
+    seat_filler.add_r_undecided = function(leaning, seat_count) {
+        var r_undecided = leaning.R.Undecided;
+        for (var i = 0; i < r_undecided.length; i++) {
+            var circle = document.getElementById('senate_seat_' + seat_count);
+            seat_count++;
+            circle.setAttribute('class', 'r_undecided ' + r_undecided[i].name.replace(/\s/, '')
+                    + (showing_d_only ? ' fade' : '')
+                    + ' republican undecided');
+            circle.setAttribute('data-tooltip', r_undecided[i].tooltip);
+        }
+        return seat_count;
+    };
+
+    seat_filler.add_r_no = function(leaning, seat_count) {
+        var r_no = leaning.R.No;
+        for (var i = 0; i < r_no.length; i++) {
+            var circle = document.getElementById('senate_seat_' + seat_count);
+            seat_count++;
+            circle.setAttribute('class', 'Rno ' + r_no[i].name.replace(/\s/, '')
+                    + (showing_d_only ? ' fade' : '')
+                    + ' republican no');
+            circle.setAttribute('data-tooltip', r_no[i].tooltip);
+        }
+        return seat_count;
+    };
+
+
+    for (var i = 0; i < senate_vote_times.length; i++) {
+        var time = senate_vote_times[i];
+        var title;
+        for(var k in time) {title = k;}
+        cleaned_times.push(cleanup_dataset(time[title]));
+    }
+    console.log(cleaned_times)
+    count_whip(cleaned_times[cleaned_times.length - 1]);
+
+
+
+    function fixWebkitHeightBug(){
+
+        //broke in ff
+    var svgW = 1280;
+    var svgH = 659.89313;
+    var curSVGW = $('#senate_syria_leaning').width();
+    if(curSVGW === 100) { return; }
+    var newSVGH = heightInRatio(svgH,svgW,curSVGW);
+    $('#senate_syria_leaning').height(newSVGH);
+
+    }
+    function heightInRatio(oH,oW,nW){
+
+    return (oH / oW * nW);
+
+    }
+
+
+    $(window).resize(function() {
+    fixWebkitHeightBug();
+    });
+    $(document).ready(function() {
+    fixWebkitHeightBug();
+    });
+
+});
