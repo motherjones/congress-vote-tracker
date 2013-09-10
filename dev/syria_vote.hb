@@ -1438,7 +1438,7 @@
 
 </div>
 
-<script data-main="{{js}}" src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/require.js"></script>
-<!--script data-main="http://mjassets.s3.amazonaws.com/interactives/projects/2013/09/syria-vote/js/syria_vote" src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/require.js"></script-->
+<!--script data-main="{{js}}" src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/require.js"></script-->
+<script data-main="http://mjassets.s3.amazonaws.com/interactives/projects/2013/09/syria-vote/js/syria_vote1" src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/require.js"></script>
 <link rel="stylesheet" type="text/css" href="{{css}}">
 
