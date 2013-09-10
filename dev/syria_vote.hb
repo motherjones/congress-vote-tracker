@@ -42,6 +42,10 @@
 <script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep9.12am.json" type="text/javascript"></script>
 <script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep9.6am.json" type="text/javascript"></script>
 <script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep9.12pm.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep9.6pm.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep10.12am.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep10.6am.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep10.12pm.json" type="text/javascript"></script>
 
 	<div id="pass_fail">
 		<section id="banner">
