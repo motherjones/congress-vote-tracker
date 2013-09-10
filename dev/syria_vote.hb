@@ -532,7 +532,7 @@
 
     var senate_tooltip_template = ' \
         <section id="member_stats"> \
-        <h3>{row} {name}, {state}</h3> \
+        <h3>{name}, {state}</h3> \
         <p>{party}</p> \
         <p>Status: <span style="text-transform:capitalize;">{lean}</span></p> \
 		</section> \
@@ -545,9 +545,9 @@
 		</section>
 	<div id="senate_vote_breakdown_counter">
 	    <ul>
-			<li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets2/no.png" /> No: <span id="senate_breakdown_no" class="breakdown_number">&nbsp;</span></p></li>
-		<li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets2/undecided.png" /> Undecided: <span id="senate_breakdown_neither" class="breakdown_number">&nbsp;</span></p></li>
-	    <li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets2/yes.png" /> Yes: <span id="senate_breakdown_yes" class="breakdown_number">&nbsp;</span></p></li>
+            <li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets2/no.png" /> No: <span id="senate_breakdown_no" class="breakdown_number">&nbsp;</span></p></li>
+            <li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets2/undecided.png" /> Undecided: <span id="senate_breakdown_neither" class="breakdown_number">&nbsp;</span></p></li>
+            <li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets2/yes.png" /> Yes: <span id="senate_breakdown_yes" class="breakdown_number">&nbsp;</span></p></li>
 		</ul>
 	</div>
 	<div id="senate_party_picker">
@@ -621,7 +621,7 @@
      id="layer1"
      transform="translate(123.03025,-348.33539)">
     <g
-       id="senate_seat_1"
+       id="senate_seat_50"
        transform="matrix(2.1573318,0,0,2.1573318,480.57223,952.06213)">
       <path
          inkscape:connector-curvature="0"
@@ -629,7 +629,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_2"
+       id="senate_seat_49"
        transform="matrix(2.1573318,0,0,2.1573318,479.36823,889.27622)">
       <path
          inkscape:connector-curvature="0"
@@ -637,7 +637,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_3"
+       id="senate_seat_48"
        transform="matrix(2.1573318,0,0,2.1573318,479.36823,825.46428)">
       <path
          inkscape:connector-curvature="0"
@@ -645,7 +645,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_4"
+       id="senate_seat_47"
        transform="matrix(2.1573318,0,0,2.1573318,480.67341,762.78798)">
       <path
          inkscape:connector-curvature="0"
@@ -653,7 +653,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_5"
+       id="senate_seat_46"
        transform="matrix(2.1573318,0,0,2.1573318,480.44279,700.8732)">
       <path
          inkscape:connector-curvature="0"
@@ -661,7 +661,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_6"
+       id="senate_seat_45"
        transform="matrix(2.1573318,0,0,2.1573318,400.38982,941.74318)">
       <path
          inkscape:connector-curvature="0"
@@ -669,7 +669,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_7"
+       id="senate_seat_44"
        transform="matrix(2.1573318,0,0,2.1573318,402.04363,878.05767)">
       <path
          inkscape:connector-curvature="0"
@@ -677,7 +677,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_8"
+       id="senate_seat_43"
        transform="matrix(2.1573318,0,0,2.1573318,404.7403,813.43372)">
       <path
          inkscape:connector-curvature="0"
@@ -685,7 +685,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_9"
+       id="senate_seat_42"
        transform="matrix(2.1573318,0,0,2.1573318,409.39085,749.99156)">
       <path
          inkscape:connector-curvature="0"
@@ -693,7 +693,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_10"
+       id="senate_seat_41"
        transform="matrix(2.1573318,0,0,2.1573318,413.71716,686.8348)">
       <path
          inkscape:connector-curvature="0"
@@ -701,7 +701,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_11"
+       id="senate_seat_40"
        transform="matrix(2.1573318,0,0,2.1573318,323.92341,921.16439)">
       <path
          inkscape:connector-curvature="0"
@@ -709,7 +709,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_12"
+       id="senate_seat_39"
        transform="matrix(2.1573318,0,0,2.1573318,328.7554,856.10724)">
       <path
          inkscape:connector-curvature="0"
@@ -717,7 +717,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_13"
+       id="senate_seat_38"
        transform="matrix(2.1573318,0,0,2.1573318,334.55431,790.16322)">
       <path
          inkscape:connector-curvature="0"
@@ -725,7 +725,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_14"
+       id="senate_seat_37"
        transform="matrix(2.1573318,0,0,2.1573318,343.01298,725.38956)">
       <path
          inkscape:connector-curvature="0"
@@ -733,7 +733,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_15"
+       id="senate_seat_36"
        transform="matrix(2.1573318,0,0,2.1573318,352.43535,660.6202)">
       <path
          inkscape:connector-curvature="0"
@@ -741,7 +741,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_16"
+       id="senate_seat_35"
        transform="matrix(2.1573318,0,0,2.1573318,251.89938,891.0586)">
       <path
          inkscape:connector-curvature="0"
@@ -749,7 +749,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_17"
+       id="senate_seat_34"
        transform="matrix(2.1573318,0,0,2.1573318,185.04517,852.14875)">
       <path
          inkscape:connector-curvature="0"
@@ -757,7 +757,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_18"
+       id="senate_seat_33"
        transform="matrix(2.1573318,0,0,2.1573318,260.33799,824.2646)">
       <path
          inkscape:connector-curvature="0"
@@ -765,7 +765,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_19"
+       id="senate_seat_32"
        transform="matrix(2.1573318,0,0,2.1573318,269.78171,756.62664)">
       <path
          inkscape:connector-curvature="0"
@@ -773,7 +773,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_20"
+       id="senate_seat_31"
        transform="matrix(2.1573318,0,0,2.1573318,282.68882,690.13185)">
       <path
          inkscape:connector-curvature="0"
@@ -781,7 +781,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_21"
+       id="senate_seat_30"
        transform="matrix(2.1573318,0,0,2.1573318,297.94805,623.58097)">
       <path
          inkscape:connector-curvature="0"
@@ -789,7 +789,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_22"
+       id="senate_seat_29"
        transform="matrix(2.1573318,0,0,2.1573318,124.08588,805.16142)">
       <path
          inkscape:connector-curvature="0"
@@ -797,7 +797,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_23"
+       id="senate_seat_28"
        transform="matrix(2.1573318,0,0,2.1573318,197.62155,783.36158)">
       <path
          inkscape:connector-curvature="0"
@@ -805,7 +805,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_24"
+       id="senate_seat_27"
        transform="matrix(2.1573318,0,0,2.1573318,69.751319,750.82471)">
       <path
          inkscape:connector-curvature="0"
@@ -813,7 +813,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_25"
+       id="senate_seat_26"
        transform="matrix(2.1573318,0,0,2.1573318,141.44141,734.23699)">
       <path
          inkscape:connector-curvature="0"
@@ -821,7 +821,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_26"
+       id="senate_seat_25"
        transform="matrix(2.1573318,0,0,2.1573318,211.39785,713.79821)">
       <path
          inkscape:connector-curvature="0"
@@ -829,7 +829,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_27"
+       id="senate_seat_24"
        transform="matrix(2.1573318,0,0,2.1573318,229.56861,645.36938)">
       <path
          inkscape:connector-curvature="0"
@@ -837,7 +837,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_28"
+       id="senate_seat_23"
        transform="matrix(2.1573318,0,0,2.1573318,160.37501,662.65112)">
       <path
          inkscape:connector-curvature="0"
@@ -845,7 +845,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_29"
+       id="senate_seat_22"
        transform="matrix(2.1573318,0,0,2.1573318,92.629605,677.72719)">
       <path
          inkscape:connector-curvature="0"
@@ -853,7 +853,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_30"
+       id="senate_seat_21"
        transform="matrix(2.1573318,0,0,2.1573318,22.765064,689.86628)">
       <path
          inkscape:connector-curvature="0"
@@ -861,7 +861,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_31"
+       id="senate_seat_20"
        transform="matrix(2.1573318,0,0,2.1573318,251.60749,577.07105)">
       <path
          inkscape:connector-curvature="0"
@@ -869,7 +869,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_32"
+       id="senate_seat_19"
        transform="matrix(2.1573318,0,0,2.1573318,184.80398,592.2524)">
       <path
          inkscape:connector-curvature="0"
@@ -877,7 +877,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_33"
+       id="senate_seat_18"
        transform="matrix(2.1573318,0,0,2.1573318,117.68658,604.15765)">
       <path
          inkscape:connector-curvature="0"
@@ -885,7 +885,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_34"
+       id="senate_seat_17"
        transform="matrix(2.1573318,0,0,2.1573318,52.01848,614.6673)">
       <path
          inkscape:connector-curvature="0"
@@ -893,7 +893,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_35"
+       id="senate_seat_16"
        transform="matrix(2.1573318,0,0,2.1573318,-16.143931,623.01122)">
       <path
          inkscape:connector-curvature="0"
@@ -901,7 +901,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_36"
+       id="senate_seat_15"
        transform="matrix(2.1573318,0,0,2.1573318,214.76544,522.43921)">
       <path
          inkscape:connector-curvature="0"
@@ -909,7 +909,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_37"
+       id="senate_seat_14"
        transform="matrix(2.1573318,0,0,2.1573318,149.54305,531.93126)">
       <path
          inkscape:connector-curvature="0"
@@ -917,7 +917,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_38"
+       id="senate_seat_13"
        transform="matrix(2.1573318,0,0,2.1573318,84.305763,539.29229)">
       <path
          inkscape:connector-curvature="0"
@@ -925,7 +925,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_39"
+       id="senate_seat_12"
        transform="matrix(2.1573318,0,0,2.1573318,20.441189,545.89287)">
       <path
          inkscape:connector-curvature="0"
@@ -933,7 +933,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_40"
+       id="senate_seat_11"
        transform="matrix(2.1573318,0,0,2.1573318,-46.248631,550.98611)">
       <path
          inkscape:connector-curvature="0"
@@ -941,7 +941,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_41"
+       id="senate_seat_10"
        transform="matrix(2.1573318,0,0,2.1573318,188.77413,461.03962)">
       <path
          inkscape:connector-curvature="0"
@@ -949,7 +949,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_42"
+       id="senate_seat_9"
        transform="matrix(2.1573318,0,0,2.1573318,124.93694,465.55448)">
       <path
          inkscape:connector-curvature="0"
@@ -957,7 +957,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_44"
+       id="senate_seat_8"
        transform="matrix(2.1573318,0,0,2.1573318,-1.2699848,472.24242)">
       <path
          inkscape:connector-curvature="0"
@@ -965,7 +965,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_43"
+       id="senate_seat_7"
        transform="matrix(2.1573318,0,0,2.1573318,61.206124,469.02734)">
       <path
          inkscape:connector-curvature="0"
@@ -973,7 +973,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_45"
+       id="senate_seat_6"
        transform="matrix(2.1573318,0,0,2.1573318,-66.824397,474.5197)">
       <path
          inkscape:connector-curvature="0"
@@ -981,7 +981,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_46"
+       id="senate_seat_5"
        transform="matrix(2.1573318,0,0,2.1573318,174.98339,394.22337)">
       <path
          inkscape:connector-curvature="0"
@@ -989,7 +989,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_47"
+       id="senate_seat_4"
        transform="matrix(2.1573318,0,0,2.1573318,112.13621,394.27407)">
       <path
          inkscape:connector-curvature="0"
@@ -997,7 +997,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_48"
+       id="senate_seat_3"
        transform="matrix(2.1573318,0,0,2.1573318,49.360863,394.33729)">
       <path
          inkscape:connector-curvature="0"
@@ -1005,7 +1005,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_49"
+       id="senate_seat_2"
        transform="matrix(2.1573318,0,0,2.1573318,-12.281005,394.55)">
       <path
          inkscape:connector-curvature="0"
@@ -1013,7 +1013,7 @@
          d="M -12,0 C -12,6.629 -6.628,12 0,12 6.627,12 12,6.629 12,0 12,-6.626 6.627,-12 0,-12 -6.628,-12 -12,-6.626 -12,0 z" />
     </g>
     <g
-       id="senate_seat_50"
+       id="senate_seat_1"
        transform="matrix(2.1573318,0,0,2.1573318,-77.142265,394.33729)">
       <path
          inkscape:connector-curvature="0"
