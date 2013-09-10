@@ -1,4 +1,4 @@
-/*! Syria Vote - v0.1.0 - 2013-09-07
+/*! Syria Vote - v0.1.0 - 2013-09-09
 * https://github.com/motherjones/syria
 * Copyright (c) 2013 Mother Jones Data Desk; Licensed MIT */
 "use strict";
@@ -21,9 +21,7 @@ var tooltip_element = jQuery('<div id="tooltip" style="display: none; position: 
 window.onload = function() {
     jQuery('svg').before(tooltip_element);
 
-    dataset_times.sort();
-
-
+//    dataset_times.sort(); oh god don't do this
     var cleaned_times = [];
     for (var i = 0; i < dataset_times.length; i++) {
         var time = dataset_times[i];
@@ -378,12 +376,12 @@ seat_filler.add_empty = function(leaning, seat_count) {
     document.getElementById('seat' + seat_count).setAttribute('class', 'empty_seat'
                 + (showing_d_only || showing_r_only ? ' fade' : '')
     );
-    document.getElementById('seat' + seat_count).setAttribute('data-tooltip', 'Empty Seat');
+    document.getElementById('seat' + seat_count).setAttribute('data-tooltip', 'Vacant Seat');
     seat_count++;
     document.getElementById('seat' + seat_count).setAttribute('class', 'empty_seat'
                 + (showing_d_only || showing_r_only ? ' fade' : '')
     );
-    document.getElementById('seat' + seat_count).setAttribute('data-tooltip', 'Empty Seat');
+    document.getElementById('seat' + seat_count).setAttribute('data-tooltip', 'Vacant Seat');
     seat_count++;
     return seat_count;
 };

@@ -576,7 +576,6 @@ require([
         step: 1,
         slide: function() {
             var value = $(this).val();
-            console.log(value);
             count_whip(cleaned_times[value]);
             displayed_leaning = cleaned_times[value];
 
@@ -740,8 +739,10 @@ require([
 
         for (var i = 0; i < dataset.length; i++) {
             var lean = dataset[i].Vote
+            var namebits = dataset[i].Name.split(/[,\.]/);
+            var name = namebits[1].replace(/ /g, '') + ' ' + namebits[0].replace(/ /g, '');
             var member = { 
-                name: dataset[i].Name,
+                name: name,
                 state: dataset[i].State,
                 party: dataset[i].Party === 'R' ? 'Republican': 'Democrat',
                 lean: lean 
@@ -755,11 +756,24 @@ require([
             leaning[dataset[i].Party][dataset[i].Vote].push(member);
 
         }
+
+        var parties = ['D', 'R', 'I'];
+        var votes = ['Yes', 'No', 'Undecided', 'Unknown'];
+        for (var i = 0; i < parties.length; i++) {
+            for (var k = 0; k < votes.length; k++) {
+                leaning[parties[i]][votes[k]].sort(function(a, b) {
+                    var a_last_name = a.name.split(' ')[1].toLowerCase().replace(/\s/g, '');
+                    var b_last_name = b.name.split(' ')[1].toLowerCase().replace(/\s/g, '');
+                    return a_last_name > b_last_name ? 1 : -1;
+                });
+            }
+        }
         return leaning;
     };
 
     var count_whip = function(leaning) {
         var seat_count = 1;
+        displayed_leaning = leaning;
 
         for (var i = 0; i < senate_seat_fillers.length; i++) {
             seat_count = seat_filler[senate_seat_fillers[i]](leaning, seat_count);
@@ -770,17 +784,17 @@ require([
 
     var update_count = function(leaning) {
         if (!showing_d_only && !showing_r_only) {
-            jQuery('#senate_breakdown_no').text( leaning.D.No.length + leaning.R.No.length);
-            jQuery('#senate_breakdown_yes').text( leaning.D.Yes.length + leaning.R.Yes.length);
-            jQuery('#senate_breakdown_neither').text((leaning.D.Unknown.length || 0) + leaning.D.Undecided.length + (leaning.R.Unknown.length || 0) + leaning.R.Undecided.length );
+            jQuery('#senate_breakdown_no').text( leaning.D.No.length + leaning.R.No.length + leaning.I.No.length);
+            jQuery('#senate_breakdown_yes').text( leaning.D.Yes.length + leaning.R.Yes.length + leaning.I.Yes.length);
+            jQuery('#senate_breakdown_neither').text((leaning.D.Unknown.length || 0) + leaning.D.Undecided.length + (leaning.R.Unknown.length || 0) + leaning.R.Undecided.length + (leaning.I.Unknown.length || 0) + leaning.I.Undecided.length  );
         } else if ( showing_r_only ) {
-            jQuery('#senate_breakdown_no').text( leaning.R.no.strong.length);
-            jQuery('#senate_breakdown_yes').text( leaning.R.yes.strong.length);
-            jQuery('#senate_breakdown_neither').text(leaning.R.unknown.length + leaning.R.undecided.length );
+            jQuery('#senate_breakdown_no').text( leaning.R.No.length);
+            jQuery('#senate_breakdown_yes').text( leaning.R.Yes.length);
+            jQuery('#senate_breakdown_neither').text(leaning.R.Unknown.length + leaning.R.Undecided.length );
         } else if ( showing_d_only ) {
-            jQuery('#senate_breakdown_no').text( leaning.D.no.strong.length);
-            jQuery('#senate_breakdown_yes').text( leaning.D.yes.strong.length);
-            jQuery('#senate_breakdown_neither').text(leaning.D.unknown.length + leaning.R.undecided.length );
+            jQuery('#senate_breakdown_no').text( leaning.D.No.length);
+            jQuery('#senate_breakdown_yes').text( leaning.D.Yes.length);
+            jQuery('#senate_breakdown_neither').text(leaning.D.Unknown.length + leaning.D.Undecided.length );
         }
     };
 
