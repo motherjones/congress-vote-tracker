@@ -109,14 +109,14 @@ circle, .fade {
 	font-weight: normal;
 }
 
-#party_picker {
+#party_picker, #senate_party_picker {
 	margin-bottom: 1em;
 	left: 50%;
 	position: relative;
 	margin-left: -225px;
 }
 
-#show_republicans_only, #show_democrats_only, #show_all_parties, #play_times {
+#show_republicans_only, #show_democrats_only, #show_all_parties, #play_times, #senate_show_republicans_only, #senate_show_democrats_only, #senate_show_all_parties, #senate_play_times  {
 	background-color: #4C4C4A;
 	border: 4px solid #ccc;
 	color: #eee;
@@ -131,12 +131,12 @@ circle, .fade {
 	margin-right: 3px;	
 } 
 
-#play_times {
+#play_times, #senate_play_times {
 	background-color: #2d2d2d;
 	padding: 10px;
 }
 
-#show_republicans_only:hover, #show_republicans_only.selected {
+#show_republicans_only:hover, #show_republicans_only.selected, #senate_show_republicans_only:hover, #senate_show_republicans_only.selected {
 	cursor: pointer;
 	background-color: #EF4023;
 	border: 4px solid #CD371E;
@@ -147,7 +147,7 @@ circle, .fade {
   transition: all 0.15s;
 }
 
-#show_democrats_only:hover, #show_democrats_only.selected {
+#show_democrats_only:hover, #show_democrats_only.selected, #senate_show_democrats_only:hover, #senate_show_democrats_only.selected {
 	cursor: pointer;
 	background-color: #0168A2;
 	border: 4px solid #304481;
@@ -158,7 +158,7 @@ circle, .fade {
   transition: all 0.15s;
 }
 
-#show_all_parties:hover, #show_all_parties.selected {
+#show_all_parties:hover, #show_all_parties.selected, #senate_show_all_parties:hover, #senate_show_all_parties.selected {
 	cursor: pointer;
 	background-color: #515151;
 	border: 4px solid #2d2d2d;
@@ -174,19 +174,20 @@ text {
 	color: red;
 }
 
-#play_times {
+#play_times, #senate_play_times {
     position: relative;
     margin-left: auto;
     margin-right: auto;
     display:block
 }
 
-#play_times.selected, #play_times:hover {
+#play_times.selected, #play_times:hover, #senate_play_times.selected, #senate_play_times:hover {
 	background-color: #515151;
 	border: 4px solid #2d2d2d;
 	color: #fff;
 	cursor: pointer;	
 }
+
 
 
 
@@ -304,11 +305,19 @@ text {
 		margin: -9px 0 0 -5px;
 	}
 	
+	#senate_time_picker {
+		display:none;
+	}
+	
 /* mobile styles */
 
 @media only screen 
 and (max-width: 480px) {
 
+	.mobile-css-hide {
+	    display: none!important;
+	  }
+	  
 	#banner {
 		width: 100%;
 	}
