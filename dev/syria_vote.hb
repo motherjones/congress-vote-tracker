@@ -47,7 +47,7 @@
 <script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep10.6am.json" type="text/javascript"></script>
 <script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/syria_vote.sep10.12pm.json" type="text/javascript"></script>
 
-	<div id="pass_fail">
+	<div class="pass_fail" id="house_pass_fail">
 		<section id="banner">
 		<p class="hed">House Vote: Syria</p>
 		<p class="dek"><span class="breakdown_number">217</span> Votes Needed To Pass or Fail</p>
@@ -543,15 +543,16 @@
     ';
 </script>
 <script src="data/senate.sep10.12pm.json" type="text/javascript"></script>
+<div class="pass_fail" id="senate_pass_fail">
 		<section id="banner">
 		<p class="hed">Senate Vote: Syria</p>
 		<p class="dek"><span class="breakdown_number">51</span> Votes Needed To Pass or Fail</p>
 		</section>
 	<div id="senate_vote_breakdown_counter">
 	    <ul>
-            <li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets2/no.png" /> No: <span id="senate_breakdown_no" class="breakdown_number">&nbsp;</span></p></li>
+            <li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets2/no.png" /> No or leaning no: <span id="senate_breakdown_no" class="breakdown_number">&nbsp;</span></p></li>
             <li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets2/undecided.png" /> Undecided: <span id="senate_breakdown_neither" class="breakdown_number">&nbsp;</span></p></li>
-            <li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets2/yes.png" /> Yes: <span id="senate_breakdown_yes" class="breakdown_number">&nbsp;</span></p></li>
+            <li><p><img src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/assets2/yes.png" /> Yes or leaning yes: <span id="senate_breakdown_yes" class="breakdown_number">&nbsp;</span></p></li>
 		</ul>
 	</div>
 	<div id="senate_party_picker">
@@ -1434,6 +1435,9 @@
     <span style="display:none;" class="ffswhyisourwysiwygsobizarre">&nbsp;</span>
 </div>
 <button id="senate_play_times">See changes over time</button>
+
+</div>
+
 <script data-main="{{js}}" src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/require.js"></script>
 <!--script data-main="http://mjassets.s3.amazonaws.com/interactives/projects/2013/09/syria-vote/js/syria_vote" src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/require.js"></script-->
 <link rel="stylesheet" type="text/css" href="{{css}}">
