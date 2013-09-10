@@ -567,7 +567,7 @@ require([
     var time_container = jQuery('#senate_time_picker');
     var label_value_now;
     for (var k in senate_vote_times[senate_vote_times.length - 1]) { label_value_now = k; }
-    var time_label = jQuery('<label id="time_picker_label">' + label_value_now + '</label>');
+    var time_label = jQuery('<label id="senate_time_picker_label">' + label_value_now + '</label>');
     time_container.after(time_label);
     time_container.noUiSlider({
         range: [0, senate_vote_times.length - 1],
