@@ -598,14 +598,14 @@ require([
         count_whip(cleaned_times[i]);
         displayed_leaning = cleaned_times[i];
 
-        var title = (i === dataset_times.length)
+        var title = (i === senate_vote_times.length)
             ? label_value_now
-            : function() { for (var k in dataset_times[i]) return k; }
+            : function() { for (var k in senate_vote_times[i]) return k; }
         time_label.text(title);
-        if (i < dataset_times.length) {
+        if (i < (senate_vote_times.length - 1)) {
             setTimeout(function() {play_time();}, 1000);
         } else { 
-            jQuery('#play_times').removeClass('selected');
+            jQuery('#senate_play_times').removeClass('selected');
         }
     }
 
@@ -616,7 +616,7 @@ require([
         } else {
             halt_play_time = false;
             jQuery('#senate_play_times').addClass('selected');
-            if( time_container.val() < dataset_times.length) {
+            if( time_container.val() < (senate_vote_times.length - 1)) {
                 play_time();
             } else {
                 play_time(0);
