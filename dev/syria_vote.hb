@@ -608,18 +608,6 @@
      inkscape:window-maximized="1"
      showguides="true"
      inkscape:guide-bbox="true" />
-  <metadata
-     id="metadata3605">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
