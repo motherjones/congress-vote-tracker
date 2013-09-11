@@ -542,7 +542,7 @@
 		</section> \
     ';
 </script>
-<script src="data/senate.sep10.12pm.json" type="text/javascript"></script>
+<script src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/data/senate.sep10.12pm.json" type="text/javascript"></script>
 <div class="pass_fail" id="senate_pass_fail">
 		<section id="banner">
 		<p class="hed">Senate Vote: Syria</p>
@@ -1438,7 +1438,7 @@
 
 </div>
 
-<script data-main="{{js}}" src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/require.js"></script>
-<!--script data-main="http://mjassets.s3.amazonaws.com/interactives/projects/2013/09/syria-vote/js/syria_vote" src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/require.js"></script-->
+<!--script data-main="{{js}}" src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/require.js"></script-->
+<script data-main="http://mjassets.s3.amazonaws.com/interactives/projects/2013/09/syria-vote/js/syria_vote1" src="http://assets.motherjones.com/interactives/projects/2013/09/syria-vote/js/require.js"></script>
 <link rel="stylesheet" type="text/css" href="{{css}}">
 
