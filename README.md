@@ -1,6 +1,5 @@
-# syria_vote
-
-The best MoJo news app ever.
+Congressional Vote Tracker
+==========================
 
 ## Getting Started
 Download the [production version][min] or the [development version][max].
