@@ -1,8 +1,6 @@
 Congressional Vote Tracker
 ==========================
 
-## Getting Started
-Download the [production version][min] or the [development version][max].
+[Demo](http://www.motherjones.com/politics/2013/09/syria-vote-tracker-congress-whip-count)
 
-[min]: https://raw.github.com/motherjones/syria/master/demo/js/syria_vote.min.js
-[max]: https://raw.github.com/motherjones/syria/master/dev/js/syria_vote.js
+[Spreadsheet template](https://docs.google.com/spreadsheet/ccc?key=0AmXJhRgn8UhudFlwcFdEVWt5TXdCRGFPWW5Pd21Sd3c&usp=drive_web#gid=0)
